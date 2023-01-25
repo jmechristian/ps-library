@@ -95,7 +95,8 @@ const LessonsBottomContent = () => {
             <a href='https://packagingschool.com/get-to-know-cmpm/'>
               <strong>Certificate of Mastery in Packaging Management</strong>
             </a>{' '}
-            that cover this course and much more.
+            that cover this course and <br />
+            much more.
           </p>
         </div>
       </div>
