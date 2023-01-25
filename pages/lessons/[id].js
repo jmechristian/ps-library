@@ -34,6 +34,10 @@ const Index = () => {
           key='desc'
         />
         <meta
+          property='og:image'
+          content='https://apsmedia.s3.amazonaws.com/images/CN+pt+1+TN.png'
+        />
+        <meta
           property='og:title'
           content='Packaging School - Carbon Neutral Part 1'
         />
