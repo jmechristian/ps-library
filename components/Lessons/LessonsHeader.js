@@ -18,9 +18,10 @@ const LessonsHeader = () => {
             Carbon Neutral - Definition and Crediting
           </h1>
           <p className='mt-6 text-lg leading-8 text-slate-500'>
-            This 2-part lesson will add context to carbon neutrality and explore
-            how you can implement it into your packaging. In part 1 we define
-            &#8220;carbon neutral&#8221; and look at real-world examples of
+            This two-part lesson will add context to the term carbon neutrality
+            and also explore ways to implement strategies that can help make
+            your packaging carbon neutral. Here in part one, we define
+            &ldquo;carbon neutral&rdquo; and look at real-world examples of
             carbon offset in the industry.
           </p>
         </div>
