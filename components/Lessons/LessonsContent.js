@@ -80,25 +80,6 @@ const LessonsContent = () => {
             fill='none'
             viewBox='0 0 404 384'
           >
-            <defs>
-              <pattern
-                id='d3eb07ae-5182-43e6-857d-35c643af9034'
-                x={0}
-                y={0}
-                width={20}
-                height={20}
-                patternUnits='userSpaceOnUse'
-              >
-                <rect
-                  x={0}
-                  y={0}
-                  width={4}
-                  height={4}
-                  className='text-slate-200'
-                  fill='currentColor'
-                />
-              </pattern>
-            </defs>
             <rect
               width={404}
               height={384}
@@ -107,7 +88,7 @@ const LessonsContent = () => {
           </svg>
         </div>
       </div>
-      <div className='relative px-6 lg:px-8'>
+      <div className='relative px-6 lg:px-8 lg:pb-16'>
         <div className='prose prose-lg prose-orange mx-auto text-slate-500'>
           <div className='pb-3'>
             <h3>Learning Objectives</h3>
@@ -122,7 +103,8 @@ const LessonsContent = () => {
           <p>
             A major component to understanding your environmental impact is the
             amount of production and discharge of carbon. So, many companies are
-            asking the question "How do we make carbon neutral packaging?"
+            asking the question &quote;How do we make carbon neutral
+            packaging?&quote;
           </p>
           <div>
             <button

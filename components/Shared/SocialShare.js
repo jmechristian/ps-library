@@ -31,7 +31,7 @@ const SocialShare = () => {
     <div
       style={{ background: 'linear-gradient(35deg, #1F97BF 20%, #FF9321 90%)' }}
     >
-      <div className='mx-auto max-w-prose px-6 py-12 lg:py-32 lg:flex lg:items-center lg:justify-between lg:px-8'>
+      <div className='mx-auto max-w-prose px-6 py-16 lg:py-20 lg:flex lg:items-center lg:justify-between lg:px-8'>
         <div className='prose prose-lg mb-4 text-center'>
           <h3 className='text-white font-medium text-2xl'>
             Share The Knowledge

@@ -3,7 +3,7 @@ import React from 'react';
 const LessonsMedia = ({ videoUrl }) => {
   return (
     <div>
-      <div>
+      <div className='max-w-7xl mx-auto'>
         <video
           className='w-full h-full'
           controls
