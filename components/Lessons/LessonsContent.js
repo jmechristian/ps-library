@@ -103,10 +103,10 @@ const LessonsContent = () => {
           <p>
             A major component to understanding your environmental impact is the
             amount of production and discharge of carbon. So, many companies are
-            asking the question &quote;How do we make carbon neutral
-            packaging?&quote;
+            asking the question &ldquo;How do we make carbon neutral
+            packaging?&rdquo;
           </p>
-          <div>
+          <div className='py-3'>
             <button
               type='button'
               className='inline-flex items-center rounded-md border border-gray-300 bg-white px-6 py-3 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'

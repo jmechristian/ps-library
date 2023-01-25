@@ -9,71 +9,66 @@ import {
   ShieldCheckIcon,
   Squares2X2Icon,
   XMarkIcon,
+  AcademicCapIcon,
+  LightBulbIcon,
+  InformationCircleIcon,
+  ShoppingCartIcon,
 } from '@heroicons/react/24/outline';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 
 const solutions = [
   {
-    name: 'Analytics',
+    name: 'Certificates',
     description:
       'Get a better understanding of where your traffic is coming from.',
-    href: '#',
-    icon: ChartBarIcon,
+    href: 'https://packagingschool.com/certificates',
+    icon: AcademicCapIcon,
   },
   {
-    name: 'Engagement',
+    name: 'Courses',
     description: 'Speak directly to your customers in a more meaningful way.',
-    href: '#',
-    icon: CursorArrowRaysIcon,
+    href: 'https://packagingschool.com/all_courses/',
+    icon: LightBulbIcon,
   },
   {
-    name: 'Security',
+    name: 'About',
     description: "Your customers' data will be safe and secure.",
-    href: '#',
-    icon: ShieldCheckIcon,
+    href: 'https://packagingschool.com/about-packaging-school/',
+    icon: InformationCircleIcon,
   },
   {
-    name: 'Integrations',
+    name: 'Campus Store',
     description: "Connect with third-party tools that you're already using.",
-    href: '#',
-    icon: Squares2X2Icon,
-  },
-  {
-    name: 'Automations',
-    description:
-      'Build strategic funnels that will drive your customers to convert',
-    href: '#',
-    icon: ArrowPathIcon,
-  },
-  {
-    name: 'Reports',
-    description:
-      'Get detailed reports that will help you make more informed decisions ',
-    href: '#',
-    icon: DocumentChartBarIcon,
+    href: 'https://packagingschool.com/store/',
+    icon: ShoppingCartIcon,
   },
 ];
 const resources = [
   {
-    name: 'Help Center',
+    name: 'Business',
     description:
       'Get all of your questions answered in our forums or contact support.',
     href: '#',
   },
   {
-    name: 'Guides',
+    name: 'Design',
     description:
       'Learn how to maximize our platform to get the most out of it.',
     href: '#',
   },
   {
-    name: 'Events',
+    name: 'Materials',
     description:
       'See what meet-ups and other events we might be planning near you.',
     href: '#',
   },
   {
-    name: 'Security',
+    name: 'Food & Beverage',
+    description: 'Understand how we take your privacy seriously.',
+    href: '#',
+  },
+  {
+    name: 'Supply Chain & Logistics',
     description: 'Understand how we take your privacy seriously.',
     href: '#',
   },
@@ -83,22 +78,22 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function Example() {
+export default function Header() {
   return (
     <Popover className='relative bg-slate-900'>
       <div className='flex items-center justify-between p-6 md:justify-start md:space-x-10'>
         <div className='flex justify-start lg:w-0 lg:flex-1'>
-          <a href='#'>
-            <span className='sr-only'>Your Company</span>
+          <a href='https://packagingschool.com'>
+            <span className='sr-only'>Packaging School</span>
             <img
               className='h-8 w-auto sm:h-10'
-              src='https://tailwindui.com/img/logos/mark.svg?color=white'
+              src='https://res.cloudinary.com/dno7xxmmy/image/upload/v1664295580/pschool/logo_white_krqpbc.svg'
               alt=''
             />
           </a>
         </div>
         <div className='-my-2 -mr-2 md:hidden'>
-          <Popover.Button className='inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>
+          <Popover.Button className='inline-flex items-center justify-center rounded-md bg-slate-900 p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-slate-500'>
             <span className='sr-only'>Open menu</span>
             <Bars3Icon className='h-6 w-6' aria-hidden='true' />
           </Popover.Button>
@@ -110,7 +105,7 @@ export default function Example() {
                 <Popover.Button
                   className={classNames(
                     open ? 'text-gray-900' : 'text-gray-500',
-                    'group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+                    'group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2'
                   )}
                 >
                   <span>Solutions</span>
@@ -141,7 +136,7 @@ export default function Example() {
                             href={solution.href}
                             className='-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50'
                           >
-                            <div className='flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-indigo-500 text-white sm:h-12 sm:w-12'>
+                            <div className='flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-slate-500 text-white sm:h-12 sm:w-12'>
                               <solution.icon
                                 className='h-6 w-6'
                                 aria-hidden='true'
@@ -167,7 +162,7 @@ export default function Example() {
                             <div className='text-base font-medium text-gray-900'>
                               Enterprise
                             </div>
-                            <span className='ml-3 inline-flex items-center rounded-full bg-indigo-100 px-3 py-0.5 text-xs font-medium leading-5 text-indigo-800'>
+                            <span className='ml-3 inline-flex items-center rounded-full bg-slate-100 px-3 py-0.5 text-xs font-medium leading-5 text-slate-800'>
                               New
                             </span>
                           </div>
@@ -184,26 +179,13 @@ export default function Example() {
             )}
           </Popover>
 
-          <a
-            href='#'
-            className='text-base font-medium text-gray-500 hover:text-gray-900'
-          >
-            Pricing
-          </a>
-          <a
-            href='#'
-            className='text-base font-medium text-gray-500 hover:text-gray-900'
-          >
-            Docs
-          </a>
-
           <Popover className='relative'>
             {({ open }) => (
               <>
                 <Popover.Button
                   className={classNames(
                     open ? 'text-gray-900' : 'text-gray-500',
-                    'group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+                    'group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2'
                   )}
                 >
                   <span>More</span>
@@ -259,7 +241,7 @@ export default function Example() {
           </a>
           <a
             href='#'
-            className='ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700'
+            className='ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-slate-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-slate-700'
           >
             Sign up
           </a>
@@ -277,7 +259,7 @@ export default function Example() {
       >
         <Popover.Panel
           focus
-          className='absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden'
+          className='absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden z-50'
         >
           <div className='divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5'>
             <div className='px-5 pt-5 pb-6'>
@@ -285,12 +267,12 @@ export default function Example() {
                 <div>
                   <img
                     className='h-8 w-auto'
-                    src='https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600'
-                    alt='Your Company'
+                    src='https://res.cloudinary.com/dno7xxmmy/image/upload/v1664298048/pschool/logo_blue_yuapvl.svg'
+                    alt='Packaging School'
                   />
                 </div>
                 <div className='-mr-2'>
-                  <Popover.Button className='inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>
+                  <Popover.Button className='inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-slate-500'>
                     <span className='sr-only'>Close menu</span>
                     <XMarkIcon className='h-6 w-6' aria-hidden='true' />
                   </Popover.Button>
@@ -304,7 +286,7 @@ export default function Example() {
                       href={solution.href}
                       className='-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50'
                     >
-                      <div className='flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-indigo-500 text-white'>
+                      <div className='flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-slate-500 text-white'>
                         <solution.icon className='h-6 w-6' aria-hidden='true' />
                       </div>
                       <div className='ml-4 text-base font-medium text-gray-900'>
@@ -317,26 +299,6 @@ export default function Example() {
             </div>
             <div className='py-6 px-5'>
               <div className='grid grid-cols-2 gap-4'>
-                <a
-                  href='#'
-                  className='text-base font-medium text-gray-900 hover:text-gray-700'
-                >
-                  Pricing
-                </a>
-
-                <a
-                  href='#'
-                  className='text-base font-medium text-gray-900 hover:text-gray-700'
-                >
-                  Docs
-                </a>
-
-                <a
-                  href='#'
-                  className='text-base font-medium text-gray-900 hover:text-gray-700'
-                >
-                  Enterprise
-                </a>
                 {resources.map((resource) => (
                   <a
                     key={resource.name}
@@ -346,21 +308,7 @@ export default function Example() {
                     {resource.name}
                   </a>
                 ))}
-              </div>
-              <div className='mt-6'>
-                <a
-                  href='#'
-                  className='flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700'
-                >
-                  Sign up
-                </a>
-                <p className='mt-6 text-center text-base font-medium text-gray-500'>
-                  Existing customer?{' '}
-                  <a href='#' className='text-indigo-600 hover:text-indigo-500'>
-                    Sign in
-                  </a>
-                </p>
-              </div>
+              </div>{' '}
             </div>
           </div>
         </Popover.Panel>
