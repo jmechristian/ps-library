@@ -4,6 +4,7 @@ import LessonsBottomContent from '../../components/Lessons/LessonsBottomContent'
 import LessonsContent from '../../components/Lessons/LessonsContent';
 import LessonsHeader from '../../components/Lessons/LessonsHeader';
 import LessonsMedia from '../../components/Lessons/LessonsMedia';
+import LinksButton from '../../components/Shared/LinksButton';
 import SocialShare from '../../components/Shared/SocialShare';
 
 const Index = () => {
@@ -30,6 +31,7 @@ const Index = () => {
       <LessonActivity />
       <LessonsBottomContent />
       <SocialShare />
+      <LinksButton />
     </div>
   );
 };

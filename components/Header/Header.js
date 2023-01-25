@@ -82,7 +82,7 @@ function classNames(...classes) {
 export default function Header() {
   return (
     <Popover className='relative bg-slate-900'>
-      <div className='flex items-center justify-between p-6 md:justify-start md:space-x-10 lg:max-w-7xl lg:mx-auto lg:p-0 lg:py-6 lg:px-6'>
+      <div className='flex items-center justify-between p-6 md:justify-start md:space-x-10 lg:max-w-7xl lg:mx-auto lg:p-0 lg:py-6 lg:px-6 xl:px-0'>
         <div className='flex justify-start lg:w-0 lg:flex-1'>
           <a href='https://packagingschool.com'>
             <span className='sr-only'>Packaging School</span>
