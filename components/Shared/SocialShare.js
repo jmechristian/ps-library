@@ -40,17 +40,26 @@ const SocialShare = () => {
         <div className='flex gap-3 items-center justify-center mx-auto'>
           <FacebookShareButton
             url='https://ps-library.vercel.app/lessons/sustainability-part-1'
-            hashtag='#sustainability #sustainablepackaging'
+            hashtag={['#sustainability', '#sustainablepackaging']}
+            quote='In part 1 we define &#8220;carbon neutral&#8221; and look at real-world examples of carbon offset in the industry.'
           >
             <FacebookIcon round size={50} />
           </FacebookShareButton>
-          <LinkedinShareButton url='https://ps-library.vercel.app/lessons/sustainability-part-1'>
+          <LinkedinShareButton
+            url='https://ps-library.vercel.app/lessons/sustainability-part-1'
+            title='Sustainability - Part 1'
+            source='PackagingSchool.com'
+            summary='In part 1 we define &#8220;carbon neutral&#8221; and look at real-world examples of carbon offset in the industry.'
+          >
             <LinkedinIcon round size={50} />
           </LinkedinShareButton>
           <TwitterShareButton url='https://ps-library.vercel.app/lessons/sustainability-part-1'>
             <TwitterIcon round size={50} />
           </TwitterShareButton>
-          <RedditShareButton url='https://ps-library.vercel.app/lessons/sustainability-part-1'>
+          <RedditShareButton
+            url='https://ps-library.vercel.app/lessons/sustainability-part-1'
+            title='Sustainability - Part 1'
+          >
             <RedditIcon round size={50} />
           </RedditShareButton>
           <EmailShareButton url='https://ps-library.vercel.app/lessons/sustainability-part-1'>
