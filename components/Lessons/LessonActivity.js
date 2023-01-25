@@ -2,7 +2,7 @@
 export default function LessonActivity() {
   return (
     <div className='bg-indigo-100'>
-      <div className='mx-auto max-w-5xl px-6 py-20 lg:py-32 lg:flex lg:items-center lg:justify-between lg:px-8'>
+      <div className='mx-auto max-w-prose lg:max-w-5xl px-8 py-20 lg:py-32 lg:flex lg:items-center lg:justify-between lg:px-8'>
         <div className='text-left'>
           <h2 className='text-lg font-semibold text-indigo-600'>Take Action</h2>
           <p className='mt-1 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl'>

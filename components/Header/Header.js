@@ -95,7 +95,12 @@ export default function Header() {
         </div>
         <div className='hidden lg:flex mx-auto justify-between items-center gap-5 text-white font-medium'>
           {solutions.map((item, i) => (
-            <a href={item.href} target='_blank'>
+            <a
+              href={item.href}
+              target='_blank'
+              rel='noreferrer'
+              key={item.name}
+            >
               <div key={item.name}>{item.name}</div>
             </a>
           ))}
