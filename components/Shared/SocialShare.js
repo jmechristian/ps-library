@@ -38,19 +38,22 @@ const SocialShare = () => {
           </h3>
         </div>
         <div className='flex gap-3 items-center justify-center mx-auto'>
-          <FacebookShareButton>
+          <FacebookShareButton
+            url='https://ps-library.vercel.app/lessons/sustainability-part-1'
+            hashtag='#sustainability #sustainablepackaging'
+          >
             <FacebookIcon round size={50} />
           </FacebookShareButton>
-          <LinkedinShareButton>
+          <LinkedinShareButton url='https://ps-library.vercel.app/lessons/sustainability-part-1'>
             <LinkedinIcon round size={50} />
           </LinkedinShareButton>
-          <TwitterShareButton>
+          <TwitterShareButton url='https://ps-library.vercel.app/lessons/sustainability-part-1'>
             <TwitterIcon round size={50} />
           </TwitterShareButton>
-          <RedditShareButton>
+          <RedditShareButton url='https://ps-library.vercel.app/lessons/sustainability-part-1'>
             <RedditIcon round size={50} />
           </RedditShareButton>
-          <EmailShareButton url={'#'}>
+          <EmailShareButton url='https://ps-library.vercel.app/lessons/sustainability-part-1'>
             <EmailIcon round size={50} />
           </EmailShareButton>
         </div>
