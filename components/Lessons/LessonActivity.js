@@ -1,3 +1,5 @@
+import { resourceRefHandler } from '../Util/ResourceClickGTAG';
+
 /* This example requires Tailwind CSS v3.0+ */
 export default function LessonActivity() {
   return (
@@ -16,13 +18,18 @@ export default function LessonActivity() {
         <div className='mt-8 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0'>
           <a
             href='https://apsmedia.s3.amazonaws.com/documents/Part+1+Resources+Carbon+Neutrality.pdf'
-            className='rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+            className='rounded-md bg-indigo-600 px-4 py-2 text-lg lg:text-xl font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+            data-click-target='resource'
+            data-click-name='sustainability_resource_pt1'
+            onClick={(e) => resourceRefHandler(e)}
+            target='_blank'
+            rel='noReferrer'
           >
             Download
           </a>
           <a
             href='#'
-            className='text-base font-semibold leading-7 text-gray-900'
+            className='hidden text-base font-semibold leading-7 text-gray-900'
           >
             Show & Tell <span aria-hidden='true'>→</span>
           </a>

@@ -1,23 +1,8 @@
 import React, { useRef } from 'react';
+import { resourceRefHandler } from '../Util/ResourceClickGTAG';
 
 const LessonsBottomContent = () => {
   const resourceRef = useRef(null);
-
-  const resourceRefHandler = async (e) => {
-    const name = await event.target.parentNode.getAttribute('data-click-name');
-
-    const target = await event.target.parentNode.getAttribute(
-      'data-click-target'
-    );
-
-    if (name && target) {
-      window.gtag('event', 'resource_click'),
-        {
-          event_category: `${target} click`,
-          event_label: `${name}`,
-        };
-    }
-  };
 
   return (
     <div className='relative overflow-hidden bg-white'>
@@ -104,7 +89,7 @@ const LessonsBottomContent = () => {
               data-click-target='resource'
               data-click-name='sustainable_packaging_course'
               ref={resourceRef}
-              onClick={resourceRefHandler}
+              onClick={(e) => resourceRefHandler(e)}
               target='_blank'
               rel='noReferrer'
             >
@@ -119,7 +104,7 @@ const LessonsBottomContent = () => {
               data-click-target='resource'
               data-click-name='cps'
               ref={resourceRef}
-              onClick={resourceRefHandler}
+              onClick={(e) => resourceRefHandler(e)}
               target='_blank'
               rel='noReferrer'
             >
@@ -131,7 +116,7 @@ const LessonsBottomContent = () => {
               data-click-target='resource'
               data-click-name='cmpm'
               ref={resourceRef}
-              onClick={resourceRefHandler}
+              onClick={(e) => resourceRefHandler(e)}
               target='_blank'
               rel='noReferrer'
             >

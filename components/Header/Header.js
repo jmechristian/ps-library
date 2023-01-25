@@ -111,7 +111,7 @@ export default function Header() {
             <Bars3Icon className='h-6 w-6' aria-hidden='true' />
           </Popover.Button>
         </div>
-        <div className='hidden items-center justify-end md:flex md:flex-1 lg:w-0'>
+        {/* <div className='hidden items-center justify-end md:flex md:flex-1 lg:w-0'>
           <a
             href='#'
             className='ml-8 inline-flex items-center gap-2 justify-center whitespace-nowrap rounded-md border border-transparent bg-base-mid px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-slate-700'
@@ -119,7 +119,7 @@ export default function Header() {
             <ChatBubbleLeftEllipsisIcon className='w-6 h-6' />
             Join The Discussion
           </a>
-        </div>
+        </div> */}
       </div>
 
       <Transition
