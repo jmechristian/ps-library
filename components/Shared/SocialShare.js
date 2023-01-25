@@ -27,6 +27,20 @@ import {
 } from 'react-share';
 
 const SocialShare = () => {
+  const socialShareClickHandler = async (event) => {
+    const name = await event.target.parentNode.getAttribute('data-click-name');
+
+    const target = await event.target.parentNode.getAttribute(
+      'data-click-target'
+    );
+
+    window.gtag('event', 'social_share'),
+      {
+        event_category: `${target} click`,
+        event_label: `${name}`,
+      };
+  };
+
   return (
     <div
       style={{ background: 'linear-gradient(35deg, #1F97BF 20%, #FF9321 90%)' }}
@@ -42,6 +56,9 @@ const SocialShare = () => {
             url='https://ps-library.vercel.app/lessons/sustainability-part-1'
             hashtag={['#sustainability', '#sustainablepackaging']}
             quote='In part 1 we define &#8220;carbon neutral&#8221; and look at real-world examples of carbon offset in the industry.'
+            onClick={socialShareClickHandler}
+            data-click-target='social_share'
+            data-click-name='Facebook'
           >
             <FacebookIcon round size={50} />
           </FacebookShareButton>
@@ -50,6 +67,9 @@ const SocialShare = () => {
             title='Sustainability - Part 1'
             source='PackagingSchool.com'
             summary='In part 1 we define &#8220;carbon neutral&#8221; and look at real-world examples of carbon offset in the industry.'
+            onClick={socialShareClickHandler}
+            data-click-target='social_share'
+            data-click-name='LinkedIn'
           >
             <LinkedinIcon round size={50} />
           </LinkedinShareButton>
@@ -59,10 +79,18 @@ const SocialShare = () => {
           <RedditShareButton
             url='https://ps-library.vercel.app/lessons/sustainability-part-1'
             title='Sustainability - Part 1'
+            onClick={socialShareClickHandler}
+            data-click-target='social_share'
+            data-click-name='Reddit'
           >
             <RedditIcon round size={50} />
           </RedditShareButton>
-          <EmailShareButton url='https://ps-library.vercel.app/lessons/sustainability-part-1'>
+          <EmailShareButton
+            url='https://ps-library.vercel.app/lessons/sustainability-part-1'
+            onClick={socialShareClickHandler}
+            data-click-target='social_share'
+            data-click-name='Email'
+          >
             <EmailIcon round size={50} />
           </EmailShareButton>
         </div>

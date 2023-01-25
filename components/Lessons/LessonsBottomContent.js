@@ -11,7 +11,7 @@ const LessonsBottomContent = () => {
     );
 
     if (name && target) {
-      window.gtag('event', 'click'),
+      window.gtag('event', 'resource_click'),
         {
           event_category: `${target} click`,
           event_label: `${name}`,
