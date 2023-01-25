@@ -17,22 +17,38 @@ const LinksButton = () => {
         <div className='px-6 pb-8 pt-6 flex-col gap-4'>
           <div className='flex flex-col text-white gap-2'>
             <div className='text-medium'>
-              <a href='https://apsmedia.s3.amazonaws.com/documents/Part+1+Resources+Carbon+Neutrality.pdf'>
+              <a
+                href='https://apsmedia.s3.amazonaws.com/documents/Part+1+Resources+Carbon+Neutrality.pdf'
+                target='_blank'
+                rel='noreferrer'
+              >
                 Sustainability Resources Part 1
               </a>
             </div>
             <div className='text-medium'>
-              <a href='https://packagingschool.com/get-to-know-cps/'>
+              <a
+                href='https://packagingschool.com/get-to-know-cps/'
+                target='_blank'
+                rel='noreferrer'
+              >
                 Certificate of Packaging Science
               </a>
             </div>
             <div className='text-medium'>
-              <a href='https://packagingschool.com/get-to-know-cmpm/'>
+              <a
+                href='https://packagingschool.com/get-to-know-cmpm/'
+                target='_blank'
+                rel='noreferrer'
+              >
                 Certificate of Mastery in Packaging Management
               </a>
             </div>
             <div className='text-medium'>
-              <a href='https://packagingschool.com/sustainable-packaging/'>
+              <a
+                href='https://packagingschool.com/sustainable-packaging/'
+                target='_blank'
+                rel='noreferrer'
+              >
                 Sustainable Packaging Course
               </a>
             </div>
