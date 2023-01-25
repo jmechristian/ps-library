@@ -1,6 +1,24 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 const LessonsBottomContent = () => {
+  const resourceRef = useRef(null);
+
+  const resourceRefHandler = async (e) => {
+    const name = await event.target.parentNode.getAttribute('data-click-name');
+
+    const target = await event.target.parentNode.getAttribute(
+      'data-click-target'
+    );
+
+    if (name && target) {
+      window.gtag('event', 'click'),
+        {
+          event_category: `${target} click`,
+          event_label: `${name}`,
+        };
+    }
+  };
+
   return (
     <div className='relative overflow-hidden bg-white'>
       <div className='hidden lg:absolute lg:inset-y-0 lg:block lg:h-full lg:w-full lg:[overflow-anchor:none]'>
@@ -81,18 +99,42 @@ const LessonsBottomContent = () => {
             For a deeper dive into sustainability as it relates to packaging and
             ways to reduce a company’s environmental footprint, look no further
             than our{' '}
-            <a href='https://packagingschool.com/sustainable-packaging/'>
+            <a
+              href='https://packagingschool.com/sustainable-packaging/'
+              data-click-target='resource'
+              data-click-name='sustainable_packaging_course'
+              ref={resourceRef}
+              onClick={resourceRefHandler}
+              target='_blank'
+              rel='noReferrer'
+            >
               <strong>sustainability course </strong>
             </a>{' '}
             containing over 4 hours of engaging content.
           </p>
           <p>
             While you are at it, check out our certificate programs,{' '}
-            <a href='https://packagingschool.com/get-to-know-cps/'>
+            <a
+              href='https://packagingschool.com/get-to-know-cps/'
+              data-click-target='resource'
+              data-click-name='cps'
+              ref={resourceRef}
+              onClick={resourceRefHandler}
+              target='_blank'
+              rel='noReferrer'
+            >
               <strong>Certificate of Packaging Science</strong>
             </a>{' '}
             and{' '}
-            <a href='https://packagingschool.com/get-to-know-cmpm/'>
+            <a
+              href='https://packagingschool.com/get-to-know-cmpm/'
+              data-click-target='resource'
+              data-click-name='cmpm'
+              ref={resourceRef}
+              onClick={resourceRefHandler}
+              target='_blank'
+              rel='noReferrer'
+            >
               <strong>Certificate of Mastery in Packaging Management</strong>
             </a>{' '}
             that cover this course and <br />
