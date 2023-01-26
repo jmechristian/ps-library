@@ -106,14 +106,14 @@ const LessonsContent = () => {
             asking the question &ldquo;How do we make carbon neutral
             packaging?&rdquo;
           </p>
-          <div className='py-3'>
+          {/* <div className='py-3'>
             <button
               type='button'
               className='inline-flex items-center rounded-md border border-gray-300 bg-white px-6 py-3 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
             >
               View Full Transcript
             </button>
-          </div>
+          </div> */}
           <p>
             This is a dense topic, so{' '}
             <strong>we will be back next month</strong> with part two,
