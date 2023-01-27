@@ -27,6 +27,20 @@ import {
 } from 'react-share';
 
 const SocialShare = () => {
+  const socialShareClickHandler = async (event) => {
+    const name = await event.target.parentNode.getAttribute('data-click-name');
+
+    const target = await event.target.parentNode.getAttribute(
+      'data-click-target'
+    );
+
+    window.gtag('event', 'social_share'),
+      {
+        event_category: `${target} click`,
+        event_label: `${name}`,
+      };
+  };
+
   return (
     <div
       style={{ background: 'linear-gradient(35deg, #1F97BF 20%, #FF9321 90%)' }}
