@@ -36,8 +36,7 @@ const SocialShare = () => {
 
     window.gtag('event', 'social_share'),
       {
-        event_category: `${target} click`,
-        event_label: `${name}`,
+        platform: `${name}`,
       };
   };
 

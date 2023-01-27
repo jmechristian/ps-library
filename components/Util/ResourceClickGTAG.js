@@ -7,7 +7,6 @@ export const resourceRefHandler = async (e) => {
 
   window.gtag('event', 'resource_click'),
     {
-      event_category: `${target} click`,
-      event_label: `${name}`,
+      resource: `${name}`,
     };
 };
