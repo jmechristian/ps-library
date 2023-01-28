@@ -28,16 +28,14 @@ import {
 
 const SocialShare = () => {
   const socialShareClickHandler = async (event) => {
-    const name = await event.target.parentNode.getAttribute('data-click-name');
+    const name = event.target.parentNode.getAttribute('data-click-name');
 
-    const target = await event.target.parentNode.getAttribute(
-      'data-click-target'
-    );
+    const target = event.target.parentNode.getAttribute('data-click-target');
 
-    window.gtag('event', 'social_share'),
-      {
-        platform: name,
-      };
+    console.log(name, target);
+    gtag('event', 'social_share', {
+      platform: name,
+    });
   };
 
   return (
