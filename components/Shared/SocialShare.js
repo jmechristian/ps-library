@@ -27,14 +27,10 @@ import {
 } from 'react-share';
 
 const SocialShare = () => {
-  const socialShareClickHandler = async (event) => {
-    const name = event.target.parentNode.getAttribute('data-click-name');
-
-    const target = event.target.parentNode.getAttribute('data-click-target');
-
-    console.log(name, target);
+  const socialShareClickHandler = async (param) => {
+    console.log(param);
     gtag('event', 'social_share', {
-      platform: name,
+      platform: param,
     });
   };
 
@@ -53,7 +49,7 @@ const SocialShare = () => {
             url='https://ps-library.vercel.app/lessons/sustainability-part-1'
             hashtag={['#sustainability', '#sustainablepackaging']}
             quote='In part 1 we define &#8220;carbon neutral&#8221; and look at real-world examples of carbon offset in the industry.'
-            onClick={socialShareClickHandler}
+            onClick={() => socialShareClickHandler('facebook')}
             data-click-target='social_share'
             data-click-name='Facebook'
           >
@@ -64,19 +60,22 @@ const SocialShare = () => {
             title='Sustainability - Part 1'
             source='PackagingSchool.com'
             summary='In part 1 we define &#8220;carbon neutral&#8221; and look at real-world examples of carbon offset in the industry.'
-            onClick={socialShareClickHandler}
+            onClick={() => socialShareClickHandler('linkedin')}
             data-click-target='social_share'
             data-click-name='LinkedIn'
           >
             <LinkedinIcon round size={50} />
           </LinkedinShareButton>
-          <TwitterShareButton url='https://ps-library.vercel.app/lessons/sustainability-part-1'>
+          <TwitterShareButton
+            url='https://ps-library.vercel.app/lessons/sustainability-part-1'
+            onClick={() => socialShareClickHandler('twitter')}
+          >
             <TwitterIcon round size={50} />
           </TwitterShareButton>
           <RedditShareButton
             url='https://ps-library.vercel.app/lessons/sustainability-part-1'
             title='Sustainability - Part 1'
-            onClick={socialShareClickHandler}
+            onClick={() => socialShareClickHandler('reddit')}
             data-click-target='social_share'
             data-click-name='Reddit'
           >
@@ -84,7 +83,7 @@ const SocialShare = () => {
           </RedditShareButton>
           <EmailShareButton
             url='https://ps-library.vercel.app/lessons/sustainability-part-1'
-            onClick={socialShareClickHandler}
+            onClick={() => socialShareClickHandler('email')}
             data-click-target='social_share'
             data-click-name='Email'
           >
