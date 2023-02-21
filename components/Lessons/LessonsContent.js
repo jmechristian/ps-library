@@ -1,7 +1,9 @@
 import React from 'react';
 import LearningObjectives from './LearningObjectives';
 
-const LessonsContent = () => {
+const LessonsContent = ({ content, objectives }) => {
+  const image =
+    'https://packschool.s3.amazonaws.com/lessons/carbon-neutral-part-2/box2.webp';
   return (
     <div className='relative overflow-hidden bg-white'>
       <div className='hidden lg:absolute lg:inset-y-0 lg:block lg:h-full lg:w-full lg:[overflow-anchor:none]'>
@@ -92,20 +94,12 @@ const LessonsContent = () => {
         <div className='prose prose-lg prose-orange mx-auto text-slate-500'>
           <div className='pb-3'>
             <h3>Learning Objectives</h3>
-            <LearningObjectives />
+            <LearningObjectives objectives={objectives} />
           </div>
-          <p>
-            Many public companies have set aggressive sustainability targets;
-            most of which involve packaging. Now, more than ever, product
-            companies are investing in reducing the environmental impacts of
-            their packaging and communicating these efforts on their labels.
-          </p>
-          <p>
-            A major component to understanding your environmental impact is the
-            amount of production and discharge of carbon. So, many companies are
-            asking the question &ldquo;How do we make carbon neutral
-            packaging?&rdquo;
-          </p>
+          <div
+            dangerouslySetInnerHTML={{ __html: content }}
+            className='bad-html'
+          ></div>
           {/* <div className='py-3'>
             <button
               type='button'
@@ -114,11 +108,6 @@ const LessonsContent = () => {
               View Full Transcript
             </button>
           </div> */}
-          <p>
-            This is a dense topic, so{' '}
-            <strong>we will be back next month</strong> with part two,
-            implementation and measurement, of our study of carbon neutrality.
-          </p>
         </div>
       </div>
     </div>

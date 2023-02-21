@@ -1,5 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
+
+import { Amplify, API, graphqlOperation } from 'aws-amplify';
+import awsExports from '../../src/aws-exports';
+Amplify.configure(awsExports);
+
+const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
+const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY;
+
 import LessonActivity from '../../components/Lessons/LessonActivity';
 import LessonsBottomContent from '../../components/Lessons/LessonsBottomContent';
 import LessonsContent from '../../components/Lessons/LessonsContent';
@@ -8,7 +16,7 @@ import LessonsMedia from '../../components/Lessons/LessonsMedia';
 import LinksButton from '../../components/Shared/LinksButton';
 import SocialShare from '../../components/Shared/SocialShare';
 
-const Index = () => {
+const Index = ({ lesson }) => {
   const style = {
     root: {
       background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
@@ -24,10 +32,12 @@ const Index = () => {
     },
   };
 
+  console.log(lesson);
+
   return (
     <>
       <Head>
-        <title>Packaging School - Carbon Neutral Part 1</title>
+        <title>{lesson.title}</title>
         <meta
           name='description'
           content='This 2-part lesson will add context to carbon neutrality and explore how you can implement it into your packaging.'
@@ -51,16 +61,114 @@ const Index = () => {
         />
       </Head>
       <div className='flex flex-col gap-12 pt-12'>
-        <LessonsHeader />
-        <LessonsMedia />
-        <LessonsContent />
-        <LessonActivity />
-        <LessonsBottomContent />
-        <SocialShare />
-        <LinksButton />
+        <LessonsHeader title={lesson.title} subhead={lesson.subhead} />
+        <div>
+          <LessonsMedia videoUrl={lesson.media} />
+          <LessonActivity
+            actionCTA={lesson.actionCTA}
+            actionSubhead={lesson.actionSubhead}
+            actionLink={lesson.actionLink}
+            name={lesson.name}
+          />
+        </div>
+        <LessonsContent
+          content={lesson.content}
+          objectives={lesson.objectives}
+        />
+        {/* <LessonsBottomContent /> */}
+        <SocialShare
+          title={lesson.title}
+          slug={lesson.slug}
+          subhead={lesson.subhead}
+        />
+        <LinksButton sources={lesson.sources.items} />
       </div>
     </>
   );
 };
+
+export async function getStaticPaths() {
+  const query = /* GraphQL */ `
+    query LIST_LESSONS {
+      listLessons {
+        items {
+          slug
+        }
+      }
+    }
+  `;
+
+  const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
+  const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY;
+
+  try {
+    const res = await API.graphql(graphqlOperation(query));
+    const lessons = await res.data.listLessons.items;
+    const paths = lessons.map((less) => ({
+      params: { id: `${less.slug}` },
+    }));
+
+    return { paths, fallback: false };
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function getStaticProps({ params }) {
+  const { id } = params;
+
+  const getLesson = /* GraphQL */ `
+    query MyQuery($slug: String!) {
+      lessonsBySlug(slug: $slug) {
+        items {
+          id
+          links {
+            items {
+              name
+              link
+              lessonLinksId
+            }
+          }
+          media
+          content
+          objectives
+          slug
+          actionCTA
+          actionLink
+          actionSubhead
+          sources {
+            items {
+              name
+              link
+              lessonSourcesId
+              position
+            }
+          }
+          subhead
+          tags {
+            items {
+              lessonTagsId
+              tag
+            }
+          }
+          title
+          type
+        }
+      }
+    }
+  `;
+
+  const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
+  const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY;
+
+  const variables = {
+    slug: id, // key is "input" based on the mutation above
+  };
+
+  const res = await API.graphql(graphqlOperation(getLesson, variables));
+  const lesson = await res.data.lessonsBySlug.items[0];
+
+  return { props: { lesson } };
+}
 
 export default Index;

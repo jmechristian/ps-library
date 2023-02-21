@@ -4,35 +4,23 @@ import {
   EmailShareButton,
   FacebookIcon,
   FacebookShareButton,
-  HatenaShareButton,
-  InstapaperShareButton,
-  LineShareButton,
   LinkedinIcon,
   LinkedinShareButton,
-  LivejournalShareButton,
-  MailruShareButton,
-  OKShareButton,
-  PinterestShareButton,
-  PocketShareButton,
   RedditIcon,
   RedditShareButton,
-  TelegramShareButton,
-  TumblrShareButton,
   TwitterIcon,
   TwitterShareButton,
-  ViberShareButton,
-  VKShareButton,
-  WhatsappShareButton,
-  WorkplaceShareButton,
 } from 'react-share';
 
-const SocialShare = () => {
+const SocialShare = ({ title, subhead, slug }) => {
   const socialShareClickHandler = async (param) => {
     console.log(param);
     gtag('event', 'social_share', {
       platform: param,
     });
   };
+
+  console.log(title, subhead, slug);
 
   return (
     <div
@@ -46,9 +34,9 @@ const SocialShare = () => {
         </div>
         <div className='flex gap-3 items-center justify-center mx-auto'>
           <FacebookShareButton
-            url='https://ps-library.vercel.app/lessons/sustainability-part-1'
-            hashtag={['#sustainability', '#sustainablepackaging']}
-            quote='In part 1 we define &#8220;carbon neutral&#8221; and look at real-world examples of carbon offset in the industry.'
+            url={`https://library.packagingschool.com/lessons/${slug}`}
+            hashtag={['#carbonneutral']}
+            quote={subhead}
             onClick={() => socialShareClickHandler('facebook')}
             data-click-target='social_share'
             data-click-name='Facebook'
@@ -56,10 +44,10 @@ const SocialShare = () => {
             <FacebookIcon round size={50} />
           </FacebookShareButton>
           <LinkedinShareButton
-            url='https://ps-library.vercel.app/lessons/sustainability-part-1'
-            title='Sustainability - Part 1'
+            url={`https://library.packagingschool.com/lessons/${slug}`}
+            title={title}
             source='PackagingSchool.com'
-            summary='In part 1 we define &#8220;carbon neutral&#8221; and look at real-world examples of carbon offset in the industry.'
+            summary={subhead}
             onClick={() => socialShareClickHandler('linkedin')}
             data-click-target='social_share'
             data-click-name='LinkedIn'
@@ -67,14 +55,14 @@ const SocialShare = () => {
             <LinkedinIcon round size={50} />
           </LinkedinShareButton>
           <TwitterShareButton
-            url='https://ps-library.vercel.app/lessons/sustainability-part-1'
+            url={`https://library.packagingschool.com/lessons/${slug}`}
             onClick={() => socialShareClickHandler('twitter')}
           >
             <TwitterIcon round size={50} />
           </TwitterShareButton>
           <RedditShareButton
-            url='https://ps-library.vercel.app/lessons/sustainability-part-1'
-            title='Sustainability - Part 1'
+            url={`https://library.packagingschool.com/lessons/${slug}`}
+            title={title}
             onClick={() => socialShareClickHandler('reddit')}
             data-click-target='social_share'
             data-click-name='Reddit'
@@ -82,7 +70,7 @@ const SocialShare = () => {
             <RedditIcon round size={50} />
           </RedditShareButton>
           <EmailShareButton
-            url='https://ps-library.vercel.app/lessons/sustainability-part-1'
+            url={`https://library.packagingschool.com/lessons/${slug}`}
             onClick={() => socialShareClickHandler('email')}
             data-click-target='social_share'
             data-click-name='Email'

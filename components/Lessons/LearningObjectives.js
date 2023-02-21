@@ -34,12 +34,12 @@ const items = [
   },
 ];
 
-const LearningObjectives = () => {
+const LearningObjectives = ({ objectives }) => {
   return (
-    <ul role='list' className='divide-y divide-gray-200 p-0'>
-      {items.map((item) => (
-        <li key={item.name} className='list-none p-0'>
-          <IconLabel name={item.name} isComplete={item.isComplete} />
+    <ul role='list' className='divide-y divide-gray-200 p-0 mb-16'>
+      {objectives.map((obj) => (
+        <li key={obj} className='list-none p-0'>
+          <IconLabel name={obj} isComplete={false} />
         </li>
       ))}
     </ul>
