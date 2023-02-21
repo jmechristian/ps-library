@@ -42,18 +42,8 @@ const Index = ({ lesson }) => {
           property='og:image'
           content='https://apsmedia.s3.amazonaws.com/images/CN+pt+1+TN.png'
         />
-        <meta
-          property='og:title'
-          content='Packaging School - Carbon Neutral Part 1'
-        />
-        <meta
-          property='og:description'
-          content='In part 1 we define “carbon neutral” and look at real-world examples of carbon offset in the industry.'
-        />
-        <meta
-          property='og:image'
-          content='https://example.com/images/cool-page.jpg'
-        />
+        <meta property='og:title' content={lesson.title} />
+        <meta property='og:description' content={lesson.subhead} />
       </Head>
       <div className='flex flex-col gap-12 pt-12'>
         <LessonsHeader title={lesson.title} subhead={lesson.subhead} />
