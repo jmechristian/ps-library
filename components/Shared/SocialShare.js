@@ -20,8 +20,6 @@ const SocialShare = ({ title, subhead, slug }) => {
     });
   };
 
-  console.log(title, subhead, slug);
-
   return (
     <div
       style={{ background: 'linear-gradient(35deg, #1F97BF 20%, #FF9321 90%)' }}

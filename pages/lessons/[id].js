@@ -33,8 +33,6 @@ const Index = ({ lesson }) => {
     },
   };
 
-  console.log(lesson);
-
   return (
     <>
       <Head>
