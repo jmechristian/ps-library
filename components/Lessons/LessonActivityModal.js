@@ -7,7 +7,6 @@ const LessonActivityModal = ({
   actionLink,
   actionExample,
 }) => {
-  console.log('title' + ' ' + title.toUpperCase());
   return (
     <div className='relative isolate overflow-hidden bg-gray-900 px-6 py-12 md:py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16'>
       {!hasSubmitted ? (
@@ -36,7 +35,11 @@ const LessonActivityModal = ({
             Download <span className='text-blue-500'>{title}</span>
           </h2>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-            <div className='col-span-1 flex gap-2 text-slate-800 bg-white py-3 px-6 rounded-md'>
+            <div
+              className={`${
+                actionExample ? 'col-span-1' : 'col-span-2'
+              } flex gap-2 text-slate-800 bg-white py-3 px-6 rounded-md`}
+            >
               <div>
                 <ArrowDownTrayIcon className='w-5 h-5 fill-slate-800' />
               </div>
