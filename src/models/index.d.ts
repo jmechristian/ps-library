@@ -19,7 +19,7 @@ export declare class LessonSource {
   readonly id: string;
   readonly name?: string | null;
   readonly link?: string | null;
-  readonly position?: number | null;
+  readonly position: number;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   readonly lessonSourcesId?: string | null;
@@ -62,7 +62,7 @@ export declare class Lesson {
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
-  readonly slug?: string | null;
+  readonly slug: string;
   readonly title: string;
   readonly subhead?: string | null;
   readonly type?: ModuleType | keyof typeof ModuleType | null;

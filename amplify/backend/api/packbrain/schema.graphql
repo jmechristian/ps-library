@@ -1,10 +1,8 @@
-# Library
-
 type LessonSource @model @auth(rules: [{ allow: public }]) {
   id: ID!
   name: String
   link: String
-  position: Int
+  position: Int!
 }
 
 type LessonLink @model @auth(rules: [{ allow: public }]) {
@@ -26,7 +24,7 @@ enum ModuleType {
 
 type Lesson @model @auth(rules: [{ allow: public }]) {
   id: ID!
-  slug: String @index(name: "lessonsByTitle")
+  slug: String! @index(name: "lessonsByTitle")
   title: String!
   subhead: String
   type: ModuleType

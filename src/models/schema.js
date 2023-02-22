@@ -28,7 +28,7 @@ export const schema = {
                     "name": "position",
                     "isArray": false,
                     "type": "Int",
-                    "isRequired": false,
+                    "isRequired": true,
                     "attributes": []
                 },
                 "createdAt": {
@@ -233,7 +233,7 @@ export const schema = {
                     "name": "slug",
                     "isArray": false,
                     "type": "String",
-                    "isRequired": false,
+                    "isRequired": true,
                     "attributes": []
                 },
                 "title": {
@@ -1195,5 +1195,5 @@ export const schema = {
             }
         }
     },
-    "version": "d80ff91360f1bf8edadb416162e533e6"
+    "version": "5c4869f855119ab4a77c09ad1cbd4ee8"
 };
