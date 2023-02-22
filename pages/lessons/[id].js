@@ -3,6 +3,12 @@ import Head from 'next/head';
 
 import { Amplify, API, graphqlOperation } from 'aws-amplify';
 
+import awsExports from '../../src/aws-exports';
+Amplify.configure(awsExports);
+
+const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
+const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY;
+
 import LessonActivity from '../../components/Lessons/LessonActivity';
 import LessonsBottomContent from '../../components/Lessons/LessonsBottomContent';
 import LessonsContent from '../../components/Lessons/LessonsContent';
