@@ -20,13 +20,13 @@ const LessonActivityModal = ({
             />
           </div>
           <h2 className='mx-auto max-w-3xl text-3xl md:text-4xl font-bold tracking-tight text-white'>
-            Join The <span className='text-blue-500'>Thought Leaders</span> of
+            Join the <span className='text-blue-500'>Thought Leaders</span> of
             Packaging Design.
           </h2>
           <p className='mx-auto mt-6 max-w-xl leading-7 text-gray-300 text-base md:text-lg'>
             Collaborate with a community dedicated to bringing companies,
-            subject matter experts and associations together to create a shared
-            learning management system across all facts of packaging and
+            subject matter experts, and associations together to create a shared
+            learning management system across all facets of packaging and
             processing.
           </p>
         </div>
