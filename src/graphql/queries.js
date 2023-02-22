@@ -261,6 +261,7 @@ export const getLesson = /* GraphQL */ `
       actionCTA
       actionSubhead
       actionLink
+      actionExample
       createdAt
       updatedAt
       _version
@@ -300,6 +301,7 @@ export const listLessons = /* GraphQL */ `
         actionCTA
         actionSubhead
         actionLink
+        actionExample
         createdAt
         updatedAt
         _version
@@ -348,6 +350,7 @@ export const syncLessons = /* GraphQL */ `
         actionCTA
         actionSubhead
         actionLink
+        actionExample
         createdAt
         updatedAt
         _version
@@ -398,6 +401,7 @@ export const lessonsBySlug = /* GraphQL */ `
         actionCTA
         actionSubhead
         actionLink
+        actionExample
         createdAt
         updatedAt
         _version
