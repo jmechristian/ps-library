@@ -37,6 +37,7 @@ type Lesson @model @auth(rules: [{ allow: public }]) {
   actionCTA: String
   actionSubhead: String
   actionLink: String
+  actionLinkTitle: String
   actionExample: String
 }
 
