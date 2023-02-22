@@ -75,6 +75,7 @@ export declare class Lesson {
   readonly actionCTA?: string | null;
   readonly actionSubhead?: string | null;
   readonly actionLink?: string | null;
+  readonly actionLinkTitle?: string | null;
   readonly actionExample?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;

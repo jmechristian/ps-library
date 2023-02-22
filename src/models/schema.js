@@ -350,6 +350,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "actionLinkTitle": {
+                    "name": "actionLinkTitle",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "actionExample": {
                     "name": "actionExample",
                     "isArray": false,
@@ -1202,5 +1209,5 @@ export const schema = {
             }
         }
     },
-    "version": "0540769f45e7490677924eb0f2c332da"
+    "version": "0b2e3700192e5389704e244bd459751b"
 };

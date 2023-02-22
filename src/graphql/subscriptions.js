@@ -195,6 +195,7 @@ export const onCreateLesson = /* GraphQL */ `
       actionCTA
       actionSubhead
       actionLink
+      actionLinkTitle
       actionExample
       createdAt
       updatedAt
@@ -263,6 +264,7 @@ export const onUpdateLesson = /* GraphQL */ `
       actionCTA
       actionSubhead
       actionLink
+      actionLinkTitle
       actionExample
       createdAt
       updatedAt
@@ -331,6 +333,7 @@ export const onDeleteLesson = /* GraphQL */ `
       actionCTA
       actionSubhead
       actionLink
+      actionLinkTitle
       actionExample
       createdAt
       updatedAt
