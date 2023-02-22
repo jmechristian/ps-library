@@ -211,6 +211,7 @@ export const getLesson = /* GraphQL */ `
       subhead
       type
       media
+      seoImage
       content
       sources {
         items {
@@ -285,6 +286,7 @@ export const listLessons = /* GraphQL */ `
         subhead
         type
         media
+        seoImage
         content
         sources {
           nextToken
@@ -335,6 +337,7 @@ export const syncLessons = /* GraphQL */ `
         subhead
         type
         media
+        seoImage
         content
         sources {
           nextToken
@@ -387,6 +390,7 @@ export const lessonsBySlug = /* GraphQL */ `
         subhead
         type
         media
+        seoImage
         content
         sources {
           nextToken

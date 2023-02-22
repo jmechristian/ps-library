@@ -42,10 +42,7 @@ const Index = ({ lesson }) => {
           content='This 2-part lesson will add context to carbon neutrality and explore how you can implement it into your packaging.'
           key='desc'
         />
-        <meta
-          property='og:image'
-          content='https://apsmedia.s3.amazonaws.com/images/CN+pt+1+TN.png'
-        />
+        <meta property='og:image' content={lesson.seoImage} />
         <meta property='og:title' content={lesson.title} />
         <meta property='og:description' content={lesson.subhead} />
       </Head>
@@ -123,6 +120,7 @@ export async function getStaticProps({ params }) {
           media
           content
           objectives
+          seoImage
           slug
           actionCTA
           actionLink

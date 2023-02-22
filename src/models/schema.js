@@ -266,6 +266,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "seoImage": {
+                    "name": "seoImage",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "content": {
                     "name": "content",
                     "isArray": false,
@@ -1209,5 +1216,5 @@ export const schema = {
             }
         }
     },
-    "version": "0b2e3700192e5389704e244bd459751b"
+    "version": "799a49f7458c7ec02574282f5da0fd5a"
 };

@@ -67,6 +67,7 @@ export declare class Lesson {
   readonly subhead?: string | null;
   readonly type?: ModuleType | keyof typeof ModuleType | null;
   readonly media?: string | null;
+  readonly seoImage?: string | null;
   readonly content?: string | null;
   readonly sources?: (LessonSource | null)[] | null;
   readonly links?: (LessonLink | null)[] | null;

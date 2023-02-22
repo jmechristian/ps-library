@@ -145,6 +145,7 @@ export const onCreateLesson = /* GraphQL */ `
       subhead
       type
       media
+      seoImage
       content
       sources {
         items {
@@ -214,6 +215,7 @@ export const onUpdateLesson = /* GraphQL */ `
       subhead
       type
       media
+      seoImage
       content
       sources {
         items {
@@ -283,6 +285,7 @@ export const onDeleteLesson = /* GraphQL */ `
       subhead
       type
       media
+      seoImage
       content
       sources {
         items {
