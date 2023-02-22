@@ -58,6 +58,8 @@ const Index = ({ lesson }) => {
             actionSubhead={lesson.actionSubhead}
             actionLink={lesson.actionLink}
             name={lesson.name}
+            actionTitle={lesson.actionLinkTitle}
+            actionExample={lesson.actionExample}
           />
         </div>
         <LessonsContent
@@ -125,6 +127,8 @@ export async function getStaticProps({ params }) {
           actionCTA
           actionLink
           actionSubhead
+          actionExample
+          actionLinkTitle
           sources {
             items {
               name

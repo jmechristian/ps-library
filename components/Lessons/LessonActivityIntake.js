@@ -1,11 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
-import {
-  ActiveCampaignInputs,
-  handleActiveCampaignSubmit,
-} from 'active-campaign-react';
 
-const LessonActivityIntake = ({ close, cancelButtonRef }) => {
+const LessonActivityIntake = ({ close, toggleSubmit }) => {
   const {
     register,
     handleSubmit,
@@ -15,9 +11,11 @@ const LessonActivityIntake = ({ close, cancelButtonRef }) => {
 
   const onSubmit = (data) => console.log(data);
   const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
   const formRef = useRef();
 
   const subscribeFormHandler = async (data) => {
+    setIsSending(true);
     const formData = new FormData(formRef.current);
 
     // Hidden field key/values.
@@ -44,8 +42,9 @@ const LessonActivityIntake = ({ close, cancelButtonRef }) => {
         }
       );
       console.log(sendEmail);
+      setIsSending(false);
+      toggleSubmit(true);
       setHasSubmitted(true);
-      setIsEmail('');
     } catch (err) {
       console.log('Request failed', err);
     }
@@ -116,7 +115,11 @@ const LessonActivityIntake = ({ close, cancelButtonRef }) => {
             className='flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-4 font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:col-start-2 md:text-xl'
             onClick={close}
           >
-            Get Resource
+            {!hasSubmitted ? (
+              <div>{isSending ? 'Calculating...' : 'Get Your Resource'}</div>
+            ) : (
+              'Submitted!'
+            )}
           </button>
         </div>
       </div>

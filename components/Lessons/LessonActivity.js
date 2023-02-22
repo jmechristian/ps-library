@@ -7,8 +7,9 @@ import ModalWrapper from '../Shared/ModalWrapper';
 export default function LessonActivity({
   actionCTA,
   actionSubhead,
-  ActionLink,
-  ActionExample,
+  actionLink,
+  actionExample,
+  actionTitle,
   name,
 }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +23,13 @@ export default function LessonActivity({
   const closeModal = () => setIsOpen(false);
   return (
     <>
-      <ModalWrapper open={isOpen} close={closeModal} />
+      <ModalWrapper
+        open={isOpen}
+        close={closeModal}
+        title={actionTitle}
+        actionExample={actionExample}
+        actionLink={actionLink}
+      />
       <div className='bg-indigo-100 max-w-7xl mx-auto rounded-b-xl'>
         <div className='mx-auto max-w-prose lg:max-w-5xl px-8 py-20 lg:py-32 lg:flex lg:items-center lg:justify-between lg:px-8'>
           <div className='text-left  max-w-2xl '>
@@ -36,7 +43,7 @@ export default function LessonActivity({
           </div>
           <div className='mt-8 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0'>
             <a
-              href={ActionLink}
+              href={actionLink}
               className='rounded-md cursor-pointer bg-indigo-600 px-4 py-2 text-lg lg:text-xl font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
               data-click-target='resource'
               data-click-name={name}

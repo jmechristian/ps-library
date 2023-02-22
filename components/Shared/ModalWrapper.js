@@ -1,11 +1,21 @@
 import { Fragment, useRef, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import { CheckIcon } from '@heroicons/react/24/outline';
 import LessonActivityModal from '../Lessons/LessonActivityModal';
 import LessonActivityIntake from '../Lessons/LessonActivityIntake';
 
-export default function ModalWrapper({ open, close }) {
+export default function ModalWrapper({
+  open,
+  close,
+  title,
+  actionLink,
+  actionExample,
+}) {
   const cancelButtonRef = useRef(null);
+  const [hasSubmitted, setHasSubmitted] = useState(false);
+
+  const toggleSubmit = (value) => {
+    setHasSubmitted(value);
+  };
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -45,12 +55,17 @@ export default function ModalWrapper({ open, close }) {
                       as='h3'
                       className='text-lg font-medium leading-6 text-gray-900'
                     >
-                      <LessonActivityModal />
+                      <LessonActivityModal
+                        title={title}
+                        hasSubmitted={hasSubmitted}
+                        actionLink={actionLink}
+                        actionExample={actionExample}
+                      />
                     </Dialog.Title>
                   </div>
                 </div>
                 <div className='px-4'>
-                  <LessonActivityIntake />
+                  <LessonActivityIntake toggleSubmit={toggleSubmit} />
 
                   <div className='mt-4 max-w-xl mx-auto text-center'>
                     <p className='text-xs text-gray-500 pb-6'>
