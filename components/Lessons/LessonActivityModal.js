@@ -51,21 +51,23 @@ const LessonActivityModal = ({
                 </a>
               </div>
             </div>
-            <div className='col-span-1 flex gap-2 text-white/80 border border-white/80 py-3 px-6 rounded-md cursor-pointer'>
-              <div>
-                <LightBulbIcon className='w-5 h-5 fill-white/80' />
+            {actionExample && (
+              <div className='col-span-1 flex gap-2 text-white/80 border border-white/80 py-3 px-6 rounded-md cursor-pointer'>
+                <div>
+                  <LightBulbIcon className='w-5 h-5 fill-white/80' />
+                </div>
+                <div>
+                  <a
+                    href={actionExample}
+                    className='font-medium'
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    View Example
+                  </a>
+                </div>
               </div>
-              <div>
-                <a
-                  href={actionExample}
-                  className='font-medium'
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  View Example
-                </a>
-              </div>
-            </div>
+            )}
           </div>
         </div>
       )}
