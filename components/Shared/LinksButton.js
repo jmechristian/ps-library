@@ -9,15 +9,15 @@ const LinksButton = ({ sources }) => {
   return (
     <Popover className='fixed bottom-0 right-8 drop-shadow-xl '>
       <Popover.Button className='w-16 md:w-[400px]'>
-        <div className='bg-slate-900 text-white font-medium text-lg flex items-center py-3 px-6 gap-2 rounded-t-lg'>
+        <div className='bg-slate-800 text-white font-medium text-lg flex items-center py-3 px-6 gap-2 rounded-t-lg'>
           <div>
-            <LinkIcon className='w-5 h-5 stroke-white' />
+            <LinkIcon className='w-6 h-6 stroke-white' />
           </div>
           <div className='hidden md:block'>Lesson Links</div>
         </div>
       </Popover.Button>
       <Popover.Panel
-        className='bg-slate-700 w-[400px] max-h-[80vh] pb-24 overflow-y-scroll relative'
+        className='bg-slate-700 w-[300px] md:w-[400px] max-h-[80vh] pb-24 overflow-y-scroll relative'
         id='scrollers'
       >
         <div className='px-6 pb-8 pt-6 flex-col gap-4'>
