@@ -3,6 +3,13 @@ import React from 'react';
 const LessonActivityModal = ({ title }) => {
   return (
     <div className='relative isolate overflow-hidden bg-gray-900 px-6 py-12 md:py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16'>
+      <div className='flex justify-center items-center mb-8 text-center'>
+        <img
+          className='h-8 w-auto sm:h-10'
+          src='https://res.cloudinary.com/dno7xxmmy/image/upload/v1664295580/pschool/logo_white_krqpbc.svg'
+          alt=''
+        />
+      </div>
       <h2 className='mx-auto max-w-3xl text-3xl md:text-4xl font-bold tracking-tight text-white'>
         Join The Package Design Industry{' '}
         <span className='text-blue-500'>Thought Leaders.</span>

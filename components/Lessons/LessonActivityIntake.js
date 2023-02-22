@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
+import {
+  ActiveCampaignInputs,
+  handleActiveCampaignSubmit,
+} from 'active-campaign-react';
 
 const LessonActivityIntake = ({ close, cancelButtonRef }) => {
   const {
@@ -8,12 +12,50 @@ const LessonActivityIntake = ({ close, cancelButtonRef }) => {
     watch,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => console.log(data);
+  const [hasSubmitted, setHasSubmitted] = useState(false);
+  const formRef = useRef();
+
+  const subscribeFormHandler = async (data) => {
+    const formData = new FormData(formRef.current);
+
+    // Hidden field key/values.
+    formData.append('u', '88');
+    formData.append('f', '88');
+    formData.append('s', 's');
+    formData.append('c', '0');
+    formData.append('m', '0');
+    formData.append('act', 'sub');
+    formData.append('v', '2');
+    formData.append('or', 'd5ea8e7b9c87b88dac73d0042fd47276');
+
+    formData.append('firstname', data.firstName);
+    formData.append('lastname', data.lastName);
+    formData.append('email', data.email);
+
+    try {
+      const sendEmail = await fetch(
+        'https://packagingschool42200.activehosted.com/proc.php',
+        {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors',
+        }
+      );
+      console.log(sendEmail);
+      setHasSubmitted(true);
+      setIsEmail('');
+    } catch (err) {
+      console.log('Request failed', err);
+    }
+  };
 
   return (
     <form
       className='w-full grid grid-cols-6 gap-4 pt-6 pb-2'
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit(subscribeFormHandler)}
+      ref={formRef}
     >
       <div className='col-span-6 sm:col-span-3'>
         <input
