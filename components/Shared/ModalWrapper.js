@@ -61,6 +61,7 @@ export default function ModalWrapper({
                         hasSubmitted={hasSubmitted}
                         actionLink={actionLink}
                         actionExample={actionExample}
+                        lessonTitle={lessonTitle}
                       />
                     </Dialog.Title>
                   </div>
