@@ -16,8 +16,9 @@ const LinksButton = ({ sources }) => {
           <div className='hidden md:block'>Lesson Links</div>
         </div>
       </Popover.Button>
+
       <Popover.Panel
-        className='bg-slate-700 w-[300px] md:w-[400px] max-h-[80vh] pb-24 overflow-y-scroll relative'
+        className='bg-slate-700 w-[300px] md:w-[400px] max-h-[80vh] pb-36 overflow-y-scroll relative'
         id='scrollers'
       >
         <div className='px-6 pb-8 pt-6 flex-col gap-4'>
@@ -35,7 +36,7 @@ const LinksButton = ({ sources }) => {
               ))}
           </div>
         </div>
-        <div className='fixed left-0 right-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-900'></div>
+        <div className='fixed left-0 right-0 bottom-0 h-8 bg-gradient-to-t from-slate-900'></div>
       </Popover.Panel>
     </Popover>
   );

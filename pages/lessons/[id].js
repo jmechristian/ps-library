@@ -159,7 +159,7 @@ export async function getStaticProps({ params }) {
   const res = await API.graphql(graphqlOperation(getLesson, variables));
   const lesson = await res.data.lessonsBySlug.items[0];
 
-  return { props: { lesson } };
+  return { props: { lesson }, revalidate: 10 };
 }
 
 export default Index;
