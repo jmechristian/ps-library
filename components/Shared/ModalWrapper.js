@@ -7,6 +7,7 @@ export default function ModalWrapper({
   open,
   close,
   title,
+  lessonTitle,
   actionLink,
   actionExample,
 }) {
@@ -65,7 +66,10 @@ export default function ModalWrapper({
                   </div>
                 </div>
                 <div className='px-4'>
-                  <LessonActivityIntake toggleSubmit={toggleSubmit} />
+                  <LessonActivityIntake
+                    toggleSubmit={toggleSubmit}
+                    title={lessonTitle}
+                  />
 
                   <div className='mt-4 max-w-xl mx-auto text-center'>
                     <p className='text-xs text-gray-500 pb-6'>

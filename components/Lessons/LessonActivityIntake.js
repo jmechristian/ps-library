@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 
-const LessonActivityIntake = ({ close, toggleSubmit }) => {
+const LessonActivityIntake = ({ toggleSubmit, title }) => {
   const {
     register,
     handleSubmit,
@@ -16,6 +16,10 @@ const LessonActivityIntake = ({ close, toggleSubmit }) => {
 
   const subscribeFormHandler = async (data) => {
     setIsSending(true);
+    gtag('event', 'resource_click', {
+      resource: 'resource_download',
+      lesson: title,
+    });
     const formData = new FormData(formRef.current);
 
     // Hidden field key/values.
@@ -113,7 +117,6 @@ const LessonActivityIntake = ({ close, toggleSubmit }) => {
           <button
             type='submit'
             className='flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-4 font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:col-start-2 md:text-xl'
-            onClick={close}
           >
             {!hasSubmitted ? (
               <div>{isSending ? 'Calculating...' : 'Get Your Resource'}</div>

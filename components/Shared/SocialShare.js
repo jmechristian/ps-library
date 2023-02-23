@@ -17,6 +17,7 @@ const SocialShare = ({ title, subhead, slug }) => {
     console.log(param);
     gtag('event', 'social_share', {
       platform: param,
+      lesson: title,
     });
   };
 

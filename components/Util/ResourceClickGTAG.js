@@ -5,9 +5,8 @@ export const resourceRefHandler = async (e, title) => {
     'data-click-target'
   );
 
-  window.gtag('event', 'resource_click'),
-    {
-      resource: `${name}`,
-      lesson: `${title}`,
-    };
+  window.gtag('event', 'resource_click', {
+    resource: name,
+    lesson: title,
+  });
 };

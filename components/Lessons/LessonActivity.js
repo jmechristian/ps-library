@@ -17,7 +17,11 @@ export default function LessonActivity({
 
   const actionClickHandler = (e) => {
     e.preventDefault();
-    resourceRefHandler(e, lessonTitle);
+    // resourceRefHandler(e, lessonTitle);
+    gtag('event', 'resource_click', {
+      resource: 'action_button',
+      lesson: lessonTitle,
+    });
     setIsOpen(true);
   };
 
@@ -30,6 +34,7 @@ export default function LessonActivity({
         title={actionTitle}
         actionExample={actionExample}
         actionLink={actionLink}
+        lessonTitle={lessonTitle}
       />
       <div className='bg-indigo-100 max-w-7xl mx-auto rounded-b-xl'>
         <div className='mx-auto max-w-prose lg:max-w-5xl px-8 py-20 lg:py-32 lg:flex lg:items-center lg:justify-between lg:px-8'>
