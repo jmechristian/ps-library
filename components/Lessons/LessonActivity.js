@@ -10,13 +10,14 @@ export default function LessonActivity({
   actionLink,
   actionExample,
   actionTitle,
+  lessonTitle,
   name,
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const actionClickHandler = (e) => {
     e.preventDefault();
-    resourceRefHandler(e);
+    resourceRefHandler(e, lessonTitle);
     setIsOpen(true);
   };
 
@@ -42,8 +43,7 @@ export default function LessonActivity({
             <p className='mt-5 text-lg text-gray-500'>{actionSubhead}</p>
           </div>
           <div className='mt-8 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0'>
-            <a
-              href={actionLink}
+            <button
               className='rounded-md cursor-pointer bg-indigo-600 px-4 py-2 text-lg lg:text-xl font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
               data-click-target='resource'
               data-click-name={name}
@@ -52,7 +52,7 @@ export default function LessonActivity({
               rel='noReferrer'
             >
               Download
-            </a>
+            </button>
             <a
               href='#'
               className='hidden text-base font-semibold leading-7 text-gray-900'

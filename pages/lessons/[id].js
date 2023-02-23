@@ -57,6 +57,7 @@ const Index = ({ lesson }) => {
             name={lesson.name}
             actionTitle={lesson.actionLinkTitle}
             actionExample={lesson.actionExample}
+            lessonTitle={lesson.title}
           />
         </div>
         <LessonsContent
