@@ -18,7 +18,7 @@ const LinksButton = ({ sources }) => {
       </Popover.Button>
 
       <Popover.Panel
-        className='bg-slate-700 w-[300px] md:w-[400px] max-h-[80vh] pb-36 overflow-y-scroll relative'
+        className='bg-slate-700 w-full md:w-[400px] max-h-[80vh] pb-36 overflow-y-scroll relative'
         id='scrollers'
       >
         <div className='px-6 pb-8 pt-6 flex-col gap-4'>
