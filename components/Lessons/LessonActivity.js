@@ -36,20 +36,22 @@ export default function LessonActivity({
         actionLink={actionLink}
         lessonTitle={lessonTitle}
       />
-      <div className='bg-indigo-100 max-w-7xl mx-auto rounded-b-xl'>
+      <div className='bg-indigo-100 dark:bg-neutral-800 max-w-7xl mx-auto rounded-b-xl'>
         <div className='mx-auto max-w-prose lg:max-w-5xl px-8 py-20 lg:py-32 lg:flex lg:items-center lg:justify-between lg:px-8'>
           <div className='text-left  max-w-2xl '>
-            <h2 className='text-lg font-semibold text-indigo-600 max-3-3xl'>
+            <h2 className='text-lg font-semibold text-slate-600 dark:text-clemson  max-3-3xl'>
               Take Action
             </h2>
-            <p className='mt-1 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl'>
+            <p className='mt-1 text-4xl font-greycliff font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-6xl'>
               {actionCTA}
             </p>
-            <p className='mt-5 text-lg text-gray-500'>{actionSubhead}</p>
+            <p className='mt-5 text-lg md:text-xl text-gray-500 dark:text-white/70'>
+              {actionSubhead}
+            </p>
           </div>
           <div className='mt-8 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0'>
             <button
-              className='rounded-md cursor-pointer bg-indigo-600 px-4 py-2 text-lg lg:text-xl font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+              className='rounded-md cursor-pointer bg-clemson px-6 py-3 text-lg lg:text-2xl font-semibold leading-7 text-white shadow-sm hover:bg-slate-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600'
               data-click-target='resource'
               data-click-name={name}
               onClick={(event) => actionClickHandler(event)}

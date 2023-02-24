@@ -5,8 +5,8 @@ const LessonsContent = ({ content, objectives }) => {
   const image =
     'https://packschool.s3.amazonaws.com/lessons/carbon-neutral-part-2/box2.webp';
   return (
-    <div className='relative overflow-hidden bg-white'>
-      <div className='hidden lg:absolute lg:inset-y-0 lg:block lg:h-full lg:w-full lg:[overflow-anchor:none]'>
+    <div className='relative overflow-hidden bg-white dark:bg-real-dark'>
+      {/* <div className='hidden lg:absolute lg:inset-y-0 lg:block lg:h-full lg:w-full lg:[overflow-anchor:none]'>
         <div
           className='relative mx-auto h-full max-w-prose text-lg'
           aria-hidden='true'
@@ -32,7 +32,7 @@ const LessonsContent = ({ content, objectives }) => {
                   y={0}
                   width={4}
                   height={4}
-                  className='text-slate-200'
+                  className='text-slate-200 dark:text-slate-200/10'
                   fill='currentColor'
                 />
               </pattern>
@@ -64,7 +64,7 @@ const LessonsContent = ({ content, objectives }) => {
                   y={0}
                   width={4}
                   height={4}
-                  className='text-slate-200'
+                  className='text-slate-200 dark:text-slate-200/10'
                   fill='currentColor'
                 />
               </pattern>
@@ -89,11 +89,13 @@ const LessonsContent = ({ content, objectives }) => {
             />
           </svg>
         </div>
-      </div>
+      </div> */}
       <div className='relative px-6 lg:px-8 lg:pb-16'>
-        <div className='prose prose-lg prose-orange mx-auto text-slate-500'>
-          <div className='pb-3'>
-            <h3>Learning Objectives</h3>
+        <div className='prose prose-lg md:prose-xl prose-orange dark:prose-orange mx-auto text-slate-500 dark:text-white/90'>
+          <div className='md:pb-16'>
+            <h3 className='font-greycliff font-bold text-3xl dark:text-white'>
+              Learning Objectives
+            </h3>
             <LearningObjectives objectives={objectives} />
           </div>
           <div

@@ -27,7 +27,7 @@ const SocialShare = ({ title, subhead, slug }) => {
     >
       <div className='mx-auto max-w-prose px-6 py-16 lg:py-20 lg:flex lg:items-center lg:justify-between lg:px-8'>
         <div className='prose prose-lg mb-4 text-center'>
-          <h3 className='text-white font-medium text-2xl'>
+          <h3 className='text-white font-bold text-2xl font-greycliff'>
             Share The Knowledge
           </h3>
         </div>

@@ -37,16 +37,12 @@ const Index = ({ lesson }) => {
     <>
       <Head>
         <title>{lesson.title}</title>
-        <meta
-          name='description'
-          content='This 2-part lesson will add context to carbon neutrality and explore how you can implement it into your packaging.'
-          key='desc'
-        />
+        <meta name='description' content={lesson.subhead} key='desc' />
         <meta property='og:image' content={lesson.seoImage} />
         <meta property='og:title' content={lesson.title} />
         <meta property='og:description' content={lesson.subhead} />
       </Head>
-      <div className='flex flex-col gap-12 pt-12'>
+      <div className='flex flex-col gap-12 pt-12 dark:bg-real-dark'>
         <LessonsHeader title={lesson.title} subhead={lesson.subhead} />
         <div>
           <LessonsMedia videoUrl={lesson.media} />

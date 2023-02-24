@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     './app/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
@@ -18,7 +19,19 @@ module.exports = {
         'base-mid': '#0585b0',
         clemson: '#ff9321',
         'clemson-dark': '#ca6800',
-        dark: '#0e1424',
+        dark: '#1a1a1a',
+        'real-dark': '#0E0E0E',
+      },
+      fontFamily: {
+        roboto: 'roboto, sans-serif',
+        greycliff: 'greycliff-cf, sans-serif',
+      },
+      typography: {
+        orange: {
+          css: {
+            '--tw-prose-bold': 'text-slate-800 dark:text-white',
+          },
+        },
       },
     },
   },

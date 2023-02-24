@@ -3,7 +3,7 @@ import { CheckCircleIcon } from '@heroicons/react/20/solid';
 
 const IconLabel = ({ name, isComplete }) => {
   return (
-    <p className='flex items-center text-lg text-gray-500'>
+    <p className='flex items-center text-lg md:text-xl text-gray-500 dark:text-white/60 pl-0'>
       <CheckCircleIcon
         className={`mr-1.5 h-5 w-5 flex-shrink-0 ${
           isComplete ? 'text-green-400' : 'text-slate-300'
@@ -36,7 +36,7 @@ const items = [
 
 const LearningObjectives = ({ objectives }) => {
   return (
-    <ul role='list' className='divide-y divide-gray-200 p-0 mb-16'>
+    <ul role='list' className='divide-y divide-gray-200 p-0 mb-24 '>
       {objectives.map((obj) => (
         <li key={obj} className='list-none p-0'>
           <IconLabel name={obj} isComplete={false} />

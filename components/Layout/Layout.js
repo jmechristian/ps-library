@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
-import BodyWrapper from '../Shared/BodyWrapper';
+import { Context } from '../../data/context';
 
 const Layout = ({ children }) => {
+  const { dark } = useContext(Context);
+
   return (
-    <div>
+    <div className={`${dark ? 'dark' : ''}`}>
       <Header />
       {children}
       <Footer />

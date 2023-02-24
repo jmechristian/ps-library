@@ -63,7 +63,7 @@ const footerNavigation = {
 
 export default function Footer() {
   return (
-    <footer className='bg-slate-900'>
+    <footer className='bg-slate-900 dark:bg-real-dark'>
       <div className='mx-auto max-w-md overflow-hidden py-12 px-6 sm:max-w-3xl lg:max-w-7xl lg:px-8'>
         <nav
           className='-mx-5 -my-2 flex flex-wrap justify-center'
@@ -73,7 +73,7 @@ export default function Footer() {
             <div key={item.name} className='px-5 py-2'>
               <a
                 href={item.href}
-                className='text-base text-slate-400 hover:text-slate-300'
+                className='text-base text-white/60 hover:text-slate-300'
               >
                 {item.name}
               </a>
@@ -85,14 +85,14 @@ export default function Footer() {
             <a
               key={item.name}
               href={item.href}
-              className='text-slate-400 hover:text-slate-300'
+              className='text-white/60 hover:text-slate-300'
             >
               <span className='sr-only'>{item.name}</span>
               <item.icon className='h-6 w-6' aria-hidden='true' />
             </a>
           ))}
         </div>
-        <p className='mt-8 text-center text-sm text-slate-400'>
+        <p className='mt-8 text-center text-sm text-white/60'>
           Copyright © 2015-2022 The Packaging School, LLC. All Rights Reserved.
         </p>
       </div>

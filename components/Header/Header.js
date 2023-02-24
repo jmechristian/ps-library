@@ -1,21 +1,15 @@
-import { Fragment } from 'react';
+import { Fragment, useState, useContext } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import {
-  ArrowPathIcon,
   Bars3Icon,
-  ChartBarIcon,
-  CursorArrowRaysIcon,
-  DocumentChartBarIcon,
-  ShieldCheckIcon,
-  Squares2X2Icon,
   XMarkIcon,
   AcademicCapIcon,
   LightBulbIcon,
   InformationCircleIcon,
   ShoppingCartIcon,
-  ChatBubbleLeftEllipsisIcon,
 } from '@heroicons/react/24/outline';
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import DarkSwitch from './DarkSwitch';
+import { Context } from '../../data/context';
 
 const solutions = [
   {
@@ -80,8 +74,14 @@ function classNames(...classes) {
 }
 
 export default function Header() {
+  const { dark, toggleDark } = useContext(Context);
+
+  const [isOn, setIsOn] = useState(dark);
+
+  const toggleSwitch = () => toggleDark(!dark);
+
   return (
-    <Popover className='relative bg-slate-900'>
+    <Popover className='relative bg-slate-900 dark:bg-dark'>
       <div className='flex items-center justify-between p-6 md:justify-start md:space-x-10 lg:max-w-7xl lg:mx-auto lg:p-0 lg:py-6 lg:px-6 xl:px-0'>
         <div className='flex justify-start lg:w-0 lg:flex-1'>
           <a href='https://packagingschool.com'>
@@ -111,15 +111,16 @@ export default function Header() {
             <Bars3Icon className='h-6 w-6' aria-hidden='true' />
           </Popover.Button>
         </div>
-        {/* <div className='hidden items-center justify-end md:flex md:flex-1 lg:w-0'>
-          <a
+        <div className='hidden items-center justify-end md:flex md:flex-1 lg:w-0 gap-4'>
+          {/* <a
             href='#'
             className='ml-8 inline-flex items-center gap-2 justify-center whitespace-nowrap rounded-md border border-transparent bg-base-mid px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-slate-700'
           >
             <ChatBubbleLeftEllipsisIcon className='w-6 h-6' />
-            Join The Discussion
-          </a>
-        </div> */}
+            Discuss
+          </a> */}
+          <DarkSwitch isOn={isOn} toggleSwitch={toggleSwitch} />
+        </div>
       </div>
 
       <Transition
