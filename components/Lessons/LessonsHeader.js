@@ -17,7 +17,7 @@ const LessonsHeader = ({ title, subhead, tags }) => {
           <h1 className='text-4xl font-bold tracking-tight sm:text-6xl font-greycliff dark:text-white'>
             {title}
           </h1>
-          <p className='mt-8 text-lg md:text-xl leading-9 text-slate-500 dark:text-white/60'>
+          <p className='mt-8 text-lg md:text-xl leading-10 text-slate-500 dark:text-white/60'>
             {subhead}
           </p>
         </div>
