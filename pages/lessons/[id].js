@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Head from 'next/head';
 
 import { Amplify, API, graphqlOperation } from 'aws-amplify';
@@ -18,21 +18,6 @@ import LinksButton from '../../components/Shared/LinksButton';
 import SocialShare from '../../components/Shared/SocialShare';
 
 const Index = ({ lesson }) => {
-  const style = {
-    root: {
-      background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-      border: 0,
-      color: 'white',
-    },
-    copyContainer: {
-      background: 'rgb(0,0,0,0.7)',
-    },
-    title: {
-      color: 'aquamarine',
-      fontStyle: 'italic',
-    },
-  };
-
   return (
     <>
       <Head>

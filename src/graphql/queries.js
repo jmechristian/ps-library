@@ -149,6 +149,7 @@ export const getTags = /* GraphQL */ `
       _deleted
       _lastChangedAt
       lessonTagsId
+      articleTagsId
     }
   }
 `;
@@ -168,6 +169,7 @@ export const listTags = /* GraphQL */ `
         _deleted
         _lastChangedAt
         lessonTagsId
+        articleTagsId
       }
       nextToken
       startedAt
@@ -196,6 +198,7 @@ export const syncTags = /* GraphQL */ `
         _deleted
         _lastChangedAt
         lessonTagsId
+        articleTagsId
       }
       nextToken
       startedAt
@@ -254,6 +257,7 @@ export const getLesson = /* GraphQL */ `
           _deleted
           _lastChangedAt
           lessonTagsId
+          articleTagsId
         }
         nextToken
         startedAt
@@ -410,6 +414,143 @@ export const lessonsBySlug = /* GraphQL */ `
         actionLink
         actionLinkTitle
         actionExample
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getArticle = /* GraphQL */ `
+  query GetArticle($id: ID!) {
+    getArticle(id: $id) {
+      id
+      slug
+      title
+      subhead
+      media
+      seoImage
+      content
+      tags {
+        items {
+          id
+          tag
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          lessonTagsId
+          articleTagsId
+        }
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listArticles = /* GraphQL */ `
+  query ListArticles(
+    $filter: ModelArticleFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listArticles(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        slug
+        title
+        subhead
+        media
+        seoImage
+        content
+        tags {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncArticles = /* GraphQL */ `
+  query SyncArticles(
+    $filter: ModelArticleFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncArticles(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        slug
+        title
+        subhead
+        media
+        seoImage
+        content
+        tags {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const articlesBySlug = /* GraphQL */ `
+  query ArticlesBySlug(
+    $slug: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelArticleFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    articlesBySlug(
+      slug: $slug
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        slug
+        title
+        subhead
+        media
+        seoImage
+        content
+        tags {
+          nextToken
+          startedAt
+        }
         createdAt
         updatedAt
         _version

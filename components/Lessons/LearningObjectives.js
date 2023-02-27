@@ -36,13 +36,15 @@ const items = [
 
 const LearningObjectives = ({ objectives }) => {
   return (
-    <ul role='list' className='divide-y divide-gray-200 p-0 mb-24 '>
-      {objectives.map((obj) => (
-        <li key={obj} className='list-none p-0'>
-          <IconLabel name={obj} isComplete={false} />
-        </li>
-      ))}
-    </ul>
+    objectives && (
+      <ul role='list' className='divide-y divide-gray-200 p-0 mb-24 '>
+        {objectives.map((obj) => (
+          <li key={obj} className='list-none p-0'>
+            <IconLabel name={obj} isComplete={false} />
+          </li>
+        ))}
+      </ul>
+    )
   );
 };
 

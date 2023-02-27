@@ -7,7 +7,11 @@ const Layout = ({ children }) => {
   const { dark } = useContext(Context);
 
   return (
-    <div className={`${dark ? 'dark' : ''}`}>
+    <div
+      className={`${
+        dark ? 'dark' : ''
+      } flex flex-col justify-between min-h-screen`}
+    >
       <Header />
       {children}
       <Footer />

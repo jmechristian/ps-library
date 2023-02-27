@@ -126,6 +126,7 @@ export const createTags = /* GraphQL */ `
       _deleted
       _lastChangedAt
       lessonTagsId
+      articleTagsId
     }
   }
 `;
@@ -143,6 +144,7 @@ export const updateTags = /* GraphQL */ `
       _deleted
       _lastChangedAt
       lessonTagsId
+      articleTagsId
     }
   }
 `;
@@ -160,6 +162,7 @@ export const deleteTags = /* GraphQL */ `
       _deleted
       _lastChangedAt
       lessonTagsId
+      articleTagsId
     }
   }
 `;
@@ -218,6 +221,7 @@ export const createLesson = /* GraphQL */ `
           _deleted
           _lastChangedAt
           lessonTagsId
+          articleTagsId
         }
         nextToken
         startedAt
@@ -291,6 +295,7 @@ export const updateLesson = /* GraphQL */ `
           _deleted
           _lastChangedAt
           lessonTagsId
+          articleTagsId
         }
         nextToken
         startedAt
@@ -364,6 +369,7 @@ export const deleteLesson = /* GraphQL */ `
           _deleted
           _lastChangedAt
           lessonTagsId
+          articleTagsId
         }
         nextToken
         startedAt
@@ -374,6 +380,114 @@ export const deleteLesson = /* GraphQL */ `
       actionLink
       actionLinkTitle
       actionExample
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const createArticle = /* GraphQL */ `
+  mutation CreateArticle(
+    $input: CreateArticleInput!
+    $condition: ModelArticleConditionInput
+  ) {
+    createArticle(input: $input, condition: $condition) {
+      id
+      slug
+      title
+      subhead
+      media
+      seoImage
+      content
+      tags {
+        items {
+          id
+          tag
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          lessonTagsId
+          articleTagsId
+        }
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const updateArticle = /* GraphQL */ `
+  mutation UpdateArticle(
+    $input: UpdateArticleInput!
+    $condition: ModelArticleConditionInput
+  ) {
+    updateArticle(input: $input, condition: $condition) {
+      id
+      slug
+      title
+      subhead
+      media
+      seoImage
+      content
+      tags {
+        items {
+          id
+          tag
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          lessonTagsId
+          articleTagsId
+        }
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const deleteArticle = /* GraphQL */ `
+  mutation DeleteArticle(
+    $input: DeleteArticleInput!
+    $condition: ModelArticleConditionInput
+  ) {
+    deleteArticle(input: $input, condition: $condition) {
+      id
+      slug
+      title
+      subhead
+      media
+      seoImage
+      content
+      tags {
+        items {
+          id
+          tag
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          lessonTagsId
+          articleTagsId
+        }
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
