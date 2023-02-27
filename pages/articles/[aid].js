@@ -92,7 +92,6 @@ export async function getStaticPaths() {
 
   try {
     const res = await API.graphql(graphqlOperation(query));
-    console.log(res.data);
     const articles = await res.data.listArticles.items;
     const paths = articles.map((less) => ({
       params: { aid: `${less.slug}` },
