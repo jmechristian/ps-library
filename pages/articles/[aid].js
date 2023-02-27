@@ -61,7 +61,9 @@ const Index = ({ article }) => {
         </div>
         <ArticleContent content={article.content} />
         <div>
-          <RelatedCourses />
+          {article.relatedCourses && (
+            <RelatedCourses relatedCourses={article.relatedCourses.items} />
+          )}
           <SocialShare
             title={article.title}
             slug={article.slug}
@@ -122,6 +124,18 @@ export async function getStaticProps({ params }) {
             }
           }
           title
+          relatedCourses {
+            items {
+              course {
+                id
+                media
+                slug
+                subhead
+                title
+                video
+              }
+            }
+          }
         }
       }
     }

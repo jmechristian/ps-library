@@ -85,6 +85,24 @@ export declare class Lesson {
   static copyOf(source: Lesson, mutator: (draft: MutableModel<Lesson>) => MutableModel<Lesson> | void): Lesson;
 }
 
+export declare class Course {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Course, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly slug: string;
+  readonly title: string;
+  readonly subhead?: string | null;
+  readonly media?: string | null;
+  readonly video?: string | null;
+  readonly articles?: (ArticleRelatedCourses | null)[] | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<Course>);
+  static copyOf(source: Course, mutator: (draft: MutableModel<Course>) => MutableModel<Course> | void): Course;
+}
+
 export declare class Article {
   readonly [__modelMeta__]: {
     identifier: ManagedIdentifier<Article, 'id'>;
@@ -98,6 +116,7 @@ export declare class Article {
   readonly seoImage?: string | null;
   readonly content?: string | null;
   readonly tags?: (Tags | null)[] | null;
+  readonly relatedCourses?: (ArticleRelatedCourses | null)[] | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<Article>);
@@ -189,6 +208,22 @@ export declare class APSSpeaker {
   readonly aPSSpeakersId?: string | null;
   constructor(init: ModelInit<APSSpeaker>);
   static copyOf(source: APSSpeaker, mutator: (draft: MutableModel<APSSpeaker>) => MutableModel<APSSpeaker> | void): APSSpeaker;
+}
+
+export declare class ArticleRelatedCourses {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<ArticleRelatedCourses, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly courseId?: string | null;
+  readonly articleId?: string | null;
+  readonly course: Course;
+  readonly article: Article;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<ArticleRelatedCourses>);
+  static copyOf(source: ArticleRelatedCourses, mutator: (draft: MutableModel<ArticleRelatedCourses>) => MutableModel<ArticleRelatedCourses> | void): ArticleRelatedCourses;
 }
 
 export declare class APSUser {

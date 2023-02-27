@@ -352,6 +352,99 @@ export const onDeleteLesson = /* GraphQL */ `
     }
   }
 `;
+export const onCreateCourse = /* GraphQL */ `
+  subscription OnCreateCourse {
+    onCreateCourse {
+      id
+      slug
+      title
+      subhead
+      media
+      video
+      articles {
+        items {
+          id
+          courseId
+          articleId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onUpdateCourse = /* GraphQL */ `
+  subscription OnUpdateCourse {
+    onUpdateCourse {
+      id
+      slug
+      title
+      subhead
+      media
+      video
+      articles {
+        items {
+          id
+          courseId
+          articleId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onDeleteCourse = /* GraphQL */ `
+  subscription OnDeleteCourse {
+    onDeleteCourse {
+      id
+      slug
+      title
+      subhead
+      media
+      video
+      articles {
+        items {
+          id
+          courseId
+          articleId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
 export const onCreateArticle = /* GraphQL */ `
   subscription OnCreateArticle {
     onCreateArticle {
@@ -373,6 +466,20 @@ export const onCreateArticle = /* GraphQL */ `
           _lastChangedAt
           lessonTagsId
           articleTagsId
+        }
+        nextToken
+        startedAt
+      }
+      relatedCourses {
+        items {
+          id
+          courseId
+          articleId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
         nextToken
         startedAt
@@ -410,6 +517,20 @@ export const onUpdateArticle = /* GraphQL */ `
         nextToken
         startedAt
       }
+      relatedCourses {
+        items {
+          id
+          courseId
+          articleId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -439,6 +560,20 @@ export const onDeleteArticle = /* GraphQL */ `
           _lastChangedAt
           lessonTagsId
           articleTagsId
+        }
+        nextToken
+        startedAt
+      }
+      relatedCourses {
+        items {
+          id
+          courseId
+          articleId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
         nextToken
         startedAt
@@ -1069,6 +1204,165 @@ export const onDeleteAPSSpeaker = /* GraphQL */ `
       _deleted
       _lastChangedAt
       aPSSpeakersId
+    }
+  }
+`;
+export const onCreateArticleRelatedCourses = /* GraphQL */ `
+  subscription OnCreateArticleRelatedCourses {
+    onCreateArticleRelatedCourses {
+      id
+      courseId
+      articleId
+      course {
+        id
+        slug
+        title
+        subhead
+        media
+        video
+        articles {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      article {
+        id
+        slug
+        title
+        subhead
+        media
+        seoImage
+        content
+        tags {
+          nextToken
+          startedAt
+        }
+        relatedCourses {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onUpdateArticleRelatedCourses = /* GraphQL */ `
+  subscription OnUpdateArticleRelatedCourses {
+    onUpdateArticleRelatedCourses {
+      id
+      courseId
+      articleId
+      course {
+        id
+        slug
+        title
+        subhead
+        media
+        video
+        articles {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      article {
+        id
+        slug
+        title
+        subhead
+        media
+        seoImage
+        content
+        tags {
+          nextToken
+          startedAt
+        }
+        relatedCourses {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onDeleteArticleRelatedCourses = /* GraphQL */ `
+  subscription OnDeleteArticleRelatedCourses {
+    onDeleteArticleRelatedCourses {
+      id
+      courseId
+      articleId
+      course {
+        id
+        slug
+        title
+        subhead
+        media
+        video
+        articles {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      article {
+        id
+        slug
+        title
+        subhead
+        media
+        seoImage
+        content
+        tags {
+          nextToken
+          startedAt
+        }
+        relatedCourses {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;

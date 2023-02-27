@@ -388,6 +388,108 @@ export const deleteLesson = /* GraphQL */ `
     }
   }
 `;
+export const createCourse = /* GraphQL */ `
+  mutation CreateCourse(
+    $input: CreateCourseInput!
+    $condition: ModelCourseConditionInput
+  ) {
+    createCourse(input: $input, condition: $condition) {
+      id
+      slug
+      title
+      subhead
+      media
+      video
+      articles {
+        items {
+          id
+          courseId
+          articleId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const updateCourse = /* GraphQL */ `
+  mutation UpdateCourse(
+    $input: UpdateCourseInput!
+    $condition: ModelCourseConditionInput
+  ) {
+    updateCourse(input: $input, condition: $condition) {
+      id
+      slug
+      title
+      subhead
+      media
+      video
+      articles {
+        items {
+          id
+          courseId
+          articleId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const deleteCourse = /* GraphQL */ `
+  mutation DeleteCourse(
+    $input: DeleteCourseInput!
+    $condition: ModelCourseConditionInput
+  ) {
+    deleteCourse(input: $input, condition: $condition) {
+      id
+      slug
+      title
+      subhead
+      media
+      video
+      articles {
+        items {
+          id
+          courseId
+          articleId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
 export const createArticle = /* GraphQL */ `
   mutation CreateArticle(
     $input: CreateArticleInput!
@@ -412,6 +514,20 @@ export const createArticle = /* GraphQL */ `
           _lastChangedAt
           lessonTagsId
           articleTagsId
+        }
+        nextToken
+        startedAt
+      }
+      relatedCourses {
+        items {
+          id
+          courseId
+          articleId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
         nextToken
         startedAt
@@ -452,6 +568,20 @@ export const updateArticle = /* GraphQL */ `
         nextToken
         startedAt
       }
+      relatedCourses {
+        items {
+          id
+          courseId
+          articleId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
       createdAt
       updatedAt
       _version
@@ -484,6 +614,20 @@ export const deleteArticle = /* GraphQL */ `
           _lastChangedAt
           lessonTagsId
           articleTagsId
+        }
+        nextToken
+        startedAt
+      }
+      relatedCourses {
+        items {
+          id
+          courseId
+          articleId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
         }
         nextToken
         startedAt
@@ -1150,6 +1294,174 @@ export const deleteAPSSpeaker = /* GraphQL */ `
       _deleted
       _lastChangedAt
       aPSSpeakersId
+    }
+  }
+`;
+export const createArticleRelatedCourses = /* GraphQL */ `
+  mutation CreateArticleRelatedCourses(
+    $input: CreateArticleRelatedCoursesInput!
+    $condition: ModelArticleRelatedCoursesConditionInput
+  ) {
+    createArticleRelatedCourses(input: $input, condition: $condition) {
+      id
+      courseId
+      articleId
+      course {
+        id
+        slug
+        title
+        subhead
+        media
+        video
+        articles {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      article {
+        id
+        slug
+        title
+        subhead
+        media
+        seoImage
+        content
+        tags {
+          nextToken
+          startedAt
+        }
+        relatedCourses {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const updateArticleRelatedCourses = /* GraphQL */ `
+  mutation UpdateArticleRelatedCourses(
+    $input: UpdateArticleRelatedCoursesInput!
+    $condition: ModelArticleRelatedCoursesConditionInput
+  ) {
+    updateArticleRelatedCourses(input: $input, condition: $condition) {
+      id
+      courseId
+      articleId
+      course {
+        id
+        slug
+        title
+        subhead
+        media
+        video
+        articles {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      article {
+        id
+        slug
+        title
+        subhead
+        media
+        seoImage
+        content
+        tags {
+          nextToken
+          startedAt
+        }
+        relatedCourses {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const deleteArticleRelatedCourses = /* GraphQL */ `
+  mutation DeleteArticleRelatedCourses(
+    $input: DeleteArticleRelatedCoursesInput!
+    $condition: ModelArticleRelatedCoursesConditionInput
+  ) {
+    deleteArticleRelatedCourses(input: $input, condition: $condition) {
+      id
+      courseId
+      articleId
+      course {
+        id
+        slug
+        title
+        subhead
+        media
+        video
+        articles {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      article {
+        id
+        slug
+        title
+        subhead
+        media
+        seoImage
+        content
+        tags {
+          nextToken
+          startedAt
+        }
+        relatedCourses {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;

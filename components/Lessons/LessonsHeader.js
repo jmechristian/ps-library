@@ -4,7 +4,7 @@ import BodyWrapper from '../Shared/BodyWrapper';
 const LessonsHeader = ({ title, subhead, tags }) => {
   return (
     <BodyWrapper>
-      <div className='mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 flex flex-col gap-3 lg:py-12'>
+      <div className='mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 flex flex-col gap-3 lg:pt-12'>
         <div className='flex flex-wrap gap-2'>
           <span className='inline-flex items-center rounded-full bg-green-100 dark:bg-green-400/50 dark:text-white px-3 py-0.5 text-sm font-medium text-green-800'>
             Sustainability
