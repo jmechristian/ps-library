@@ -49,20 +49,21 @@ const Index = ({ article }) => {
     <>
       <Head>
         <title>{article.title}</title>
-        <meta name='description' content={article.subhead} key='desc' />
-        <meta property='og:image' content={article.seoImage} />
+        <meta property='og:image' content={article.media && article.media} />
         <meta property='og:title' content={article.title} />
-        <meta property='og:description' content={article.subhead} />
       </Head>
       <div className='flex flex-col gap-12 pt-12 dark:bg-real-dark'>
         <LessonsHeader
           title={article.title}
-          subhead={article.subhead}
+          subhead={''}
           date={article.date}
           author={article.author}
         />
         <div>
-          <ArticleMedia media={article.media} title={article.title} />
+          <ArticleMedia
+            media={article.media && article.media}
+            title={article.title}
+          />
         </div>
         <ArticleContent content={article.content} />
         <div>
@@ -72,7 +73,7 @@ const Index = ({ article }) => {
           <SocialShare
             title={article.title}
             slug={article.slug}
-            subhead={article.subhead}
+            subhead={article.subhead ? article.subhead : ''}
           />
         </div>
       </div>
