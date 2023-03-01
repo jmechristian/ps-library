@@ -11,7 +11,7 @@ const people = [
   // More people...
 ];
 
-const index = ({ articles }) => {
+const Index = ({ articles }) => {
   return (
     <div className='max-w-7xl mx-auto px-6 md:px-0'>
       <div className='px-4 sm:px-6 lg:px-8'>
@@ -86,4 +86,4 @@ export async function getServerSideProps() {
   }
 }
 
-export default index;
+export default Index;

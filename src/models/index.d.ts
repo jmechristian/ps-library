@@ -52,6 +52,7 @@ export declare class Tags {
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   readonly lessonTagsId?: string | null;
+  readonly blogTagsId?: string | null;
   readonly articleTagsId?: string | null;
   constructor(init: ModelInit<Tags>);
   static copyOf(source: Tags, mutator: (draft: MutableModel<Tags>) => MutableModel<Tags> | void): Tags;
@@ -83,6 +84,25 @@ export declare class Lesson {
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<Lesson>);
   static copyOf(source: Lesson, mutator: (draft: MutableModel<Lesson>) => MutableModel<Lesson> | void): Lesson;
+}
+
+export declare class Blog {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Blog, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly slug: string;
+  readonly title: string;
+  readonly media?: string | null;
+  readonly content: string;
+  readonly author?: string | null;
+  readonly tags?: (Tags | null)[] | null;
+  readonly date?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<Blog>);
+  static copyOf(source: Blog, mutator: (draft: MutableModel<Blog>) => MutableModel<Blog> | void): Blog;
 }
 
 export declare class Course {

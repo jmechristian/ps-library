@@ -17,6 +17,14 @@
   margin-bottom: 0;
 }
 
+.bad-html > h3 > span {
+  @apply font-bold text-slate-900 dark:text-white;
+}
+
+.bad-html > h3 {
+  @apply font-bold text-slate-900 dark:text-white;
+}
+
 #scrollers::-webkit-scrollbar {
   display: none;
   width: 0;
