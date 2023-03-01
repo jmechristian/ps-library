@@ -93,10 +93,12 @@ const Index = () => {
                   {items.map((article) => (
                     <tr key={article.id} className='w-full'>
                       <td className='py-4 pr-3 font-medium text-gray-900 sm:pl-0'>
-                        {article.title}
+                        {article.title && article.title}
                       </td>
                       <td className='py-4 text-gray-500'>
-                        <a href={`/blog/${article.slug}`}>{article.slug}</a>
+                        <a href={`/blog/${article.slug && article.slug}`}>
+                          {article.slug && article.slug}
+                        </a>
                       </td>
                     </tr>
                   ))}
