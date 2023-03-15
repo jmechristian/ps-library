@@ -16,34 +16,7 @@ import ArticleMedia from '../../components/Articles/ArticleMedia';
 import RelatedCourses from '../../components/Shared/RelatedCourses';
 
 const Index = ({ article }) => {
-  //   const query = /* GraphQL */ `
-  //     query ListArticles {
-  //       listArticles {
-  //         items {
-  //           id
-  //           slug
-  //         }
-  //       }
-  //     }
-  //   `;
-  //   useEffect(() => {
-  //     const getArticles = async () => {
-  //       try {
-  //         const res = await API.graphql(graphqlOperation(query));
-  //         console.log(res.data);
-  //         const articles = await res.data.listArticles.items;
-  //         const paths = articles.map((less) => ({
-  //           params: { id: `${less.slug}` },
-  //         }));
-
-  //         return { paths, fallback: false };
-  //       } catch (error) {
-  //         console.log(error);
-  //       }
-  //     };
-
-  //     getArticles();
-  //   }, []);
+  console.log(article);
 
   return (
     <>
@@ -56,12 +29,14 @@ const Index = ({ article }) => {
       </Head>
       <div className='flex flex-col gap-12 pt-12 dark:bg-real-dark'>
         <LessonsHeader title={article.title} subhead={article.subhead} />
-        <div>
-          <ArticleMedia media={article.media} title={article.title} />
-        </div>
+        {article.media && (
+          <div>
+            <ArticleMedia media={article.media} title={article.title} />
+          </div>
+        )}
         <ArticleContent content={article.content} />
         <div>
-          {article.relatedCourses && (
+          {article.relatedCourses.items.length != 0 && (
             <RelatedCourses relatedCourses={article.relatedCourses.items} />
           )}
           <SocialShare
