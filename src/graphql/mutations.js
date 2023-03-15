@@ -126,6 +126,7 @@ export const createTags = /* GraphQL */ `
       _deleted
       _lastChangedAt
       lessonTagsId
+      blogTagsId
       articleTagsId
     }
   }
@@ -144,6 +145,7 @@ export const updateTags = /* GraphQL */ `
       _deleted
       _lastChangedAt
       lessonTagsId
+      blogTagsId
       articleTagsId
     }
   }
@@ -162,7 +164,284 @@ export const deleteTags = /* GraphQL */ `
       _deleted
       _lastChangedAt
       lessonTagsId
+      blogTagsId
       articleTagsId
+    }
+  }
+`;
+export const createCertificate = /* GraphQL */ `
+  mutation CreateCertificate(
+    $input: CreateCertificateInput!
+    $condition: ModelCertificateConditionInput
+  ) {
+    createCertificate(input: $input, condition: $condition) {
+      id
+      slug
+      title
+      title_callout_1
+      title_callout_2
+      title_text
+      title_button_1_text
+      title_button_1_link
+      title_button_2_text
+      title_button_2_link
+      title_image
+      courses {
+        items {
+          id
+          certificateId
+          courseId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const updateCertificate = /* GraphQL */ `
+  mutation UpdateCertificate(
+    $input: UpdateCertificateInput!
+    $condition: ModelCertificateConditionInput
+  ) {
+    updateCertificate(input: $input, condition: $condition) {
+      id
+      slug
+      title
+      title_callout_1
+      title_callout_2
+      title_text
+      title_button_1_text
+      title_button_1_link
+      title_button_2_text
+      title_button_2_link
+      title_image
+      courses {
+        items {
+          id
+          certificateId
+          courseId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const deleteCertificate = /* GraphQL */ `
+  mutation DeleteCertificate(
+    $input: DeleteCertificateInput!
+    $condition: ModelCertificateConditionInput
+  ) {
+    deleteCertificate(input: $input, condition: $condition) {
+      id
+      slug
+      title
+      title_callout_1
+      title_callout_2
+      title_text
+      title_button_1_text
+      title_button_1_link
+      title_button_2_text
+      title_button_2_link
+      title_image
+      courses {
+        items {
+          id
+          certificateId
+          courseId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const createCourse = /* GraphQL */ `
+  mutation CreateCourse(
+    $input: CreateCourseInput!
+    $condition: ModelCourseConditionInput
+  ) {
+    createCourse(input: $input, condition: $condition) {
+      id
+      slug
+      category
+      title
+      subhead
+      media
+      video
+      hour
+      lessons
+      videos
+      price
+      articles {
+        items {
+          id
+          courseId
+          articleId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      certificate {
+        items {
+          id
+          certificateId
+          courseId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const updateCourse = /* GraphQL */ `
+  mutation UpdateCourse(
+    $input: UpdateCourseInput!
+    $condition: ModelCourseConditionInput
+  ) {
+    updateCourse(input: $input, condition: $condition) {
+      id
+      slug
+      category
+      title
+      subhead
+      media
+      video
+      hour
+      lessons
+      videos
+      price
+      articles {
+        items {
+          id
+          courseId
+          articleId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      certificate {
+        items {
+          id
+          certificateId
+          courseId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const deleteCourse = /* GraphQL */ `
+  mutation DeleteCourse(
+    $input: DeleteCourseInput!
+    $condition: ModelCourseConditionInput
+  ) {
+    deleteCourse(input: $input, condition: $condition) {
+      id
+      slug
+      category
+      title
+      subhead
+      media
+      video
+      hour
+      lessons
+      videos
+      price
+      articles {
+        items {
+          id
+          courseId
+          articleId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      certificate {
+        items {
+          id
+          certificateId
+          courseId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
     }
   }
 `;
@@ -221,6 +500,7 @@ export const createLesson = /* GraphQL */ `
           _deleted
           _lastChangedAt
           lessonTagsId
+          blogTagsId
           articleTagsId
         }
         nextToken
@@ -295,6 +575,7 @@ export const updateLesson = /* GraphQL */ `
           _deleted
           _lastChangedAt
           lessonTagsId
+          blogTagsId
           articleTagsId
         }
         nextToken
@@ -369,6 +650,7 @@ export const deleteLesson = /* GraphQL */ `
           _deleted
           _lastChangedAt
           lessonTagsId
+          blogTagsId
           articleTagsId
         }
         nextToken
@@ -388,32 +670,35 @@ export const deleteLesson = /* GraphQL */ `
     }
   }
 `;
-export const createCourse = /* GraphQL */ `
-  mutation CreateCourse(
-    $input: CreateCourseInput!
-    $condition: ModelCourseConditionInput
+export const createBlog = /* GraphQL */ `
+  mutation CreateBlog(
+    $input: CreateBlogInput!
+    $condition: ModelBlogConditionInput
   ) {
-    createCourse(input: $input, condition: $condition) {
+    createBlog(input: $input, condition: $condition) {
       id
       slug
       title
-      subhead
       media
-      video
-      articles {
+      content
+      author
+      tags {
         items {
           id
-          courseId
-          articleId
+          tag
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          lessonTagsId
+          blogTagsId
+          articleTagsId
         }
         nextToken
         startedAt
       }
+      date
       createdAt
       updatedAt
       _version
@@ -422,32 +707,35 @@ export const createCourse = /* GraphQL */ `
     }
   }
 `;
-export const updateCourse = /* GraphQL */ `
-  mutation UpdateCourse(
-    $input: UpdateCourseInput!
-    $condition: ModelCourseConditionInput
+export const updateBlog = /* GraphQL */ `
+  mutation UpdateBlog(
+    $input: UpdateBlogInput!
+    $condition: ModelBlogConditionInput
   ) {
-    updateCourse(input: $input, condition: $condition) {
+    updateBlog(input: $input, condition: $condition) {
       id
       slug
       title
-      subhead
       media
-      video
-      articles {
+      content
+      author
+      tags {
         items {
           id
-          courseId
-          articleId
+          tag
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          lessonTagsId
+          blogTagsId
+          articleTagsId
         }
         nextToken
         startedAt
       }
+      date
       createdAt
       updatedAt
       _version
@@ -456,32 +744,35 @@ export const updateCourse = /* GraphQL */ `
     }
   }
 `;
-export const deleteCourse = /* GraphQL */ `
-  mutation DeleteCourse(
-    $input: DeleteCourseInput!
-    $condition: ModelCourseConditionInput
+export const deleteBlog = /* GraphQL */ `
+  mutation DeleteBlog(
+    $input: DeleteBlogInput!
+    $condition: ModelBlogConditionInput
   ) {
-    deleteCourse(input: $input, condition: $condition) {
+    deleteBlog(input: $input, condition: $condition) {
       id
       slug
       title
-      subhead
       media
-      video
-      articles {
+      content
+      author
+      tags {
         items {
           id
-          courseId
-          articleId
+          tag
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
+          lessonTagsId
+          blogTagsId
+          articleTagsId
         }
         nextToken
         startedAt
       }
+      date
       createdAt
       updatedAt
       _version
@@ -513,6 +804,7 @@ export const createArticle = /* GraphQL */ `
           _deleted
           _lastChangedAt
           lessonTagsId
+          blogTagsId
           articleTagsId
         }
         nextToken
@@ -563,6 +855,7 @@ export const updateArticle = /* GraphQL */ `
           _deleted
           _lastChangedAt
           lessonTagsId
+          blogTagsId
           articleTagsId
         }
         nextToken
@@ -613,6 +906,7 @@ export const deleteArticle = /* GraphQL */ `
           _deleted
           _lastChangedAt
           lessonTagsId
+          blogTagsId
           articleTagsId
         }
         nextToken
@@ -632,6 +926,192 @@ export const deleteArticle = /* GraphQL */ `
         nextToken
         startedAt
       }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const createDayInLifeItem = /* GraphQL */ `
+  mutation CreateDayInLifeItem(
+    $input: CreateDayInLifeItemInput!
+    $condition: ModelDayInLifeItemConditionInput
+  ) {
+    createDayInLifeItem(input: $input, condition: $condition) {
+      id
+      name
+      desc
+      icon
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      careerDayInLifeId
+    }
+  }
+`;
+export const updateDayInLifeItem = /* GraphQL */ `
+  mutation UpdateDayInLifeItem(
+    $input: UpdateDayInLifeItemInput!
+    $condition: ModelDayInLifeItemConditionInput
+  ) {
+    updateDayInLifeItem(input: $input, condition: $condition) {
+      id
+      name
+      desc
+      icon
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      careerDayInLifeId
+    }
+  }
+`;
+export const deleteDayInLifeItem = /* GraphQL */ `
+  mutation DeleteDayInLifeItem(
+    $input: DeleteDayInLifeItemInput!
+    $condition: ModelDayInLifeItemConditionInput
+  ) {
+    deleteDayInLifeItem(input: $input, condition: $condition) {
+      id
+      name
+      desc
+      icon
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      careerDayInLifeId
+    }
+  }
+`;
+export const createCareer = /* GraphQL */ `
+  mutation CreateCareer(
+    $input: CreateCareerInput!
+    $condition: ModelCareerConditionInput
+  ) {
+    createCareer(input: $input, condition: $condition) {
+      id
+      slug
+      title
+      altName
+      subhead
+      media
+      dayInLife {
+        items {
+          id
+          name
+          desc
+          icon
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          careerDayInLifeId
+        }
+        nextToken
+        startedAt
+      }
+      cmpmCopy
+      cpsCopy
+      apcCopy
+      coreCopy
+      electiveCopy
+      freeCopy
+      beverageCopy
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const updateCareer = /* GraphQL */ `
+  mutation UpdateCareer(
+    $input: UpdateCareerInput!
+    $condition: ModelCareerConditionInput
+  ) {
+    updateCareer(input: $input, condition: $condition) {
+      id
+      slug
+      title
+      altName
+      subhead
+      media
+      dayInLife {
+        items {
+          id
+          name
+          desc
+          icon
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          careerDayInLifeId
+        }
+        nextToken
+        startedAt
+      }
+      cmpmCopy
+      cpsCopy
+      apcCopy
+      coreCopy
+      electiveCopy
+      freeCopy
+      beverageCopy
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const deleteCareer = /* GraphQL */ `
+  mutation DeleteCareer(
+    $input: DeleteCareerInput!
+    $condition: ModelCareerConditionInput
+  ) {
+    deleteCareer(input: $input, condition: $condition) {
+      id
+      slug
+      title
+      altName
+      subhead
+      media
+      dayInLife {
+        items {
+          id
+          name
+          desc
+          icon
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          careerDayInLifeId
+        }
+        nextToken
+        startedAt
+      }
+      cmpmCopy
+      cpsCopy
+      apcCopy
+      coreCopy
+      electiveCopy
+      freeCopy
+      beverageCopy
       createdAt
       updatedAt
       _version
@@ -1297,6 +1777,201 @@ export const deleteAPSSpeaker = /* GraphQL */ `
     }
   }
 `;
+export const createCertificateCourses = /* GraphQL */ `
+  mutation CreateCertificateCourses(
+    $input: CreateCertificateCoursesInput!
+    $condition: ModelCertificateCoursesConditionInput
+  ) {
+    createCertificateCourses(input: $input, condition: $condition) {
+      id
+      certificateId
+      courseId
+      certificate {
+        id
+        slug
+        title
+        title_callout_1
+        title_callout_2
+        title_text
+        title_button_1_text
+        title_button_1_link
+        title_button_2_text
+        title_button_2_link
+        title_image
+        courses {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      course {
+        id
+        slug
+        category
+        title
+        subhead
+        media
+        video
+        hour
+        lessons
+        videos
+        price
+        articles {
+          nextToken
+          startedAt
+        }
+        certificate {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const updateCertificateCourses = /* GraphQL */ `
+  mutation UpdateCertificateCourses(
+    $input: UpdateCertificateCoursesInput!
+    $condition: ModelCertificateCoursesConditionInput
+  ) {
+    updateCertificateCourses(input: $input, condition: $condition) {
+      id
+      certificateId
+      courseId
+      certificate {
+        id
+        slug
+        title
+        title_callout_1
+        title_callout_2
+        title_text
+        title_button_1_text
+        title_button_1_link
+        title_button_2_text
+        title_button_2_link
+        title_image
+        courses {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      course {
+        id
+        slug
+        category
+        title
+        subhead
+        media
+        video
+        hour
+        lessons
+        videos
+        price
+        articles {
+          nextToken
+          startedAt
+        }
+        certificate {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const deleteCertificateCourses = /* GraphQL */ `
+  mutation DeleteCertificateCourses(
+    $input: DeleteCertificateCoursesInput!
+    $condition: ModelCertificateCoursesConditionInput
+  ) {
+    deleteCertificateCourses(input: $input, condition: $condition) {
+      id
+      certificateId
+      courseId
+      certificate {
+        id
+        slug
+        title
+        title_callout_1
+        title_callout_2
+        title_text
+        title_button_1_text
+        title_button_1_link
+        title_button_2_text
+        title_button_2_link
+        title_image
+        courses {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      course {
+        id
+        slug
+        category
+        title
+        subhead
+        media
+        video
+        hour
+        lessons
+        videos
+        price
+        articles {
+          nextToken
+          startedAt
+        }
+        certificate {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
 export const createArticleRelatedCourses = /* GraphQL */ `
   mutation CreateArticleRelatedCourses(
     $input: CreateArticleRelatedCoursesInput!
@@ -1309,11 +1984,20 @@ export const createArticleRelatedCourses = /* GraphQL */ `
       course {
         id
         slug
+        category
         title
         subhead
         media
         video
+        hour
+        lessons
+        videos
+        price
         articles {
+          nextToken
+          startedAt
+        }
+        certificate {
           nextToken
           startedAt
         }
@@ -1365,11 +2049,20 @@ export const updateArticleRelatedCourses = /* GraphQL */ `
       course {
         id
         slug
+        category
         title
         subhead
         media
         video
+        hour
+        lessons
+        videos
+        price
         articles {
+          nextToken
+          startedAt
+        }
+        certificate {
           nextToken
           startedAt
         }
@@ -1421,11 +2114,20 @@ export const deleteArticleRelatedCourses = /* GraphQL */ `
       course {
         id
         slug
+        category
         title
         subhead
         media
         video
+        hour
+        lessons
+        videos
+        price
         articles {
+          nextToken
+          startedAt
+        }
+        certificate {
           nextToken
           startedAt
         }
