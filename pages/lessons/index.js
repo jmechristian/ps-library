@@ -1,24 +1,15 @@
 import React from 'react';
+
 import { Amplify, API, graphqlOperation } from 'aws-amplify';
 
-const people = [
-  {
-    name: 'Lindsay Walton',
-    title: 'Front-end Developer',
-    email: 'lindsay.walton@example.com',
-    role: 'Member',
-  },
-  // More people...
-];
-
-const Index = ({ articles }) => {
+const Index = ({ lessons }) => {
   return (
     <div className='max-w-7xl mx-auto px-6 md:px-0'>
       <div className='px-4 sm:px-6 lg:px-8 py-16'>
         <div className='sm:flex sm:items-center'>
           <div className='sm:flex-auto'>
             <h1 className='text-base font-semibold leading-6 text-gray-900'>
-              Articles
+              Lessons
             </h1>
           </div>
         </div>
@@ -43,13 +34,13 @@ const Index = ({ articles }) => {
                   </tr>
                 </thead>
                 <tbody className='divide-y divide-gray-200'>
-                  {articles.map((article) => (
+                  {lessons.map((article) => (
                     <tr key={article.id}>
                       <td className='whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0'>
                         {article.title}
                       </td>
                       <td className='whitespace-nowrap py-4 px-3 text-sm text-gray-500'>
-                        <a href={`/articles/${article.slug}`}>{article.slug}</a>
+                        <a href={`/lessons/${article.slug}`}>{article.slug}</a>
                       </td>
                     </tr>
                   ))}
@@ -65,12 +56,12 @@ const Index = ({ articles }) => {
 
 export async function getServerSideProps() {
   const query = /* GraphQL */ `
-    query ListArticles {
-      listArticles {
+    query ListLessons {
+      listLessons {
         items {
+          title
           id
           slug
-          title
         }
       }
     }
@@ -79,8 +70,8 @@ export async function getServerSideProps() {
   // Fetch data from external API
   try {
     const res = await API.graphql(graphqlOperation(query));
-    const articles = await res.data.listArticles.items;
-    return { props: { articles } };
+    const lessons = await res.data.listLessons.items;
+    return { props: { lessons } };
   } catch (error) {
     console.log(error);
   }

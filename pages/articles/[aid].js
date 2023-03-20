@@ -16,8 +16,6 @@ import ArticleMedia from '../../components/Articles/ArticleMedia';
 import RelatedCourses from '../../components/Shared/RelatedCourses';
 
 const Index = ({ article }) => {
-  console.log(article);
-
   return (
     <>
       <Head>
