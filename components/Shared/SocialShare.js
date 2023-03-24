@@ -34,7 +34,6 @@ const SocialShare = ({ title, subhead, slug }) => {
         <div className='flex gap-3 items-center justify-center mx-auto'>
           <FacebookShareButton
             url={`https://library.packagingschool.com/lessons/${slug}`}
-            hashtag={['#carbonneutral']}
             quote={subhead}
             onClick={() => socialShareClickHandler('facebook')}
             data-click-target='social_share'
