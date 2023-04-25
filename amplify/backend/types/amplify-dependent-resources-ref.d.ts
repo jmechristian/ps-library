@@ -1,11 +1,4 @@
 export type AmplifyDependentResourcesAttributes = {
-    "analytics": {
-        "autopacksummit": {
-            "Region": "string",
-            "Id": "string",
-            "appName": "string"
-        }
-    },
     "api": {
         "packbrain": {
             "GraphQLAPIKeyOutput": "string",
@@ -17,8 +10,6 @@ export type AmplifyDependentResourcesAttributes = {
         "packbrain": {
             "IdentityPoolId": "string",
             "IdentityPoolName": "string",
-            "HostedUIDomain": "string",
-            "OAuthMetadata": "string",
             "UserPoolId": "string",
             "UserPoolArn": "string",
             "UserPoolName": "string",
