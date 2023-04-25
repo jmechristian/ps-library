@@ -17,6 +17,12 @@ const CategoryType = {
   "DESIGN": "DESIGN"
 };
 
+const MediaType = {
+  "VIDEO": "VIDEO",
+  "IMAGE": "IMAGE",
+  "SLIDES": "SLIDES"
+};
+
 const { LessonSource, LessonLink, Tags, Certificate, Course, Article, Lesson, Blog, DayInLifeItem, Career, APS, User, CMPMForm, Company, APSSpeaker, CertificateCourses, ArticleRelatedCourses, APSUser, APSSponsor, RegistrationCode } = initSchema(schema);
 
 export {
@@ -41,5 +47,6 @@ export {
   APSSponsor,
   ModuleType,
   CategoryType,
+  MediaType,
   RegistrationCode
 };

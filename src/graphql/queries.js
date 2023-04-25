@@ -722,6 +722,7 @@ export const getLesson = /* GraphQL */ `
       subhead
       type
       media
+      mediaType
       seoImage
       content
       sources {
@@ -799,6 +800,7 @@ export const listLessons = /* GraphQL */ `
         subhead
         type
         media
+        mediaType
         seoImage
         content
         sources {
@@ -850,6 +852,7 @@ export const syncLessons = /* GraphQL */ `
         subhead
         type
         media
+        mediaType
         seoImage
         content
         sources {
@@ -903,6 +906,7 @@ export const lessonsBySlug = /* GraphQL */ `
         subhead
         type
         media
+        mediaType
         seoImage
         content
         sources {

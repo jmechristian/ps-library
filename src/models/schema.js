@@ -813,6 +813,15 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "mediaType": {
+                    "name": "mediaType",
+                    "isArray": false,
+                    "type": {
+                        "enum": "MediaType"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "seoImage": {
                     "name": "seoImage",
                     "isArray": false,
@@ -2592,6 +2601,14 @@ export const schema = {
                 "SUPPLYCHAIN",
                 "DESIGN"
             ]
+        },
+        "MediaType": {
+            "name": "MediaType",
+            "values": [
+                "VIDEO",
+                "IMAGE",
+                "SLIDES"
+            ]
         }
     },
     "nonModels": {
@@ -2608,5 +2625,5 @@ export const schema = {
             }
         }
     },
-    "version": "0c7c8bfd482326b7402b4a4e593638f6"
+    "version": "138f3348a9df02e044fecf570d89331f"
 };

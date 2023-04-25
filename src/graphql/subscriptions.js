@@ -442,6 +442,7 @@ export const onCreateLesson = /* GraphQL */ `
       subhead
       type
       media
+      mediaType
       seoImage
       content
       sources {
@@ -514,6 +515,7 @@ export const onUpdateLesson = /* GraphQL */ `
       subhead
       type
       media
+      mediaType
       seoImage
       content
       sources {
@@ -586,6 +588,7 @@ export const onDeleteLesson = /* GraphQL */ `
       subhead
       type
       media
+      mediaType
       seoImage
       content
       sources {

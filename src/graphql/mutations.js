@@ -490,6 +490,7 @@ export const createLesson = /* GraphQL */ `
       subhead
       type
       media
+      mediaType
       seoImage
       content
       sources {
@@ -565,6 +566,7 @@ export const updateLesson = /* GraphQL */ `
       subhead
       type
       media
+      mediaType
       seoImage
       content
       sources {
@@ -640,6 +642,7 @@ export const deleteLesson = /* GraphQL */ `
       subhead
       type
       media
+      mediaType
       seoImage
       content
       sources {

@@ -9,6 +9,7 @@ import LessonsHeader from '../../components/Lessons/LessonsHeader';
 import LessonsMedia from '../../components/Lessons/LessonsMedia';
 import LinksButton from '../../components/Shared/LinksButton';
 import SocialShare from '../../components/Shared/SocialShare';
+import LessonSlides from '../../components/Lessons/LessonSlides';
 
 const Index = ({ lesson }) => {
   return (
@@ -20,10 +21,14 @@ const Index = ({ lesson }) => {
         <meta property='og:title' content={lesson.title} />
         <meta property='og:description' content={lesson.subhead} />
       </Head>
-      <div className='flex flex-col gap-12 pt-12 dark:bg-real-dark'>
+      <div className='flex flex-col gap-12 pt-8 dark:bg-real-dark'>
         <LessonsHeader title={lesson.title} subhead={lesson.subhead} />
         <div>
-          <LessonsMedia videoUrl={lesson.media} />
+          {lesson.mediaType === 'SLIDES' ? (
+            <LessonSlides />
+          ) : (
+            <LessonsMedia videoUrl={lesson.media} />
+          )}
           <LessonActivity
             actionCTA={lesson.actionCTA}
             actionSubhead={lesson.actionSubhead}
@@ -92,6 +97,7 @@ export async function getStaticProps({ params }) {
             }
           }
           media
+          mediaType
           content
           objectives
           seoImage

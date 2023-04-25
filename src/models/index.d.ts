@@ -15,6 +15,12 @@ export enum CategoryType {
   DESIGN = "DESIGN"
 }
 
+export enum MediaType {
+  VIDEO = "VIDEO",
+  IMAGE = "IMAGE",
+  SLIDES = "SLIDES"
+}
+
 export declare class RegistrationCode {
   readonly code?: string | null;
   constructor(init: ModelInit<RegistrationCode>);
@@ -156,6 +162,7 @@ export declare class Lesson {
   readonly subhead?: string | null;
   readonly type?: ModuleType | keyof typeof ModuleType | null;
   readonly media?: string | null;
+  readonly mediaType?: MediaType | keyof typeof MediaType | null;
   readonly seoImage?: string | null;
   readonly content?: string | null;
   readonly sources?: (LessonSource | null)[] | null;

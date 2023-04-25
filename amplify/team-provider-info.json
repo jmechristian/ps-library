@@ -12,13 +12,6 @@
       "AmplifyAppId": "d3erwqq9qelccz"
     },
     "categories": {
-      "notifications": {
-        "Pinpoint": {
-          "Name": "autopacksummit-staging",
-          "Id": "196d27043c7a4001aa96a55edb90d78e",
-          "Region": "us-east-1"
-        }
-      },
       "auth": {
         "packbrain": {}
       },
