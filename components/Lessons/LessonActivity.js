@@ -1,6 +1,4 @@
-import { resourceRefHandler } from '../Util/ResourceClickGTAG';
 import { useState } from 'react';
-import { Dialog } from '@headlessui/react';
 import ModalWrapper from '../Shared/ModalWrapper';
 
 /* This example requires Tailwind CSS v3.0+ */

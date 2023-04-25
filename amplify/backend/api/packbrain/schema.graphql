@@ -31,6 +31,12 @@ enum CategoryType {
   DESIGN
 }
 
+enum MediaType {
+  VIDEO
+  IMAGE
+  SLIDES
+}
+
 type Certificate @model @searchable @auth(rules: [{ allow: public }]) {
   id: ID!
   slug: String! @index(name: "certificateByTitle")
@@ -80,6 +86,7 @@ type Lesson @model @auth(rules: [{ allow: public }]) {
   subhead: String
   type: ModuleType
   media: String
+  mediaType: MediaType
   seoImage: String
   content: String
   sources: [LessonSource] @hasMany
