@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { wrap } from 'popmotion';
 import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/24/solid';
+import SlideBar from '../Shared/SlideBar';
 
 const SlidesPlayer = ({ images }) => {
   const [[page, direction], setPage] = useState([0, 0]);
@@ -86,6 +87,7 @@ const SlidesPlayer = ({ images }) => {
           </div>
         </div>
       </div>
+      <SlideBar slides={images} page={page} unlocked={true} />
     </>
   );
 };

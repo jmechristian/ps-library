@@ -7,7 +7,6 @@ const LessonSlides = ({ slides }) => {
     <div className='mx-auto max-w-7xl aspect-square md:aspect-video w-full'>
       <div className='w-full h-full bg-dark'>
         <SlidesPlayer images={slides} />
-        <SlideBar slides={slides} />
       </div>
     </div>
   );
