@@ -25,7 +25,7 @@ const Index = ({ lesson }) => {
         <LessonsHeader title={lesson.title} subhead={lesson.subhead} />
         <div>
           {lesson.mediaType === 'SLIDES' ? (
-            <LessonSlides />
+            <LessonSlides slides={lesson.slides ? lesson.slides : []} />
           ) : (
             <LessonsMedia videoUrl={lesson.media} />
           )}
