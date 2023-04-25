@@ -1,10 +1,7 @@
 import React, { useEffect } from 'react';
 import Head from 'next/head';
 
-import { Amplify, API, graphqlOperation } from 'aws-amplify';
-
-import awsExports from '../../src/aws-exports';
-Amplify.configure(awsExports);
+import { API, graphqlOperation } from 'aws-amplify';
 
 const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
 const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY;

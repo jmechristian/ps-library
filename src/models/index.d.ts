@@ -163,6 +163,7 @@ export declare class Lesson {
   readonly type?: ModuleType | keyof typeof ModuleType | null;
   readonly media?: string | null;
   readonly mediaType?: MediaType | keyof typeof MediaType | null;
+  readonly slides?: (string | null)[] | null;
   readonly seoImage?: string | null;
   readonly content?: string | null;
   readonly sources?: (LessonSource | null)[] | null;

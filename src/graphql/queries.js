@@ -723,6 +723,7 @@ export const getLesson = /* GraphQL */ `
       type
       media
       mediaType
+      slides
       seoImage
       content
       sources {
@@ -801,6 +802,7 @@ export const listLessons = /* GraphQL */ `
         type
         media
         mediaType
+        slides
         seoImage
         content
         sources {
@@ -853,6 +855,7 @@ export const syncLessons = /* GraphQL */ `
         type
         media
         mediaType
+        slides
         seoImage
         content
         sources {
@@ -907,6 +910,7 @@ export const lessonsBySlug = /* GraphQL */ `
         type
         media
         mediaType
+        slides
         seoImage
         content
         sources {

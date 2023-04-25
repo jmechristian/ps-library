@@ -21,7 +21,7 @@ const Index = ({ lesson }) => {
         <meta property='og:title' content={lesson.title} />
         <meta property='og:description' content={lesson.subhead} />
       </Head>
-      <div className='flex flex-col gap-12 pt-8 dark:bg-real-dark'>
+      <div className='flex flex-col gap-16 pt-12 dark:bg-real-dark'>
         <LessonsHeader title={lesson.title} subhead={lesson.subhead} />
         <div>
           {lesson.mediaType === 'SLIDES' ? (
@@ -101,6 +101,7 @@ export async function getStaticProps({ params }) {
           content
           objectives
           seoImage
+          slides
           slug
           actionCTA
           actionLink

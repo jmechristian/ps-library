@@ -822,6 +822,14 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "slides": {
+                    "name": "slides",
+                    "isArray": true,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true
+                },
                 "seoImage": {
                     "name": "seoImage",
                     "isArray": false,
@@ -2625,5 +2633,5 @@ export const schema = {
             }
         }
     },
-    "version": "138f3348a9df02e044fecf570d89331f"
+    "version": "2251dc0ab3e18153af401ce2431f5678"
 };

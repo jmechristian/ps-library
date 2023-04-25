@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { wrap } from 'popmotion';
+import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/24/solid';
 
 const SlidesPlayer = ({ images }) => {
   const [[page, direction], setPage] = useState([0, 0]);
@@ -39,38 +40,51 @@ const SlidesPlayer = ({ images }) => {
 
   return (
     <>
-      <AnimatePresence initial={false} custom={direction}>
-        <motion.img
-          key={page}
-          src={images[imageIndex]}
-          custom={direction}
-          variants={variants}
-          initial='enter'
-          animate='center'
-          exit='exit'
-          transition={{
-            x: { type: 'spring', stiffness: 300, damping: 30 },
-            opacity: { duration: 0.2 },
-          }}
-          drag='x'
-          dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={1}
-          onDragEnd={(e, { offset, velocity }) => {
-            const swipe = swipePower(offset.x, velocity.x);
+      <div className='relative h-full flex flex-col items-center overflow-hidden'>
+        <AnimatePresence initial={false} custom={direction}>
+          <motion.img
+            className='w-auto h-auto max-h-full absolute'
+            key={page}
+            src={images[imageIndex]}
+            custom={direction}
+            variants={variants}
+            initial='enter'
+            animate='center'
+            exit='exit'
+            transition={{
+              x: { type: 'spring', stiffness: 300, damping: 30 },
+              opacity: { duration: 0.2 },
+            }}
+            drag='x'
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={1}
+            onDragEnd={(e, { offset, velocity }) => {
+              const swipe = swipePower(offset.x, velocity.x);
 
-            if (swipe < -swipeConfidenceThreshold) {
-              paginate(1);
-            } else if (swipe > swipeConfidenceThreshold) {
-              paginate(-1);
-            }
-          }}
-        />
-      </AnimatePresence>
-      <div className='next' onClick={() => paginate(1)}>
-        {'‣'}
-      </div>
-      <div className='prev' onClick={() => paginate(-1)}>
-        {'‣'}
+              if (swipe < -swipeConfidenceThreshold) {
+                paginate(1);
+              } else if (swipe > swipeConfidenceThreshold) {
+                paginate(-1);
+              }
+            }}
+          />
+        </AnimatePresence>
+        <div
+          className='next absolute z-10 right-10 top-[90%] md:top-1/2 -translate-y-1/2'
+          onClick={() => paginate(1)}
+        >
+          <div className='bg-real-dark rounded-full h-10 md:h-16 md:w-16 w-10 shadow-lg flex justify-center items-center'>
+            <ChevronRightIcon className='w-6 h-6 fill-white' />
+          </div>
+        </div>
+        <div
+          className='prev absolute z-10 left-10 top-[90%] md:top-1/2 -translate-y-1/2'
+          onClick={() => paginate(-1)}
+        >
+          <div className='bg-real-dark rounded-full h-10 w-10 md:h-16 md:w-16 shadow-lg flex justify-center items-center'>
+            <ChevronLeftIcon className='w-6 h-6 fill-white' />
+          </div>
+        </div>
       </div>
     </>
   );

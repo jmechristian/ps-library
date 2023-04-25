@@ -34,7 +34,7 @@ export default function LessonActivity({
         actionLink={actionLink}
         lessonTitle={lessonTitle}
       />
-      <div className='bg-indigo-100 dark:bg-neutral-800 max-w-7xl mx-auto rounded-b-xl'>
+      <div className='bg-indigo-100 dark:bg-base-dark max-w-7xl mx-auto rounded-b-xl'>
         <div className='mx-auto max-w-prose lg:max-w-5xl px-8 py-20 lg:py-32 lg:flex lg:items-center lg:justify-between lg:px-8'>
           <div className='text-left  max-w-2xl '>
             <h2 className='text-lg font-semibold text-slate-600 dark:text-clemson  max-3-3xl'>
