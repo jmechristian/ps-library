@@ -2,40 +2,41 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { wrap } from 'popmotion';
 
-const variants = {
-  enter: (direction) => {
-    return {
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0,
-    };
-  },
-  center: {
-    zIndex: 1,
-    x: 0,
-    opacity: 1,
-  },
-  exit: (direction) => {
-    return {
-      zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
-      opacity: 0,
-    };
-  },
-};
+// const variants = {
+//   enter: (direction) => {
+//     return {
+//       x: direction > 0 ? 1000 : -1000,
+//       opacity: 0,
+//     };
+//   },
+//   center: {
+//     zIndex: 1,
+//     x: 0,
+//     opacity: 1,
+//   },
+//   exit: (direction) => {
+//     return {
+//       zIndex: 0,
+//       x: direction < 0 ? 1000 : -1000,
+//       opacity: 0,
+//     };
+//   },
+// };
 
-const swipeConfidenceThreshold = 10000;
-const swipePower = (offset, velocity) => {
-  return Math.abs(offset) * velocity;
-};
+// const swipeConfidenceThreshold = 10000;
+// const swipePower = (offset, velocity) => {
+//   return Math.abs(offset) * velocity;
+// };
 
-const imageIndex = wrap(0, images.length, page);
+// const imageIndex = wrap(0, images.length, page);
 
-const paginate = (newDirection) => {
-  setPage([page + newDirection, newDirection]);
-};
+// const paginate = (newDirection) => {
+//   setPage([page + newDirection, newDirection]);
+// };
 
 const SlidesPlayer = () => {
   const [[page, direction], setPage] = useState([0, 0]);
+  const [images, setImages] = useState([]);
   return (
     <>
       <AnimatePresence initial={false} custom={direction}>
