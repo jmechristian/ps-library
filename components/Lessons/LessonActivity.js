@@ -40,7 +40,7 @@ export default function LessonActivity({
             <h2 className='text-lg font-semibold text-slate-600 dark:text-clemson  max-3-3xl'>
               Take Action
             </h2>
-            <p className='mt-1 text-4xl font-greycliff font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-6xl'>
+            <p className='mt-1 text-4xl font-greycliff font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl'>
               {actionCTA}
             </p>
             <p className='mt-5 text-lg md:text-xl text-gray-500 dark:text-white/70'>
