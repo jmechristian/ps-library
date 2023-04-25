@@ -2,8 +2,6 @@ import React from 'react';
 import LearningObjectives from './LearningObjectives';
 
 const LessonsContent = ({ content, objectives }) => {
-  const image =
-    'https://packschool.s3.amazonaws.com/lessons/carbon-neutral-part-2/box2.webp';
   return (
     <div className='relative overflow-hidden bg-white dark:bg-real-dark'>
       {/* <div className='hidden lg:absolute lg:inset-y-0 lg:block lg:h-full lg:w-full lg:[overflow-anchor:none]'>
@@ -92,7 +90,7 @@ const LessonsContent = ({ content, objectives }) => {
       </div> */}
       <div className='relative px-6 lg:px-8 lg:pb-16'>
         <div className='prose prose-lg md:prose-xl prose-orange dark:prose-orange mx-auto text-slate-500 dark:text-white/90'>
-          <div className='md:pb-16'>
+          <div className='md:pb-6'>
             <h3 className='font-greycliff font-bold text-3xl dark:text-white'>
               Learning Objectives
             </h3>
@@ -102,14 +100,6 @@ const LessonsContent = ({ content, objectives }) => {
             dangerouslySetInnerHTML={{ __html: content }}
             className='bad-html'
           ></div>
-          {/* <div className='py-3'>
-            <button
-              type='button'
-              className='inline-flex items-center rounded-md border border-gray-300 bg-white px-6 py-3 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
-            >
-              View Full Transcript
-            </button>
-          </div> */}
         </div>
       </div>
     </div>

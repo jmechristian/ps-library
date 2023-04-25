@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Amplify, API, graphqlOperation } from 'aws-amplify';
+import { API, graphqlOperation } from 'aws-amplify';
 
 const Index = ({ lessons }) => {
   return (

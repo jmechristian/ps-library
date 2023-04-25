@@ -63,7 +63,7 @@ const footerNavigation = {
 
 export default function Footer() {
   return (
-    <footer className='bg-slate-900 dark:bg-real-dark'>
+    <footer className='bg-dark'>
       <div className='mx-auto max-w-md overflow-hidden py-12 px-6 sm:max-w-3xl lg:max-w-7xl lg:px-8'>
         <nav
           className='-mx-5 -my-2 flex flex-wrap justify-center'

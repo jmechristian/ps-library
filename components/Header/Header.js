@@ -81,7 +81,7 @@ export default function Header() {
   const toggleSwitch = () => toggleDark(!dark);
 
   return (
-    <Popover className='relative bg-slate-900 dark:bg-dark'>
+    <Popover className='relative bg-dark'>
       <div className='flex items-center justify-between p-6 md:justify-start md:space-x-10 lg:max-w-7xl lg:mx-auto lg:p-0 lg:py-6 lg:px-6 xl:px-0'>
         <div className='flex justify-start lg:w-0 lg:flex-1'>
           <a href='https://packagingschool.com'>
