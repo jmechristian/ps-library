@@ -1,6 +1,5 @@
 import React from 'react';
 import SlidesPlayer from './SlidesPlayer';
-import SlideBar from '../Shared/SlideBar';
 
 const LessonSlides = ({ slides }) => {
   return (

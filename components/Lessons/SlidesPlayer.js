@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { wrap } from 'popmotion';
 import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/24/solid';
 import SlideBar from '../Shared/SlideBar';
+import { LessonContext } from '../../pages/lessons/[id]';
 
 const SlidesPlayer = ({ images }) => {
   const [[page, direction], setPage] = useState([0, 0]);
+  const { unlocked, toggleUnlocked } = useContext(LessonContext);
 
   const variants = {
     enter: (direction) => {
@@ -37,6 +39,9 @@ const SlidesPlayer = ({ images }) => {
 
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
+    if (newDirection === 1 && page === images.length - 1) {
+      toggleUnlocked(true);
+    }
   };
 
   return (

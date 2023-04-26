@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { LockOpenIcon } from '@heroicons/react/24/solid';
+import { LessonContext } from '../../pages/lessons/[id]';
 
-const SlideBar = ({ slides, page, unlocked }) => {
+const SlideBar = ({ slides, page }) => {
+  const { unlocked, toggleUnlocked } = useContext(LessonContext);
   return (
     <div className='flex gap-1 items-center w-full pr-1 bg-black'>
       <div className='flex items-center gap-1 w-full h-min'>

@@ -10,6 +10,7 @@ export default function LessonActivity({
   actionTitle,
   lessonTitle,
   name,
+  mediaType,
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -34,16 +35,16 @@ export default function LessonActivity({
         actionLink={actionLink}
         lessonTitle={lessonTitle}
       />
-      <div className='bg-indigo-100 dark:bg-base-dark max-w-7xl mx-auto rounded-b-xl'>
+      <div className='bg-base-dark max-w-7xl mx-auto rounded-b-xl'>
         <div className='mx-auto max-w-prose lg:max-w-5xl px-8 py-20 lg:py-32 lg:flex lg:items-center lg:justify-between lg:px-8'>
           <div className='text-left  max-w-2xl '>
-            <h2 className='text-lg font-semibold text-slate-600 dark:text-clemson  max-3-3xl'>
+            <h2 className='text-xl font-semibold text-clemson  max-3-3xl'>
               Take Action
             </h2>
-            <p className='mt-1 text-4xl font-greycliff font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl'>
+            <p className='mt-1 text-4xl font-greycliff font-bold tracking-tight text-white sm:text-5xl'>
               {actionCTA}
             </p>
-            <p className='mt-5 text-lg md:text-xl text-gray-500 dark:text-white/70'>
+            <p className='mt-5 text-lg md:text-xl text-white/70'>
               {actionSubhead}
             </p>
           </div>

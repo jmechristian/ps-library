@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
 import Head from 'next/head';
 
 import { API, graphqlOperation } from 'aws-amplify';
@@ -11,7 +11,14 @@ import LinksButton from '../../components/Shared/LinksButton';
 import SocialShare from '../../components/Shared/SocialShare';
 import LessonSlides from '../../components/Lessons/LessonSlides';
 
+export const LessonContext = createContext({
+  unlocked: Boolean,
+  toggleUnlocked: () => {},
+});
+
 const Index = ({ lesson }) => {
+  const [unlocked, setUnlocked] = useState(false);
+
   return (
     <>
       <Head>
@@ -21,35 +28,43 @@ const Index = ({ lesson }) => {
         <meta property='og:title' content={lesson.title} />
         <meta property='og:description' content={lesson.subhead} />
       </Head>
-      <div className='flex flex-col gap-16 pt-12 dark:bg-real-dark'>
-        <LessonsHeader title={lesson.title} subhead={lesson.subhead} />
-        <div>
-          {lesson.mediaType === 'SLIDES' ? (
-            <LessonSlides slides={lesson.slides ? lesson.slides : []} />
-          ) : (
-            <LessonsMedia videoUrl={lesson.media} />
-          )}
-          <LessonActivity
-            actionCTA={lesson.actionCTA}
-            actionSubhead={lesson.actionSubhead}
-            actionLink={lesson.actionLink}
-            name={lesson.name}
-            actionTitle={lesson.actionLinkTitle}
-            actionExample={lesson.actionExample}
-            lessonTitle={lesson.title}
+      <LessonContext.Provider
+        value={{
+          unlocked: unlocked,
+          toggleUnlocked: (unlocked) => setUnlocked(!unlocked),
+        }}
+      >
+        <div className='flex flex-col gap-16 pt-12 dark:bg-real-dark'>
+          <LessonsHeader title={lesson.title} subhead={lesson.subhead} />
+          <div>
+            {lesson.mediaType === 'SLIDES' ? (
+              <LessonSlides slides={lesson.slides ? lesson.slides : []} />
+            ) : (
+              <LessonsMedia videoUrl={lesson.media} />
+            )}
+            <LessonActivity
+              actionCTA={lesson.actionCTA}
+              actionSubhead={lesson.actionSubhead}
+              actionLink={lesson.actionLink}
+              name={lesson.name}
+              actionTitle={lesson.actionLinkTitle}
+              actionExample={lesson.actionExample}
+              lessonTitle={lesson.title}
+              mediaType={lesson.mediaType && lesson.mediaType}
+            />
+          </div>
+          <LessonsContent
+            content={lesson.content}
+            objectives={lesson.objectives}
           />
+          <SocialShare
+            title={lesson.title}
+            slug={lesson.slug}
+            subhead={lesson.subhead}
+          />
+          <LinksButton sources={lesson.sources.items} />
         </div>
-        <LessonsContent
-          content={lesson.content}
-          objectives={lesson.objectives}
-        />
-        <SocialShare
-          title={lesson.title}
-          slug={lesson.slug}
-          subhead={lesson.subhead}
-        />
-        <LinksButton sources={lesson.sources.items} />
-      </div>
+      </LessonContext.Provider>
     </>
   );
 };
