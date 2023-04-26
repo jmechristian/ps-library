@@ -88,9 +88,9 @@ const LessonsContent = ({ content, objectives }) => {
           </svg>
         </div>
       </div> */}
-      <div className='relative px-6 lg:px-8 lg:pb-16'>
+      <div className='relative px-6 lg:px-8 lg:pb-8'>
         <div className='prose prose-lg md:prose-xl prose-orange dark:prose-orange mx-auto text-slate-500 dark:text-white/90'>
-          <div className='md:pb-12'>
+          <div className='md:pb-6'>
             <h3 className='font-greycliff font-bold text-3xl dark:text-white'>
               Learning Objectives
             </h3>

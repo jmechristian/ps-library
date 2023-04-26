@@ -39,7 +39,7 @@ const LearningObjectives = ({ objectives }) => {
     objectives && (
       <ul
         role='list'
-        className='divide-y divide-gray-200 p-0 pb-3 mb-24 border-b border-b-white/60'
+        className='divide-y divide-gray-200 p-0 pb-3 border-b dark:border-b-white/60'
       >
         {objectives.map((obj) => (
           <li key={obj} className='list-none p-0'>
