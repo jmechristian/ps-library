@@ -1,5 +1,6 @@
 import React, { createContext, useState } from 'react';
 import Head from 'next/head';
+import { listLessons } from '../../src/graphql/queries';
 
 import { API, graphqlOperation } from 'aws-amplify';
 
@@ -10,15 +11,15 @@ import LessonsMedia from '../../components/Lessons/LessonsMedia';
 import LinksButton from '../../components/Shared/LinksButton';
 import SocialShare from '../../components/Shared/SocialShare';
 import LessonSlides from '../../components/Lessons/LessonSlides';
+import RelatedLessons from '../../components/Shared/RelatedLessons';
 
 export const LessonContext = createContext({
   unlocked: Boolean,
   toggleUnlocked: () => {},
 });
 
-const Index = ({ lesson }) => {
+const Index = ({ lesson, lessons }) => {
   const [unlocked, setUnlocked] = useState(false);
-
   return (
     <>
       <Head>
@@ -57,6 +58,7 @@ const Index = ({ lesson }) => {
             content={lesson.content}
             objectives={lesson.objectives}
           />
+          <RelatedLessons relatedLessons={lessons} lessonId={lesson.id} />
           <SocialShare
             title={lesson.title}
             slug={lesson.slug}
@@ -155,7 +157,10 @@ export async function getStaticProps({ params }) {
   const res = await API.graphql(graphqlOperation(getLesson, variables));
   const lesson = await res.data.lessonsBySlug.items[0];
 
-  return { props: { lesson }, revalidate: 10 };
+  const getLessons = await API.graphql({ query: listLessons });
+  const lessons = getLessons.data.listLessons.items;
+
+  return { props: { lesson, lessons }, revalidate: 10 };
 }
 
 export default Index;
