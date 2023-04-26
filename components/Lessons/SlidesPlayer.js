@@ -7,7 +7,7 @@ import { LessonContext } from '../../pages/lessons/[id]';
 import { usePageVisibility } from '../../lib/visibility';
 import dynamic from 'next/dynamic';
 
-const SlidesPlayer = ({ images }) => {
+const SlidesPlayer = ({ images, title }) => {
   const [[page, direction], setPage] = useState([0, 0]);
   const { unlocked, toggleUnlocked, setPageContext } =
     useContext(LessonContext);
@@ -15,9 +15,7 @@ const SlidesPlayer = ({ images }) => {
   const isVisible = usePageVisibility();
 
   if (!isVisible) {
-    console.log('Here');
-  } else {
-    console.log('exited', page);
+    gtag('event', 'slide_exit', { slide: page, lesson_title: title });
   }
 
   useEffect(() => {
