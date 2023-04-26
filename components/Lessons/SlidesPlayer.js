@@ -77,7 +77,7 @@ const SlidesPlayer = ({ images }) => {
         </AnimatePresence>
         {page != images.length - 1 && (
           <div
-            className='next absolute z-10 right-10 top-[90%] md:top-1/2 -translate-y-1/2'
+            className='next absolute z-[2] right-10 top-[90%] md:top-1/2 -translate-y-1/2'
             onClick={() => paginate(1)}
           >
             <div className='bg-real-dark rounded-full h-10 md:h-16 md:w-16 w-10 shadow-lg flex justify-center items-center'>
@@ -87,7 +87,7 @@ const SlidesPlayer = ({ images }) => {
         )}
         {page != 0 && (
           <div
-            className='prev absolute z-10 left-10 top-[90%] md:top-1/2 -translate-y-1/2'
+            className='prev absolute z-[2] left-10 top-[90%] md:top-1/2 -translate-y-1/2'
             onClick={() => paginate(-1)}
           >
             <div className='bg-real-dark rounded-full h-10 w-10 md:h-16 md:w-16 shadow-lg flex justify-center items-center'>

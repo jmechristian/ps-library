@@ -7,13 +7,13 @@ const LinksButton = ({ sources }) => {
     return a.position - b.position;
   });
   return (
-    <Popover className='fixed bottom-0 right-8 drop-shadow-xl '>
+    <Popover className='fixed bottom-0 right-8 drop-shadow-xl z-10'>
       <Popover.Button className='w-16 md:w-[400px]'>
-        <div className='bg-slate-800 text-white font-medium text-lg flex items-center py-3 px-6 gap-2 rounded-t-lg'>
+        <div className='bg-dark text-white font-medium text-lg flex items-center py-3 px-6 gap-2 rounded-t-lg'>
           <div>
             <LinkIcon className='w-6 h-6 stroke-white' />
           </div>
-          <div className='hidden md:block'>Lesson Links</div>
+          <div className='hidden md:block'>Lesson Sources</div>
         </div>
       </Popover.Button>
 
