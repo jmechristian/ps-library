@@ -11,14 +11,6 @@ const SlidesPlayer = ({ images }) => {
   const { unlocked, toggleUnlocked, setPageContext } =
     useContext(LessonContext);
 
-  const isVisible = usePageVisibility();
-
-  if (isVisible) {
-    console.log('Here');
-  } else {
-    console.log('exited', page);
-  }
-
   useEffect(() => {
     setPageContext(page);
   }, [page, setPageContext]);
