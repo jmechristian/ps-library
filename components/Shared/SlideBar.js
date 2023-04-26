@@ -11,7 +11,7 @@ const SlideBar = ({ slides, page }) => {
           slides.map((sl, index) => (
             <div
               key={index}
-              className={`h-2 ${
+              className={`md:h-2 h-1.5 ${
                 page >= index ? 'bg-clemson' : 'bg-white'
               } w-full rounded-sm`}
             />
@@ -19,7 +19,7 @@ const SlideBar = ({ slides, page }) => {
       </div>
       <div>
         <LockOpenIcon
-          className={`w-5 h-5 ${
+          className={`w-4 h-4 ${
             page === slides.length - 1 || unlocked
               ? 'fill-clemson'
               : 'fill-white'
