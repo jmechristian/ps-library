@@ -39,7 +39,7 @@ const SlidesPlayer = ({ images }) => {
 
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
-    if (newDirection === 1 && page === images.length - 1) {
+    if (newDirection === 1 && page === images.length - 2) {
       toggleUnlocked(true);
     }
   };
@@ -75,14 +75,16 @@ const SlidesPlayer = ({ images }) => {
             }}
           />
         </AnimatePresence>
-        <div
-          className='next absolute z-10 right-10 top-[90%] md:top-1/2 -translate-y-1/2'
-          onClick={() => paginate(1)}
-        >
-          <div className='bg-real-dark rounded-full h-10 md:h-16 md:w-16 w-10 shadow-lg flex justify-center items-center'>
-            <ChevronRightIcon className='w-6 h-6 fill-white' />
+        {page != images.length - 1 && (
+          <div
+            className='next absolute z-10 right-10 top-[90%] md:top-1/2 -translate-y-1/2'
+            onClick={() => paginate(1)}
+          >
+            <div className='bg-real-dark rounded-full h-10 md:h-16 md:w-16 w-10 shadow-lg flex justify-center items-center'>
+              <ChevronRightIcon className='w-6 h-6 fill-white' />
+            </div>
           </div>
-        </div>
+        )}
         <div
           className='prev absolute z-10 left-10 top-[90%] md:top-1/2 -translate-y-1/2'
           onClick={() => paginate(-1)}

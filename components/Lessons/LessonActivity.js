@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import ModalWrapper from '../Shared/ModalWrapper';
+import { LessonContext } from '../../pages/lessons/[id]';
+import { LockOpenIcon, LockClosedIcon } from '@heroicons/react/24/solid';
 
 /* This example requires Tailwind CSS v3.0+ */
 export default function LessonActivity({
@@ -13,6 +15,7 @@ export default function LessonActivity({
   mediaType,
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const { unlocked } = useContext(LessonContext);
 
   const actionClickHandler = (e) => {
     e.preventDefault();
@@ -48,24 +51,53 @@ export default function LessonActivity({
               {actionSubhead}
             </p>
           </div>
-          <div className='mt-8 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0'>
-            <button
-              className='rounded-md cursor-pointer bg-clemson px-6 py-3 text-lg lg:text-2xl font-semibold leading-7 text-white shadow-sm hover:bg-slate-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600'
-              data-click-target='resource'
-              data-click-name={name}
-              onClick={(event) => actionClickHandler(event)}
-              target='_blank'
-              rel='noReferrer'
-            >
-              Download
-            </button>
-            <a
-              href='#'
-              className='hidden text-base font-semibold leading-7 text-gray-900'
-            >
-              Show & Tell <span aria-hidden='true'>→</span>
-            </a>
-          </div>
+          {mediaType === 'SLIDES' ? (
+            <div className='mt-8 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0'>
+              {unlocked ? (
+                <button
+                  className='rounded-md cursor-pointer bg-clemson px-6 py-3 text-lg lg:text-2xl font-semibold leading-7 text-white shadow-sm hover:bg-slate-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600'
+                  data-click-target='resource'
+                  data-click-name={name}
+                  onClick={(event) => actionClickHandler(event)}
+                  target='_blank'
+                  rel='noReferrer'
+                >
+                  Download
+                </button>
+              ) : (
+                <button
+                  className='rounded-md cursor-pointer bg-clemson px-6 py-3 text-lg lg:text-2xl font-semibold leading-7 text-white shadow-sm hover:bg-slate-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600'
+                  data-click-target='resource'
+                  data-click-name={name}
+                  onClick={(event) => actionClickHandler(event)}
+                  target='_blank'
+                  rel='noReferrer'
+                >
+                  <div className='flex gap-3 items-center h-full'>
+                    <div className='h-full'>Unlock</div>
+                    <div className='w-10 h-10 rounded-full bg-clemson-dark/60 flex justify-center items-center'>
+                      <LockClosedIcon className='w-5 h-5 fill-white/50' />
+                    </div>
+                  </div>
+                </button>
+              )}
+            </div>
+          ) : (
+            <div className='mt-8 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0'>
+              <button
+                className='rounded-md cursor-pointer bg-clemson px-6 py-3 text-lg lg:text-2xl font-semibold leading-7 text-white shadow-sm hover:bg-slate-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600'
+                data-click-target='resource'
+                data-click-name={name}
+                onClick={(event) => actionClickHandler(event)}
+                target='_blank'
+                rel='noReferrer'
+              >
+                <div className='flex gap-2'>
+                  <div>Download</div>
+                </div>
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </>

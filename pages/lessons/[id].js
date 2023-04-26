@@ -31,7 +31,7 @@ const Index = ({ lesson }) => {
       <LessonContext.Provider
         value={{
           unlocked: unlocked,
-          toggleUnlocked: (unlocked) => setUnlocked(!unlocked),
+          toggleUnlocked: () => setUnlocked(true),
         }}
       >
         <div className='flex flex-col gap-16 pt-12 dark:bg-real-dark'>
