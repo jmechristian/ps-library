@@ -62,12 +62,12 @@ const LessonActivityIntake = ({ toggleSubmit, title }) => {
     >
       <div className='col-span-6 sm:col-span-3'>
         <input
-          {...register('firstName', { required: true })}
+          {...register('firstName')}
           type='text'
           name='firstName'
           id='firstName'
           autoComplete='firstName'
-          placeholder='First Name (required)'
+          placeholder='First Name (optional)'
           className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm'
         />
         <div>
@@ -80,8 +80,8 @@ const LessonActivityIntake = ({ toggleSubmit, title }) => {
       </div>
       <div className='col-span-6 sm:col-span-3'>
         <input
-          {...register('lastName', { required: true })}
-          placeholder='Last Name (required)'
+          {...register('lastName')}
+          placeholder='Last Name (optional)'
           type='text'
           name='lastName'
           id='lastName'
@@ -98,8 +98,8 @@ const LessonActivityIntake = ({ toggleSubmit, title }) => {
       </div>
       <div className='col-span-6'>
         <input
-          {...register('email', { required: true })}
-          placeholder='Email (required)'
+          {...register('email')}
+          placeholder='Email (optional)'
           type='text'
           name='email'
           id='email'
