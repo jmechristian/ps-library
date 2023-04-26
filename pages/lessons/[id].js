@@ -1,9 +1,7 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState } from 'react';
 import Head from 'next/head';
 import { listLessons } from '../../src/graphql/queries';
-
 import { API, graphqlOperation } from 'aws-amplify';
-
 import LessonActivity from '../../components/Lessons/LessonActivity';
 import LessonsContent from '../../components/Lessons/LessonsContent';
 import LessonsHeader from '../../components/Lessons/LessonsHeader';
@@ -23,15 +21,6 @@ export const LessonContext = createContext({
 const Index = ({ lesson, lessons }) => {
   const [unlocked, setUnlocked] = useState(false);
   const [isPage, setIsPage] = useState(0);
-
-  useEffect(() => {
-    window.addEventListener('visibilitychange', (event) => {
-      gtag('event', 'slide_exit', {
-        lesson: lesson.title,
-        slide: isPage,
-      });
-    });
-  }, []);
 
   return (
     <>

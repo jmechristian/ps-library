@@ -4,11 +4,20 @@ import { wrap } from 'popmotion';
 import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/24/solid';
 import SlideBar from '../Shared/SlideBar';
 import { LessonContext } from '../../pages/lessons/[id]';
+import { usePageVisibility } from '../../lib/visibility';
 
 const SlidesPlayer = ({ images }) => {
   const [[page, direction], setPage] = useState([0, 0]);
   const { unlocked, toggleUnlocked, setPageContext } =
     useContext(LessonContext);
+
+  const isVisible = usePageVisibility();
+
+  if (isVisible) {
+    console.log('Here');
+  } else {
+    console.log('exited', page);
+  }
 
   useEffect(() => {
     setPageContext(page);
@@ -47,6 +56,7 @@ const SlidesPlayer = ({ images }) => {
 
     if (newDirection === 1 && page === images.length - 2) {
       toggleUnlocked(true);
+      gtag('event', 'slide_completion');
     }
   };
 
