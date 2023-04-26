@@ -55,23 +55,29 @@ export default function LessonActivity({
             <div className='mt-8 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0'>
               {unlocked ? (
                 <button
-                  className='rounded-md cursor-pointer bg-clemson px-6 py-3 text-lg lg:text-2xl font-semibold leading-7 text-white shadow-sm hover:bg-slate-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600'
+                  className='rounded-md cursor-pointer bg-clemson px-6 py-3 text-lg lg:text-2xl font-semibold leading-7 text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clemson-dark'
                   data-click-target='resource'
                   data-click-name={name}
                   onClick={(event) => actionClickHandler(event)}
                   target='_blank'
                   rel='noReferrer'
                 >
-                  Download
+                  <div className='flex gap-2 items-center h-full'>
+                    <div className='h-full'>Download</div>
+                    <div className='w-10 h-10 rounded-full bg-clemson-dark/60 flex justify-center items-center'>
+                      <LockOpenIcon className='w-5 h-5 fill-white/50' />
+                    </div>
+                  </div>
                 </button>
               ) : (
                 <button
-                  className='rounded-md cursor-pointer bg-clemson px-6 py-3 text-lg lg:text-2xl font-semibold leading-7 text-white shadow-sm hover:bg-slate-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600'
+                  className='rounded-md cursor-pointer bg-clemson px-6 py-3 text-lg lg:text-2xl font-semibold leading-7 text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clemson-dark'
                   data-click-target='resource'
                   data-click-name={name}
                   onClick={(event) => actionClickHandler(event)}
                   target='_blank'
                   rel='noReferrer'
+                  disabled
                 >
                   <div className='flex gap-3 items-center h-full'>
                     <div className='h-full'>Unlock</div>

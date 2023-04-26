@@ -85,14 +85,16 @@ const SlidesPlayer = ({ images }) => {
             </div>
           </div>
         )}
-        <div
-          className='prev absolute z-10 left-10 top-[90%] md:top-1/2 -translate-y-1/2'
-          onClick={() => paginate(-1)}
-        >
-          <div className='bg-real-dark rounded-full h-10 w-10 md:h-16 md:w-16 shadow-lg flex justify-center items-center'>
-            <ChevronLeftIcon className='w-6 h-6 fill-white' />
+        {page != 0 && (
+          <div
+            className='prev absolute z-10 left-10 top-[90%] md:top-1/2 -translate-y-1/2'
+            onClick={() => paginate(-1)}
+          >
+            <div className='bg-real-dark rounded-full h-10 w-10 md:h-16 md:w-16 shadow-lg flex justify-center items-center'>
+              <ChevronLeftIcon className='w-6 h-6 fill-white' />
+            </div>
           </div>
-        </div>
+        )}
       </div>
       <SlideBar slides={images} page={page} unlocked={true} />
     </>
