@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { wrap } from 'popmotion';
 import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/24/solid';
@@ -7,7 +7,12 @@ import { LessonContext } from '../../pages/lessons/[id]';
 
 const SlidesPlayer = ({ images }) => {
   const [[page, direction], setPage] = useState([0, 0]);
-  const { unlocked, toggleUnlocked } = useContext(LessonContext);
+  const { unlocked, toggleUnlocked, setPageContext } =
+    useContext(LessonContext);
+
+  useEffect(() => {
+    setPageContext(page);
+  }, [page, setPageContext]);
 
   const variants = {
     enter: (direction) => {
@@ -39,6 +44,7 @@ const SlidesPlayer = ({ images }) => {
 
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
+
     if (newDirection === 1 && page === images.length - 2) {
       toggleUnlocked(true);
     }

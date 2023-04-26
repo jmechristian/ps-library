@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import Head from 'next/head';
 import { listLessons } from '../../src/graphql/queries';
 
@@ -16,10 +16,23 @@ import RelatedLessons from '../../components/Shared/RelatedLessons';
 export const LessonContext = createContext({
   unlocked: Boolean,
   toggleUnlocked: () => {},
+  page: 0,
+  setPageContext: () => {},
 });
 
 const Index = ({ lesson, lessons }) => {
   const [unlocked, setUnlocked] = useState(false);
+  const [isPage, setIsPage] = useState(0);
+
+  useEffect(() => {
+    window.addEventListener('visibilitychange', (event) => {
+      gtag('event', 'slide_exit', {
+        lesson: lesson.title,
+        slide: isPage,
+      });
+    });
+  }, []);
+
   return (
     <>
       <Head>
@@ -33,6 +46,8 @@ const Index = ({ lesson, lessons }) => {
         value={{
           unlocked: unlocked,
           toggleUnlocked: () => setUnlocked(true),
+          page: isPage,
+          setPageContext: (val) => setIsPage(val),
         }}
       >
         <div className='flex flex-col gap-16 pt-12 dark:bg-real-dark'>
