@@ -16,8 +16,13 @@
   @apply dark:bg-white max-w-full;
 }
 
-.sqs-block-content > h3 {
+.sqs-block-content > h3,
+h2 {
   @apply text-base-mid;
+}
+
+.sqs-block-content > br {
+  @apply py-6;
 }
 
 .bad-html > p {
