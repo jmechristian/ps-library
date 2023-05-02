@@ -12,9 +12,15 @@
   }
 }
 
+.prose :where(img):not(:where([class~='not-prose'] *)) {
+  @apply dark:bg-white;
+}
+
 .bad-html > p {
   margin-top: 0;
   margin-bottom: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .bad-html > h3 > span {
