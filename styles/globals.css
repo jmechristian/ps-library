@@ -16,8 +16,11 @@
   @apply dark:bg-white max-w-full;
 }
 
-.sqs-block-content > h3,
-h2 {
+.sqs-block-content > h3 {
+  @apply text-base-mid;
+}
+
+.sqs-block-content > h2 {
   @apply text-base-mid;
 }
 
