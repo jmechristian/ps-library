@@ -12,7 +12,7 @@ import {
   TwitterShareButton,
 } from 'react-share';
 
-const SocialShare = ({ title, subhead, slug }) => {
+const SocialShare = ({ title, subhead, slug, type }) => {
   const socialShareClickHandler = async (param) => {
     console.log(param);
     gtag('event', 'social_share', {
@@ -33,7 +33,7 @@ const SocialShare = ({ title, subhead, slug }) => {
         </div>
         <div className='flex gap-3 items-center justify-center mx-auto'>
           <FacebookShareButton
-            url={`https://library.packagingschool.com/lessons/${slug}`}
+            url={`https://library.packagingschool.com/${type}/${slug}`}
             quote={subhead}
             onClick={() => socialShareClickHandler('facebook')}
             data-click-target='social_share'
@@ -42,7 +42,7 @@ const SocialShare = ({ title, subhead, slug }) => {
             <FacebookIcon round size={50} />
           </FacebookShareButton>
           <LinkedinShareButton
-            url={`https://library.packagingschool.com/lessons/${slug}`}
+            url={`https://library.packagingschool.com/${type}/${slug}`}
             title={title}
             source='PackagingSchool.com'
             summary={subhead}
@@ -53,13 +53,13 @@ const SocialShare = ({ title, subhead, slug }) => {
             <LinkedinIcon round size={50} />
           </LinkedinShareButton>
           <TwitterShareButton
-            url={`https://library.packagingschool.com/lessons/${slug}`}
+            url={`https://library.packagingschool.com/${type}/${slug}`}
             onClick={() => socialShareClickHandler('twitter')}
           >
             <TwitterIcon round size={50} />
           </TwitterShareButton>
           <RedditShareButton
-            url={`https://library.packagingschool.com/lessons/${slug}`}
+            url={`https://library.packagingschool.com/${type}/${slug}`}
             title={title}
             onClick={() => socialShareClickHandler('reddit')}
             data-click-target='social_share'
@@ -68,7 +68,7 @@ const SocialShare = ({ title, subhead, slug }) => {
             <RedditIcon round size={50} />
           </RedditShareButton>
           <EmailShareButton
-            url={`https://library.packagingschool.com/lessons/${slug}`}
+            url={`https://library.packagingschool.com/${type}/${slug}`}
             onClick={() => socialShareClickHandler('email')}
             data-click-target='social_share'
             data-click-name='Email'

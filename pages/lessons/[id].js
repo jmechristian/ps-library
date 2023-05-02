@@ -67,6 +67,7 @@ const Index = ({ lesson, lessons }) => {
             title={lesson.title}
             slug={lesson.slug}
             subhead={lesson.subhead}
+            type={'lessons'}
           />
           <LinksButton sources={lesson.sources.items} />
         </div>

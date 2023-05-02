@@ -59,12 +59,14 @@ const Index = ({ article }) => {
           date={article.date}
           author={article.author}
         />
-        <div>
-          <ArticleMedia
-            media={article.media && article.media}
-            title={article.title}
-          />
-        </div>
+        {article.media && (
+          <div>
+            <ArticleMedia
+              media={article.media && article.media}
+              title={article.title}
+            />
+          </div>
+        )}
         <ArticleContent content={article.content} />
         <div>
           {article.relatedCourses && (
@@ -74,6 +76,7 @@ const Index = ({ article }) => {
             title={article.title}
             slug={article.slug}
             subhead={article.subhead ? article.subhead : ''}
+            type='blog'
           />
         </div>
       </div>
