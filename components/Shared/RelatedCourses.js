@@ -2,7 +2,6 @@
 import React from 'react';
 
 const RelatedCourses = ({ relatedCourses }) => {
-  console.log(relatedCourses);
   return (
     <div className='bg-slate-100 dark:bg-dark py-24 sm:py-32'>
       <div className='mx-auto max-w-7xl px-6 lg:px-8'>
