@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply font-roboto;
+    @apply font-roboto text-slate-800;
   }
 
   .bad-html > h2 {
