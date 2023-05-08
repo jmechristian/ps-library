@@ -5,10 +5,10 @@ const SpaObjectives = ({ objectives }) => {
   return (
     <div className='flex flex-col gap-6'>
       <div className='flex flex-col gap-1.5'>
-        <div className='text-3xl md:text-4xl font-greycliff font-bold text-white'>
+        <div className='text-2xl font-greycliff font-bold text-white md:text-slate-900'>
           Objectives
         </div>
-        <div className='text-lg font-greycliff text-white/80'>
+        <div className='text-lg font-greycliff text-white/80 md:text-slate-900'>
           By the end of this course you will have the skillset to be able to:
         </div>
       </div>

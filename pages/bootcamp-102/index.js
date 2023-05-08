@@ -1,11 +1,11 @@
 import React, { createContext, useState, useCallback } from 'react';
 import SpaWrapper from '../../components/SPA/SpaWrapper';
-
 import SpaTitle from '../../components/SPA/SpaTitle';
 import SpaObjectives from '../../components/SPA/SpaObjectives';
 import SpaAudience from '../../components/SPA/SpaAudience';
 import SpaSyllabus from '../../components/SPA/SpaSyllabus';
 import SpaIntake from '../../components/SPA/SpaIntake';
+import SpaCanvas from '../../components/SPA/SpaCanvas';
 
 const objectives = [
   {
@@ -167,19 +167,20 @@ const Page = () => {
       value={{ activeTab: activeTab, setActiveTab: (val) => setActiveTab(val) }}
     >
       <SpaWrapper>
-        <div className='w-full bg-slate-100 full-height'>
-          <div className='pt-12 h-full full-height'>
-            <div className='flex flex-1 flex-col h-full justify-between full-height'>
-              <div className='mx-auto max-w-7xl px-6 mb-12'>
+        <div className='w-full md:max-w-7xl md:mx-auto full-height md:flex'>
+          <div className='pt-16 md:pt-20 h-full full-height'>
+            <div className='flex flex-1 flex-col h-full justify-between md:justify-start md:gap-9 full-height'>
+              <div className='mx-auto max-w-7xl px-6 mb-12 md:mb-0'>
                 <SpaTitle />
               </div>
-              <div className='w-full h-full rounded-t-3xl md:rounded-t-4xl bg-base-brand px-6 pt-8 pb-12'>
-                <div className='mx-auto max-w-2xl lg:mx-0 px-6 md:px-0 md:pb-32'>
+              <div className='w-full h-full rounded-t-3xl md:rounded-t-4xl bg-base-brand md:bg-transparent px-6 pt-8 pb-12'>
+                <div className='mx-auto max-w-xl lg:mx-0 px-6 md:px-0 md:pb-32'>
                   {getPage(activeTab)}
                 </div>
               </div>
             </div>
           </div>
+          <SpaCanvas />
         </div>
       </SpaWrapper>
     </SpaContext.Provider>

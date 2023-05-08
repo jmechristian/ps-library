@@ -28,7 +28,7 @@ const SpaObjective = ({ objective, icon }) => {
         <div className='w-12 h-12 mt-2 rounded-full bg-white ring-slate-300/80 ring-4 shadow-md flex justify-center items-center'>
           {icon && getIcon(icon)}
         </div>
-        <div className='w-fit text-lg md:text-xl'>{objective}</div>
+        <div className='w-fit text-base'>{objective}</div>
       </div>
     </div>
   );

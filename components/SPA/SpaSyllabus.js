@@ -5,7 +5,7 @@ const SpaSyllabus = ({ syllabus }) => {
   return (
     <div className='flex flex-col gap-6'>
       <div className='flex flex-col gap-1.5'>
-        <div className='text-3xl font-greycliff font-bold text-white'>
+        <div className='text-3xl font-greycliff font-bold text-white md:text-slate-900'>
           Course Syllabus
         </div>
       </div>
