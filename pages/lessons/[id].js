@@ -18,6 +18,9 @@ export const LessonContext = createContext({
   setPageContext: () => {},
 });
 
+const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
+const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY;
+
 const Index = ({ lesson, lessons }) => {
   const [unlocked, setUnlocked] = useState(false);
   const [isPage, setIsPage] = useState(0);
