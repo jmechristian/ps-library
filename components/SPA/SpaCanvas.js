@@ -9,11 +9,13 @@ import {
   Center,
   Float,
   useAnimations,
+  Plane,
 } from '@react-three/drei';
 
 export function Model(props) {
   const group = useRef();
   const model = useGLTF('/box.glb');
+  console.log(model);
   // console.log(materials);
   // // useFrame((state) => {
   // //   const t = state.clock.getElapsedTime();
@@ -25,9 +27,9 @@ export function Model(props) {
   return (
     <primitive
       object={model.scene}
-      scale={0.8}
-      position={[0, -0.5, 0]}
-      rotation={[0, 0.9, 0]}
+      scale={1.25}
+      position={[0, -1, 0]}
+      rotation={[0.05, -2, 0]}
     />
     //   <group ref={group} {...props} dispose={null}>
     //     <group name='Scene' position={[0, -1, 0.5]}>
@@ -55,31 +57,17 @@ useGLTF.preload('/box.glb');
 
 const SpaCanvas = () => {
   return (
-    <div className='pt-16 w-full hidden lg:block'>
-      <Canvas shadows camera={{ position: [0, 0, 10], fov: 25 }}>
-        <ambientLight intensity={0.5} />
-        <spotLight
-          position={[10, 10, 10]}
-          angle={0.15}
-          penumbra={1}
-          shadow-mapSize={2048}
-          castShadow
-        />
-        <Float>
-          <PresentationControls
-            config={{ mass: 2, tension: 500 }}
-            snap={{ mass: 4, tension: 1500 }}
-            rotation={[0, 0.3, 0]}
-            polar={[-Math.PI / 3, Math.PI / 3]}
-            azimuth={[-Math.PI / 1.4, Math.PI / 2]}
-          >
-            <Center>
-              <Model scale={0.6} rotation={[0, 0.8, 0]} />
-            </Center>
-          </PresentationControls>
-        </Float>
+    <div className='pt-24 w-full hidden lg:block'>
+      <Canvas shadows linear='true' flat='true' position={[1, 0, 0]}>
+        {/* <color attach='background' args={['#fefefe']} /> */}
+        <ambientLight intensity={1.5} />
+        <Suspense fallback='none'>
+          <Float>
+            <Model />
+          </Float>
+        </Suspense>
         <ContactShadows
-          position={[0, -1.2, 0]}
+          position={[0, -1.4, 0]}
           opacity={0.75}
           scale={10}
           blur={2.5}

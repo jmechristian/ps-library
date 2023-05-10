@@ -111,7 +111,7 @@ const syllabus = [
         title: 'Box It Now Tutorial',
       },
       {
-        title: 'Prototype setup with Box it Now',
+        title: 'Prototype Setup',
       },
       {
         title: 'Graphics and Text',
@@ -120,7 +120,7 @@ const syllabus = [
         title: 'Create and Save a Virtual Prototype',
       },
       {
-        title: 'Resources for Printing (at Student expense)',
+        title: 'Resources for Printing',
       },
     ],
   },
