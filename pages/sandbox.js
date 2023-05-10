@@ -280,7 +280,7 @@ const Page = () => {
                 </div>
               </div>
               <div
-                className='max-w-2xl flex flex-col gap-10 bg-white/30 min-h-[600px] max-h-[780px] overflow-scroll p-9 rounded-lg backdrop-blur-lg shadow-lg'
+                className='max-w-2xl flex flex-col gap-10 bg-white/30 min-h-[600px] max-h-[780px] overflow-scroll p-12 rounded-xl backdrop-blur-lg shadow-lg'
                 id='scrollers'
               >
                 <div className='flex flex-col gap-4'>

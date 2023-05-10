@@ -33,7 +33,7 @@ const SpaAbout = () => {
           </div>
         </div>
       </div>
-      <p className='text-lg leading-relaxed text-slate-600 font-medium tracking-wide'>
+      <p className='text-lg leading-relaxed text-slate-800 font-medium tracking-wide'>
         Master the fundementals of packaging design in this emmersive, online
         workshop. Work though the design process from ideation through building
         your own digital prototypes. You will leave this workshop with a solid
