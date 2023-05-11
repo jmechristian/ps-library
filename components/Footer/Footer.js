@@ -93,7 +93,7 @@ export default function Footer() {
           ))}
         </div>
         <p className='mt-8 text-center text-sm text-white/60'>
-          Copyright © 2015-2022 The Packaging School, LLC. All Rights Reserved.
+          Copyright © 2015-2023 The Packaging School, LLC. All Rights Reserved.
         </p>
       </div>
     </footer>

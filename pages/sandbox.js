@@ -1,4 +1,5 @@
 import { Suspense, useRef, useEffect, useState, useCallback } from 'react';
+import * as THREE from 'three';
 import { Canvas, useLoader, useFrame } from '@react-three/fiber';
 import {
   Environment,
@@ -163,10 +164,42 @@ const syllabus = [
 
 export function Model(props) {
   const group = useRef();
-  const model = useGLTF('/boz_unfold.glb');
-  console.log('model', model);
+  const { nodes, materials, animations } = useGLTF('/boz_unfold.glb');
+  const { actions } = useAnimations(animations, group);
 
-  return <primitive object={model.scene} scale={1} />;
+  useEffect(() => {
+    console.log(actions);
+    actions.EmptyAction.play();
+    actions.ArmatureAction.play();
+  }, []);
+
+  return (
+    <group ref={group} {...props} dispose={null}>
+      <group name='Scene' castShadow receiveShadow>
+        <group name='Empty' position={[2.72, 1.25, -0.01]}>
+          <group name='Armature' position={[-0.01, -1.02, -0.01]}>
+            <primitive object={nodes.BASE} />
+            <skinnedMesh
+              name='Plane'
+              geometry={nodes.Plane.geometry}
+              material={materials['Material.001']}
+              skeleton={nodes.Plane.skeleton}
+              castShadow
+              receiveShadow
+            />
+          </group>
+        </group>
+        <mesh
+          name='surface'
+          castShadow
+          receiveShadow
+          geometry={nodes.surface.geometry}
+          material={materials.blue}
+          scale={8.36}
+        />
+      </group>
+    </group>
+  );
 }
 
 useGLTF.preload('/boz_unfold.glb');
@@ -192,20 +225,25 @@ const Page = () => {
       <div className='w-full full-height relative'>
         <div
           className='absolute top-0 left-0 right-0 bottom-0 z-1 bg-cover'
-          style={{ backgroundImage: `url('/preview.png')` }}
+          style={{ backgroundImage: `url('/102-final.webp')` }}
         >
           {/* <Canvas
-            shadows
             camera={{
-              position: [0, 0, 0],
+              fov: 60,
+              near: 0.1,
+              far: 1000,
+              position: [3, 6, 9],
+              rotation: [-0.5, 0.5, 0],
             }}
+            shadows
           >
-            <directionalLight castShadow position={[1, 2, 3]} intensity={1.5} />
             <ambientLight intensity={0.25} />
+            <pointLight position={[2, 5, 1]} intensity={1.25} />
+
+            <color attach='background' args={['#0000g']} />
             <Suspense fallback={null}>
               <Model />
             </Suspense>
-            <Environment preset='city' />
           </Canvas> */}
         </div>
         <div className='absolute top-0 left-0 right-0 bottom-0'>
@@ -288,11 +326,11 @@ const Page = () => {
                     <div>
                       <BoltIcon className='w-4 h-4 fill-white' />
                     </div>
-                    <div>Save 10% Pre-Register By June 1</div>
+                    <div>Save 10% Pre-Register By June 15</div>
                   </div>
 
                   <div className='text-5xl text-slate-800 font-greycliff font-semibold'>
-                    Box Packaging Workshop
+                    PackDesign Packaging Workshop
                   </div>
                   <div className='text-base font-semibold text-white'>
                     $1200 | XX Hours | XX Lessons | Online

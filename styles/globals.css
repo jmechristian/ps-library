@@ -13,7 +13,7 @@
 }
 
 #__next {
-  @apply min-h-screen;
+  @apply min-h-screen h-full;
 }
 
 .full-height {
