@@ -224,7 +224,7 @@ const Page = () => {
     <div className='h-full min-h-[800] bg-slate-400/60'>
       <div className='w-full full-height relative'>
         <div
-          className='absolute top-0 left-0 right-0 z-0 bg-cover lg:bg-right full-height'
+          className='absolute top-0 left-0 right-0 z-0 bg-cover md:bg-right full-height'
           style={{ backgroundImage: `url('/102-final.webp')` }}
         >
           {/* <Canvas
@@ -247,9 +247,9 @@ const Page = () => {
           </Canvas> */}
         </div>
         <div className='md:absolute top-0 left-0 right-0 bottom-0'>
-          <div className='w-full max-w-7xl mx-auto py-4 lg:py-20'>
+          <div className='w-full max-w-7xl mx-auto py-4 md:py-9 lg:py-20'>
             <div className='flex gap-6 px-4 lg:px-0'>
-              <div className='hidden lg:flex flex-col gap-6 mt-2 max-w-lg'>
+              <div className='hidden md:flex flex-col gap-6 mt-2 max-w-lg'>
                 <div className='flex flex-col justify-center items-center gap-1.5'>
                   <div
                     className={`w-16 h-16 ${
@@ -326,7 +326,7 @@ const Page = () => {
                 </div>
               </div>
               <div
-                className='max-w-2xl flex flex-col gap-5 lg:gap-10 bg-white/30 lg:w-[700px] min-h-[600px]  p-6 lg:p-12 rounded-xl backdrop-blur-lg shadow-lg'
+                className='max-w-2xl flex flex-col gap-5 lg:gap-10 bg-white/30 md:min-w-[625px] lg:w-[700px] min-h-[600px]  p-6 lg:p-12 rounded-xl backdrop-blur-lg shadow-lg'
                 id='scrollers'
               >
                 <div className='flex flex-col gap-4'>

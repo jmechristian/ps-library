@@ -24,7 +24,7 @@ const SpaObjective = ({ objective, icon }) => {
 
   return (
     <div className='bg-base-mid h-full text-white p-6 rounded-lg'>
-      <div className='grid grid-flow-col gap-3'>
+      <div className='grid grid-flow-col items-center justify-start md:gap-6 gap-3'>
         <div className='w-8 h-8 md:w-12 md:h-12 mt-2 rounded-full bg-white ring-slate-300/80 ring-4 shadow-md flex justify-center items-center'>
           {icon && getIcon(icon)}
         </div>

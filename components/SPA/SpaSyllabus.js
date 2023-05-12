@@ -13,7 +13,7 @@ const SpaSyllabus = ({ syllabus }) => {
         </div>
       </div>
       <div className='flex flex-col md:grid md:grid-cols-1 lg:grid-cols-2 gap-4'>
-        <div className='flex flex-col gap-3'>
+        <div className='flex flex-col gap-3 w-full'>
           <SpaSyllabusItem item={syllabus[0]} />
           <SpaSyllabusItem item={syllabus[2]} />
           <SpaSyllabusItem item={syllabus[4]} />

@@ -5,7 +5,7 @@ import { ChevronUpIcon } from '@heroicons/react/20/solid';
 const SpaSyllabusItem = ({ item }) => {
   return (
     <div className='w-full'>
-      <div className='mx-auto w-full max-w-md rounded-2xl bg-base-mid backdrop-blur-sm p-2'>
+      <div className='mx-auto w-full lg:max-w-md rounded-2xl bg-base-mid backdrop-blur-sm p-2'>
         <Disclosure>
           {({ open }) => (
             <>
