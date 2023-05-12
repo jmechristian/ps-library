@@ -12,7 +12,7 @@ const SpaSyllabus = ({ syllabus }) => {
           This self-paced workshop will lead you through the following:
         </div>
       </div>
-      <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
+      <div className='flex flex-col md:grid md:grid-cols-1 lg:grid-cols-2 gap-4'>
         <div className='flex flex-col gap-3'>
           <SpaSyllabusItem item={syllabus[0]} />
           <SpaSyllabusItem item={syllabus[2]} />

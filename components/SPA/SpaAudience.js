@@ -6,7 +6,7 @@ const SpaAudience = () => {
       <div className='font-semibold text-2xl text-slate-800 font-greycliff'>
         Who is this workshop for?
       </div>
-      <p className='text-lg leading-relaxed tracking-wide text-slate-800 font-medium'>
+      <p className='lg:text-lg lg:leading-relaxed tracking-wide text-slate-800 font-medium'>
         This course is tailored to individuals interested in acquiring skills on
         package design and creation. From researching the category, through
         putting together all design elements, to building a prototype,

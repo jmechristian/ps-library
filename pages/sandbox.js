@@ -221,10 +221,10 @@ const Page = () => {
   };
 
   return (
-    <div className='h-full min-h-[800]'>
+    <div className='h-full min-h-[800] bg-slate-400/60'>
       <div className='w-full full-height relative'>
         <div
-          className='absolute top-0 left-0 right-0 z-0 bg-cover bg-right full-height'
+          className='absolute top-0 left-0 right-0 z-0 bg-cover lg:bg-right full-height'
           style={{ backgroundImage: `url('/102-final.webp')` }}
         >
           {/* <Canvas
@@ -246,10 +246,10 @@ const Page = () => {
             </Suspense>
           </Canvas> */}
         </div>
-        <div className='absolute top-0 left-0 right-0 bottom-0'>
-          <div className='w-full max-w-7xl mx-auto py-20'>
-            <div className='flex gap-6'>
-              <div className='flex flex-col gap-6 mt-2 max-w-lg'>
+        <div className='md:absolute top-0 left-0 right-0 bottom-0'>
+          <div className='w-full max-w-7xl mx-auto py-4 lg:py-20'>
+            <div className='flex gap-6 px-4 lg:px-0'>
+              <div className='hidden lg:flex flex-col gap-6 mt-2 max-w-lg'>
                 <div className='flex flex-col justify-center items-center gap-1.5'>
                   <div
                     className={`w-16 h-16 ${
@@ -309,7 +309,15 @@ const Page = () => {
                   </div>
                 </div>
                 <div className='flex flex-col justify-center items-center gap-1.5'>
-                  <div className='w-16 h-16 bg-clemson backdrop-blur rounded-full flex justify-center items-center shadow-lg'>
+                  <div
+                    className='w-16 h-16 bg-clemson cursor-pointer backdrop-blur rounded-full flex justify-center items-center shadow-lg'
+                    onClick={() => {
+                      window.open(
+                        'https://learn.packagingschool.com/courses/pack-design-workshop',
+                        '_blank'
+                      );
+                    }}
+                  >
                     <TrophyIcon className='w-8 h-8 fill-white' />
                   </div>
                   <div className='font-bold text-white font-greycliff'>
@@ -318,22 +326,30 @@ const Page = () => {
                 </div>
               </div>
               <div
-                className='max-w-2xl flex flex-col gap-10 bg-white/30 lg:w-[700px] min-h-[600px] max-h-[780px] overflow-scroll p-12 rounded-xl backdrop-blur-lg shadow-lg'
+                className='max-w-2xl flex flex-col gap-5 lg:gap-10 bg-white/30 lg:w-[700px] min-h-[600px]  p-6 lg:p-12 rounded-xl backdrop-blur-lg shadow-lg'
                 id='scrollers'
               >
                 <div className='flex flex-col gap-4'>
-                  <div className='font-greycliff flex items-center gap-1 text-medium font-semibold text-white bg-clemson shadow w-fit py-2 px-4 rounded-lg'>
+                  <div
+                    className='font-greycliff flex items-center gap-1 text-medium font-semibold text-white bg-clemson shadow w-fit py-2 px-4 rounded-lg text-center lg:text-left'
+                    onClick={() =>
+                      window.open(
+                        'https://learn.packagingschool.com/courses/pack-design-workshop',
+                        '_blank'
+                      )
+                    }
+                  >
                     <div>
                       <BoltIcon className='w-4 h-4 fill-white' />
                     </div>
                     <div>Save 10% Pre-Register By June 15</div>
                   </div>
 
-                  <div className='text-5xl text-slate-800 font-greycliff font-semibold'>
+                  <div className='text-4xl lg:text-5xl text-slate-800 font-greycliff font-semibold'>
                     PackDesign Workshop
                   </div>
                   <div className='text-base font-semibold text-white'>
-                    $1200 | XX Hours | XX Lessons | Online
+                    $1200 | XX Hours | XX Lessons
                   </div>
                 </div>
                 <div className='border-b border-b-slate-400' />
@@ -341,6 +357,53 @@ const Page = () => {
                   {getPage(isActive)}
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <div className='fixed lg:hidden bottom-0 left-0 right-0 h-16 bg-black'>
+          <div className='flex gap-3 flex-nowrap overflow-scroll px-4 h-full items-center text-sm font-semibold justify-center'>
+            <div
+              className={`${
+                isActive === 'ABOUT' ? 'text-base-mid' : 'text-white/70'
+              }`}
+              onClick={() => setIsActive('ABOUT')}
+            >
+              About
+            </div>
+            <div
+              className={`${
+                isActive === 'AUDIENCE' ? 'text-base-mid' : 'text-white/70'
+              }`}
+              onClick={() => setIsActive('AUDIENCE')}
+            >
+              Audience
+            </div>
+            <div
+              className={`${
+                isActive === 'OBJECTIVES' ? 'text-base-mid' : 'text-white/70'
+              }`}
+              onClick={() => setIsActive('OBJECTIVES')}
+            >
+              Objectives
+            </div>
+            <div
+              className={`${
+                isActive === 'SYLLABUS' ? 'text-base-mid' : 'text-white/70'
+              }`}
+              onClick={() => setIsActive('SYLLABUS')}
+            >
+              Syllabus
+            </div>
+            <div
+              className='text-clemson'
+              onClick={() =>
+                window.open(
+                  'https://learn.packagingschool.com/courses/pack-design-workshop',
+                  '_blank'
+                )
+              }
+            >
+              Register
             </div>
           </div>
         </div>
