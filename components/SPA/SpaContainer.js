@@ -228,7 +228,7 @@ const SpaContainer = () => {
                   className='w-16 h-16 bg-clemson cursor-pointer backdrop-blur rounded-full flex justify-center items-center shadow-lg'
                   onClick={() => {
                     window.open(
-                      'https://learn.packagingschool.com/courses/pack-design-workshop',
+                      'https://learn.packagingschool.com/courses/pack-design-workshop?coupon=summer2023',
                       '_blank'
                     );
                   }}
@@ -249,7 +249,7 @@ const SpaContainer = () => {
                   className='font-greycliff flex items-center gap-1 text-medium font-semibold text-white bg-clemson shadow w-fit py-2 px-4 rounded-lg text-center lg:text-left'
                   onClick={() =>
                     window.open(
-                      'https://learn.packagingschool.com/courses/pack-design-workshop',
+                      'https://learn.packagingschool.com/courses/pack-design-workshop?coupon=summer2023',
                       '_blank'
                     )
                   }
@@ -317,7 +317,7 @@ const SpaContainer = () => {
             className='text-clemson'
             onClick={() =>
               window.open(
-                'https://learn.packagingschool.com/courses/pack-design-workshop',
+                'https://learn.packagingschool.com/courses/pack-design-workshop?coupon=summer2023',
                 '_blank'
               )
             }
