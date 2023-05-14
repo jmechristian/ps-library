@@ -257,6 +257,7 @@ const Page = () => {
                   <div
                     className='w-16 h-16 bg-clemson cursor-pointer backdrop-blur rounded-full flex justify-center items-center shadow-lg'
                     onClick={() => {
+                      gtag('event', 'workshop_register_click');
                       window.open(
                         'https://learn.packagingschool.com/courses/pack-design-workshop?coupon=summer2023',
                         '_blank'
@@ -277,12 +278,13 @@ const Page = () => {
                 <div className='flex flex-col gap-4'>
                   <div
                     className='font-greycliff flex items-center gap-1 text-medium font-semibold text-white bg-clemson shadow w-fit py-2 px-4 rounded-lg text-center lg:text-left'
-                    onClick={() =>
+                    onClick={() => {
+                      gtag('event', 'workshop_register_click');
                       window.open(
                         'https://learn.packagingschool.com/courses/pack-design-workshop?coupon=summer2023',
                         '_blank'
-                      )
-                    }
+                      );
+                    }}
                   >
                     <div>
                       <BoltIcon className='w-4 h-4 fill-white' />
@@ -296,7 +298,7 @@ const Page = () => {
                   <div className='text-lg font-semibold text-white'>
                     <span className='line-through text-white/60'>$1200</span>
                     &nbsp;{' '}
-                    <span className='font-bold'>$1000 (Till June 15!)</span>
+                    <span className='font-bold'>$1080 (Till June 15!)</span>
                     <div className='font-medium text-base text-slate-900'>
                       Students completing the workshop will receive their&nbsp;
                       <u>physical prototype</u> via mail.
@@ -347,12 +349,13 @@ const Page = () => {
             </div>
             <div
               className='text-clemson'
-              onClick={() =>
+              onClick={() => {
+                gtag('event', 'workshop_register_click');
                 window.open(
                   'https://learn.packagingschool.com/courses/pack-design-workshop?coupon=summer2023',
                   '_blank'
-                )
-              }
+                );
+              }}
             >
               Register
             </div>
