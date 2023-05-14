@@ -167,10 +167,10 @@ const SpaContainer = () => {
 
   return (
     <>
-      <div className='md:absolute top-0 left-0 flex justify-center items-center w-full h-full z-30'>
-        <div className='w-full max-w-7xl mx-auto py-4 md:py-9 lg:py-16'>
+      <div className='flex justify-center items-center md:items-start w-full h-full z-30 md:pt-8 md:pl-8 lg:pt-0'>
+        <div className='w-full max-w-7xl mx-auto py-4 md:py-9 xl:py-16'>
           <div className='flex gap-6 px-4 lg:px-4 xl:px-0 relative'>
-            <div className='hidden md:flex flex-col gap-6 mt-2 max-w-lg absolute z-40'>
+            <div className='hidden lg:flex flex-col gap-6 mt-2 max-w-lg absolute z-40'>
               <div className='flex flex-col justify-center items-center gap-1.5'>
                 <div
                   className={`w-16 h-16 ${
@@ -241,7 +241,7 @@ const SpaContainer = () => {
               </div>
             </div>
             <div
-              className='max-w-2xl flex flex-col gap-5 lg:gap-10 bg-white/30 md:min-w-[625px] lg:w-[700px] min-h-[600px] p-6 lg:p-12 rounded-xl backdrop-blur-lg shadow-lg lg:ml-24'
+              className='max-w-2xl flex flex-col gap-5 xl:gap-10 bg-white/30 md:min-w-[625px] lg:w-[800px] min-h-[600px] p-6 lg:p-12 rounded-xl backdrop-blur-lg shadow-lg lg:ml-24'
               id='scrollers'
             >
               <div className='flex flex-col gap-4'>
@@ -260,7 +260,7 @@ const SpaContainer = () => {
                   <div>Save 10% Pre-Register By June 15</div>
                 </div>
 
-                <div className='text-4xl lg:text-5xl text-slate-800 font-greycliff font-semibold'>
+                <div className='text-4xl xl:text-5xl text-slate-800 font-greycliff font-semibold'>
                   PackDesign Workshop
                 </div>
                 <div className='text-lg font-semibold text-white'>
@@ -279,7 +279,7 @@ const SpaContainer = () => {
           </div>
         </div>
       </div>
-      <div className='fixed lg:hidden bottom-0 left-0 right-0 h-16 bg-black'>
+      <div className='fixed lg:hidden bottom-0 left-0 right-0 h-16 bg-black z-[80]'>
         <div className='flex gap-3 flex-nowrap overflow-scroll px-4 h-full items-center text-sm font-semibold justify-center'>
           <div
             className={`${
