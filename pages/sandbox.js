@@ -17,8 +17,8 @@ export function Model(props) {
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
     ref.current.rotation.y = -Math.sin(t / 4) / 24;
-    ref.current.rotation.z = (1 + Math.sin(t / 1.5)) / 60;
-    ref.current.position.y = (1 + Math.sin(t / 1.5)) / 100;
+    ref.current.rotation.z = (1 + Math.sin(t / 1.5)) / 40;
+    ref.current.position.y = (1 + Math.sin(t / 1.5)) / 80;
   });
   return (
     <group
