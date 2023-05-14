@@ -1,17 +1,4 @@
 import { Suspense, useRef, useEffect, useState, useCallback } from 'react';
-import * as THREE from 'three';
-import { Canvas, useLoader, useFrame } from '@react-three/fiber';
-import {
-  Environment,
-  PresentationControls,
-  OrbitControls,
-  useGLTF,
-  ContactShadows,
-  Center,
-  Float,
-  useAnimations,
-  Plane,
-} from '@react-three/drei';
 import {
   UserIcon,
   PuzzlePieceIcon,
@@ -162,48 +149,6 @@ const syllabus = [
   },
 ];
 
-export function Model(props) {
-  const group = useRef();
-  const { nodes, materials, animations } = useGLTF('/boz_unfold.glb');
-  const { actions } = useAnimations(animations, group);
-
-  useEffect(() => {
-    console.log(actions);
-    actions.EmptyAction.play();
-    actions.ArmatureAction.play();
-  }, []);
-
-  return (
-    <group ref={group} {...props} dispose={null}>
-      <group name='Scene' castShadow receiveShadow>
-        <group name='Empty' position={[2.72, 1.25, -0.01]}>
-          <group name='Armature' position={[-0.01, -1.02, -0.01]}>
-            <primitive object={nodes.BASE} />
-            <skinnedMesh
-              name='Plane'
-              geometry={nodes.Plane.geometry}
-              material={materials['Material.001']}
-              skeleton={nodes.Plane.skeleton}
-              castShadow
-              receiveShadow
-            />
-          </group>
-        </group>
-        <mesh
-          name='surface'
-          castShadow
-          receiveShadow
-          geometry={nodes.surface.geometry}
-          material={materials.blue}
-          scale={8.36}
-        />
-      </group>
-    </group>
-  );
-}
-
-useGLTF.preload('/boz_unfold.glb');
-
 const Page = () => {
   const [isActive, setIsActive] = useState('ABOUT');
 
@@ -348,8 +293,14 @@ const Page = () => {
                   <div className='text-4xl lg:text-5xl text-slate-800 font-greycliff font-semibold'>
                     PackDesign Workshop
                   </div>
-                  <div className='text-base font-semibold text-white'>
-                    $1200 | XX Hours | XX Lessons
+                  <div className='text-lg font-semibold text-white'>
+                    <span className='line-through text-white/60'>$1200</span>
+                    &nbsp;{' '}
+                    <span className='font-bold'>$1000 (Till June 15!)</span>
+                    <div className='font-medium text-base text-slate-900'>
+                      Students completing the workshop will receive their&nbsp;
+                      <u>physical prototype</u> via mail.
+                    </div>
                   </div>
                 </div>
                 <div className='border-b border-b-slate-400' />
