@@ -270,8 +270,9 @@ const SpaContainer = () => {
                   &nbsp;{' '}
                   <span className='font-bold'>$1080 (Till June 15!)</span>
                   <div className='font-medium text-base text-slate-900'>
-                    Students completing the workshop will receive their&nbsp;
-                    <u>physical prototype</u> via mail.
+                    Students completing the workshop will design and improve a
+                    paperboard carton or corrugated container and receive their
+                    physical prototype via mail.
                   </div>
                 </div>
               </div>
