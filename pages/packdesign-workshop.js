@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import Head from 'next/head';
 import { Canvas, useFrame } from '@react-three/fiber';
 import {
   Center,
@@ -95,21 +96,43 @@ function CameraRig({ children }) {
 
 const Page = () => {
   return (
-    <div className='w-full bg-base-brand flex flex-1 full-height relative'>
-      <SpaContainer />
-      <div className='absolute top-0 left-0 w-full h-full'>
-        <Canvas camera={{ position: [0, 0, 0], fov: 25 }} shadows dpr='2'>
-          <ambientLight intensity={0.5} />
-          <Environment preset='city' />
-          <CameraRig>
-            <Backdrop />
-            <Center>
-              <Model />
-            </Center>
-          </CameraRig>
-        </Canvas>
+    <>
+      <Head>
+        <title>PackDesign Workshop | Hands-On Learning</title>
+        <meta
+          name='description'
+          content='Master the fundementals of packaging design in this emmersive, online workshop. Work though the design process from ideation through building your own digital prototypes.'
+          key='desc'
+        />
+        <meta
+          property='og:image'
+          content='https://packschool.s3.amazonaws.com/packdesign-workshop-hero_700.png'
+        />
+        <meta
+          property='og:title'
+          content='PackDesign Workshop | Hands-On Learning'
+        />
+        <meta
+          property='og:description'
+          content='Master the fundementals of packaging design in this emmersive, online workshop. Work though the design process from ideation through building your own digital prototypes.'
+        />
+      </Head>
+      <div className='w-full bg-base-brand flex flex-1 full-height relative'>
+        <SpaContainer />
+        <div className='absolute top-0 left-0 w-full h-full'>
+          <Canvas camera={{ position: [0, 0, 0], fov: 25 }} shadows dpr='2'>
+            <ambientLight intensity={0.5} />
+            <Environment preset='city' />
+            <CameraRig>
+              <Backdrop />
+              <Center>
+                <Model />
+              </Center>
+            </CameraRig>
+          </Canvas>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

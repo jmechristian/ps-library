@@ -19,6 +19,7 @@
     "@tailwindcss/typography": "^0.5.9",
     "@types/three": "^0.152.0",
     "active-campaign-react": "^1.4.0",
+    "algoliasearch": "^4.17.0",
     "aws-amplify": "^5.0.15",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.5",
@@ -29,6 +30,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.43.2",
+    "react-instantsearch-hooks-web": "^6.43.0",
     "react-share": "^4.4.1",
     "react-share-social": "^0.1.55",
     "three": "^0.152.2"

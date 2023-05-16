@@ -3,6 +3,13 @@ import Layout from '../components/Layout/Layout';
 import '../styles/globals.css';
 import { Amplify } from 'aws-amplify';
 import { Context } from '../data/context';
+import algoliasearch from 'algoliasearch/lite';
+import { InstantSearch } from 'react-instantsearch-hooks-web';
+
+const searchClient = algoliasearch(
+  'W0TY58JH2W',
+  '1a1941245a399e4509af58aa6a30ad1a'
+);
 
 import awsExports from '../src/aws-exports';
 Amplify.configure(awsExports);
@@ -22,9 +29,11 @@ export default function App({ Component, pageProps }) {
 
   return (
     <Context.Provider value={value}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <InstantSearch searchClient={searchClient} indexName='COURSES'>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </InstantSearch>
     </Context.Provider>
   );
 }
