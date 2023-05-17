@@ -26,7 +26,6 @@ const Index = ({ lesson, lessons }) => {
   const [isPage, setIsPage] = useState(0);
 
   const ogImage = lesson.seoImage;
-  console.log(ogImage);
 
   return (
     <>
@@ -34,8 +33,8 @@ const Index = ({ lesson, lessons }) => {
         <title>{lesson.title}</title>
         <meta property='og:image' content={ogImage} key='image' />
         <meta property='og:title' content='lesson' key='title' />
-        <meta property='og:description' content={lesson.subhead} key='desc' />
-        <meta name='description' content={lesson.subhead} key='desc' />
+        <meta property='og:description' content={lesson?.subhead} key='desc' />
+        <meta name='description' content={lesson?.subhead} key='desc' />
       </Head>
       <LessonContext.Provider
         value={{
