@@ -6,10 +6,6 @@ export default function Document() {
   return (
     <Html style={{ scrollBehavior: 'smooth' }}>
       <Head>
-        <meta
-          name='description'
-          content='A site for demonstrating use of _document file'
-        />
         <link rel='stylesheet' href='https://use.typekit.net/qtr6hem.css' />
         <Script
           strategy='afterInteractive'

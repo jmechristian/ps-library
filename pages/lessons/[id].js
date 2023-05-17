@@ -32,7 +32,7 @@ const Index = ({ lesson, lessons }) => {
       <Head>
         <title>{lesson.title}</title>
         <meta property='og:image' content={ogImage} key='image' />
-        <meta property='og:title' content='lesson' key='title' />
+        <meta property='og:title' content={lesson.title} key='title' />
         <meta property='og:description' content={lesson?.subhead} key='desc' />
         <meta name='description' content={lesson?.subhead} key='desc' />
       </Head>
