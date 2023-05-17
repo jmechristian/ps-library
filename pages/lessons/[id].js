@@ -1,6 +1,5 @@
 import React, { createContext, useState } from 'react';
 import Head from 'next/head';
-import { NextSeo } from 'next-seo';
 import { listLessons } from '../../src/graphql/queries';
 import { API, graphqlOperation } from 'aws-amplify';
 import LessonActivity from '../../components/Lessons/LessonActivity';
@@ -22,41 +21,19 @@ export const LessonContext = createContext({
 const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
 const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY;
 
-const Page = ({ lesson, lessons }) => {
+const Index = ({ lesson, lessons }) => {
   const [unlocked, setUnlocked] = useState(false);
   const [isPage, setIsPage] = useState(0);
 
   return (
     <>
-      {/* <Head>
+      <Head>
         <title>{lesson.title}</title>
         <meta property='og:image' content={lesson.seoImage} key='image' />
         <meta property='og:title' content={lesson.title} key='title' />
         <meta property='og:description' content={lesson.subhead} key='desc' />
         <meta name='description' content={lesson.subhead} key='desc' />
-      </Head> */}
-      <NextSeo
-        openGraph={{
-          type: 'website',
-          url: 'https://www.example.com/page',
-          title: 'Open Graph Title',
-          description: 'Open Graph Description',
-          images: [
-            {
-              url: 'https://www.example.ie/og-image.jpg',
-              width: 800,
-              height: 600,
-              alt: 'Og Image Alt',
-            },
-            {
-              url: 'https://www.example.ie/og-image-2.jpg',
-              width: 800,
-              height: 600,
-              alt: 'Og Image Alt 2',
-            },
-          ],
-        }}
-      />
+      </Head>
       <LessonContext.Provider
         value={{
           unlocked: unlocked,
@@ -194,4 +171,4 @@ export async function getStaticProps({ params }) {
   return { props: { lesson, lessons }, revalidate: 10 };
 }
 
-export default Page;
+export default Index;
