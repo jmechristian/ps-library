@@ -82,34 +82,34 @@ const Index = ({ lesson, lessons }) => {
   );
 };
 
-export async function getStaticPaths() {
-  const query = /* GraphQL */ `
-    query LIST_LESSONS {
-      listLessons {
-        items {
-          slug
-        }
-      }
-    }
-  `;
+// export async function getStaticPaths() {
+//   const query = /* GraphQL */ `
+//     query LIST_LESSONS {
+//       listLessons {
+//         items {
+//           slug
+//         }
+//       }
+//     }
+//   `;
 
-  const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
-  const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY;
+//   const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
+//   const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY;
 
-  try {
-    const res = await API.graphql(graphqlOperation(query));
-    const lessons = await res.data.listLessons.items;
-    const paths = lessons.map((less) => ({
-      params: { id: `${less.slug}` },
-    }));
+//   try {
+//     const res = await API.graphql(graphqlOperation(query));
+//     const lessons = await res.data.listLessons.items;
+//     const paths = lessons.map((less) => ({
+//       params: { id: `${less.slug}` },
+//     }));
 
-    return { paths, fallback: false };
-  } catch (error) {
-    console.log(error);
-  }
-}
+//     return { paths, fallback: false };
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const { id } = params;
 
   const getLesson = /* GraphQL */ `
@@ -171,7 +171,7 @@ export async function getStaticProps({ params }) {
   const getLessons = await API.graphql({ query: listLessons });
   const lessons = getLessons.data.listLessons.items;
 
-  return { props: { lesson, lessons }, revalidate: 10 };
+  return { props: { lesson, lessons } };
 }
 
 export default Index;
