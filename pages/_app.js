@@ -29,11 +29,9 @@ export default function App({ Component, pageProps }) {
 
   return (
     <Context.Provider value={value}>
-      <InstantSearch searchClient={searchClient} indexName='COURSES'>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </InstantSearch>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </Context.Provider>
   );
 }
