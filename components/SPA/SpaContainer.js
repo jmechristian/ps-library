@@ -176,7 +176,7 @@ const SpaContainer = () => {
       <div className='flex justify-center items-center md:items-start w-full h-full z-30 md:pt-8 md:pl-8 lg:pt-0'>
         <div className='w-full max-w-7xl mx-auto py-4 md:py-9 xl:py-16'>
           <div className='flex gap-6 px-4 lg:px-4 xl:px-0 relative'>
-            <div className='hidden lg:flex flex-col gap-6 mt-2 max-w-lg absolute z-40'>
+            <div className='hidden lg:flex flex-col gap-6 mt-2 max-w-lg absolute z-[100]'>
               <div className='flex flex-col justify-center items-center gap-1.5'>
                 <div
                   className={`w-16 h-16 ${
@@ -247,10 +247,7 @@ const SpaContainer = () => {
                 </div>
               </div>
             </div>
-            <div
-              className='max-w-2xl flex flex-col gap-5 xl:gap-10 bg-white/30 md:min-w-[625px] lg:w-[800px] min-h-[600px] p-6 lg:p-12 rounded-xl backdrop-blur-lg shadow-lg lg:ml-24'
-              id='scrollers'
-            >
+            <div className='max-w-2xl flex flex-col gap-5 xl:gap-6 h-full bg-white/30 md:min-w-[625px] lg:w-[800px] min-h-[600px] lg:h-[720px] p-6 lg:p-12 rounded-xl backdrop-blur-lg shadow-lg lg:ml-24'>
               <div className='flex flex-col gap-4'>
                 <div
                   className='font-greycliff flex items-center gap-1 text-medium font-semibold text-white bg-clemson shadow w-fit py-2 px-4 rounded-lg text-center lg:text-left'
@@ -313,7 +310,9 @@ const SpaContainer = () => {
                 </div>
               </div>
               <div className='border-b border-b-slate-400' />
-              <div className='w-full h-full max-w-xl'>{getPage(isActive)}</div>
+              <div className='w-full overflow-scroll max-w-xl' id='scrollers'>
+                {getPage(isActive)}
+              </div>
             </div>
           </div>
         </div>
