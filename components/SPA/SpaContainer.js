@@ -7,6 +7,12 @@ import {
   LightBulbIcon,
   BoltIcon,
 } from '@heroicons/react/24/solid';
+import {
+  ComputerDesktopIcon,
+  ChatBubbleLeftEllipsisIcon,
+  HandRaisedIcon,
+  CodeBracketIcon,
+} from '@heroicons/react/24/outline';
 import SpaSyllabus from '../SPA/SpaSyllabus';
 import SpaObjectives from '../SPA/SpaObjectives';
 import SpaAudience from '../SPA/SpaAudience';
@@ -273,7 +279,36 @@ const SpaContainer = () => {
                     Students completing the workshop will design and improve a
                     paperboard carton or corrugated container and learn how to
                     price and order production samples of their packaging.
-                    Required software provided.
+                  </div>
+                  <div className='flex gap-4 mt-4'>
+                    <div className='flex gap-1 items-center'>
+                      <div>
+                        <ComputerDesktopIcon className='w-5 h-5 stroke-white' />
+                      </div>
+                      <div className='font-medium text-slate-900'>Online</div>
+                    </div>
+                    <div className='flex gap-1 items-center'>
+                      <div>
+                        <HandRaisedIcon className='w-5 h-5 stroke-white' />
+                      </div>
+                      <div className='font-medium text-slate-900'>Hands-On</div>
+                    </div>
+                    <div className='flex gap-1 items-center'>
+                      <div>
+                        <ChatBubbleLeftEllipsisIcon className='w-5 h-5 stroke-white' />
+                      </div>
+                      <div className='font-medium text-slate-900'>
+                        Office Hours
+                      </div>
+                    </div>
+                    <div className='flex gap-1 items-center'>
+                      <div>
+                        <CodeBracketIcon className='w-5 h-5 stroke-white' />
+                      </div>
+                      <div className='font-medium text-slate-900'>
+                        Software Provided
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
