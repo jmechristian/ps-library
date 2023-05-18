@@ -18,8 +18,8 @@ export function Model(props) {
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
     ref.current.rotation.y = -Math.sin(t / 4) / 24;
-    ref.current.rotation.z = (1 + Math.sin(t / 1.5)) / 40;
-    ref.current.position.y = (1 + Math.sin(t / 1.5)) / 80;
+    ref.current.rotation.z = (1 + Math.sin(t / 1.5)) / 100;
+    // ref.current.position.y = (1 + Math.sin(t / 1.5)) / 80;
   });
   return (
     <group
@@ -98,7 +98,7 @@ const Page = () => {
   return (
     <>
       <Head>
-        <title>PackDesign Workshop | Hands-On Learning</title>
+        <title>Pack Design Workshop | Hands-On Learning</title>
         <meta
           name='description'
           content='Master the fundementals of packaging design in this emmersive, online workshop. Work though the design process from ideation through building your own digital prototypes.'
@@ -110,7 +110,7 @@ const Page = () => {
         />
         <meta
           property='og:title'
-          content='PackDesign Workshop | Hands-On Learning'
+          content='Pack Design Workshop | Hands-On Learning'
         />
         <meta
           property='og:description'

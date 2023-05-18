@@ -259,20 +259,20 @@ const SpaContainer = () => {
                   <div>
                     <BoltIcon className='w-4 h-4 fill-white' />
                   </div>
-                  <div>Save 10% Pre-Register By June 15</div>
+                  <div>Save 30% Pre-Register By June 15</div>
                 </div>
 
                 <div className='text-4xl xl:text-5xl text-slate-800 font-greycliff font-semibold'>
-                  PackDesign Workshop
+                  Pack Design Workshop
                 </div>
                 <div className='text-lg font-semibold text-white'>
-                  <span className='line-through text-white/60'>$1200</span>
+                  <span className='line-through text-white/60'>$399</span>
                   &nbsp;{' '}
-                  <span className='font-bold'>$1080 (Till June 15!)</span>
+                  <span className='font-bold'>$279.30 (Till June 15!)</span>
                   <div className='font-medium text-base text-slate-900'>
                     Students completing the workshop will design and improve a
-                    paperboard carton or corrugated container and receive their
-                    physical prototype via mail.
+                    paperboard carton or corrugated container and learn how to
+                    price and order production samples of their packaging.
                   </div>
                 </div>
               </div>
