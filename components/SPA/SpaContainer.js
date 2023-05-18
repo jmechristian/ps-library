@@ -273,6 +273,7 @@ const SpaContainer = () => {
                     Students completing the workshop will design and improve a
                     paperboard carton or corrugated container and learn how to
                     price and order production samples of their packaging.
+                    Required software provided.
                   </div>
                 </div>
               </div>
