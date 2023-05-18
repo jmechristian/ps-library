@@ -280,7 +280,7 @@ const SpaContainer = () => {
                     paperboard carton or corrugated container and learn how to
                     price and order production samples of their packaging.
                   </div>
-                  <div className='flex gap-4 mt-4'>
+                  <div className='flex flex-wrap gap-4 mt-4'>
                     <div className='flex gap-1 items-center'>
                       <div>
                         <ComputerDesktopIcon className='w-5 h-5 stroke-white' />
