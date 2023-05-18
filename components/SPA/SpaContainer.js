@@ -20,7 +20,7 @@ import SpaAbout from '../SPA/SpaAbout';
 
 const objectives = [
   {
-    objective: 'Research competetive packaging within your market.',
+    objective: 'Research competitive packaging within your market.',
     icon: 'magnifyingGlassIcon',
   },
   {
@@ -33,7 +33,7 @@ const objectives = [
     icon: 'swatchIcon',
   },
   {
-    objective: 'Digitally develop a final rendering of your prototype .',
+    objective: 'Digitally develop a final rendering of your prototype.',
     icon: 'cubeTransparentIcon',
   },
 ];
@@ -50,7 +50,7 @@ const syllabus = [
         title: 'Course Introduction and the Design Process',
       },
       {
-        title: 'Project and schedule review',
+        title: 'Project and Schedule Review',
       },
       {
         title: 'Survey',
@@ -122,7 +122,7 @@ const syllabus = [
         title: 'Box It Now Tutorial',
       },
       {
-        title: 'Prototype setup with Box it Now',
+        title: 'Prototype Setup with Box it Now',
       },
       {
         title: 'Graphics and Text',
@@ -274,7 +274,7 @@ const SpaContainer = () => {
                 <div className='text-lg font-semibold text-white'>
                   <span className='line-through text-white/60'>$399</span>
                   &nbsp;{' '}
-                  <span className='font-bold'>$279.30 (Till June 15!)</span>
+                  <span className='font-bold'>$279.30 (Until June 15!)</span>
                   <div className='font-medium text-base text-slate-900'>
                     Students completing the workshop will design and improve a
                     paperboard carton or corrugated container and learn how to
