@@ -119,10 +119,10 @@ const syllabus = [
     section: '05',
     modules: [
       {
-        title: 'Box It Now Tutorial',
+        title: 'Design Software Tutorial',
       },
       {
-        title: 'Prototype Setup with Box it Now',
+        title: 'Prototype Setup',
       },
       {
         title: 'Graphics and Text',
