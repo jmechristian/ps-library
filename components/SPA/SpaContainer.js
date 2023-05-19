@@ -248,66 +248,70 @@ const SpaContainer = () => {
               </div>
             </div>
             <div className='max-w-2xl flex flex-col gap-5 xl:gap-6 h-full bg-white/30 md:min-w-[625px] lg:w-[800px] min-h-[600px] lg:h-[720px] p-6 lg:p-12 rounded-xl backdrop-blur-lg shadow-lg lg:ml-24'>
-              <div className='flex flex-col gap-4'>
-                <div
-                  className='font-greycliff flex items-center gap-1 text-medium font-semibold text-white bg-clemson shadow w-fit py-2 px-4 rounded-lg text-center lg:text-left'
-                  onClick={() => {
-                    gtag('event', 'workshop_register_click');
-                    window.open(
-                      'https://learn.packagingschool.com/courses/pack-design-workshop?coupon=summer2023',
-                      '_blank'
-                    );
-                  }}
-                >
-                  <div>
-                    <BoltIcon className='w-4 h-4 fill-white' />
+              <div className='flex flex-col gap-3'>
+                <div className='flex flex-wrap gap-4'>
+                  <div className='flex gap-1 items-center'>
+                    <div>
+                      <ComputerDesktopIcon className='w-5 h-5 stroke-white' />
+                    </div>
+                    <div className='font-medium text-slate-900 text-sm'>
+                      Online
+                    </div>
                   </div>
-                  <div>Save 30% Pre-Register By June 15</div>
+                  <div className='flex gap-1 items-center'>
+                    <div>
+                      <HandRaisedIcon className='w-5 h-5 stroke-white' />
+                    </div>
+                    <div className='font-medium text-slate-900 text-sm'>
+                      Hands-On
+                    </div>
+                  </div>
+                  <div className='flex gap-1 items-center'>
+                    <div>
+                      <ChatBubbleLeftEllipsisIcon className='w-5 h-5 stroke-white' />
+                    </div>
+                    <div className='font-medium text-slate-900 text-sm'>
+                      Office Hours
+                    </div>
+                  </div>
+                  <div className='flex gap-1 items-center'>
+                    <div>
+                      <CodeBracketIcon className='w-5 h-5 stroke-white' />
+                    </div>
+                    <div className='font-medium text-slate-900 text-sm'>
+                      Software Provided
+                    </div>
+                  </div>
                 </div>
-
-                <div className='text-4xl xl:text-5xl text-slate-800 font-greycliff font-semibold'>
+                <div className='text-4xl xl:text-5xl text-slate-800 font-greycliff font-semibold leading-none'>
                   Pack Design Workshop
                 </div>
-                <div className='text-lg font-semibold text-white'>
+
+                <div className='text-xl font-semibold text-white'>
                   <span className='line-through text-white/60'>$399</span>
                   &nbsp;{' '}
                   <span className='font-bold'>$279.30 (Until June 15!)</span>
-                  <div className='font-medium text-base text-slate-900'>
-                    Students completing the workshop will design and improve a
-                    paperboard carton or corrugated container and learn how to
-                    price and order production samples of their packaging.
-                  </div>
-                  <div className='flex flex-wrap gap-4 mt-4'>
-                    <div className='flex gap-1 items-center'>
-                      <div>
-                        <ComputerDesktopIcon className='w-5 h-5 stroke-white' />
-                      </div>
-                      <div className='font-medium text-slate-900'>Online</div>
-                    </div>
-                    <div className='flex gap-1 items-center'>
-                      <div>
-                        <HandRaisedIcon className='w-5 h-5 stroke-white' />
-                      </div>
-                      <div className='font-medium text-slate-900'>Hands-On</div>
-                    </div>
-                    <div className='flex gap-1 items-center'>
-                      <div>
-                        <ChatBubbleLeftEllipsisIcon className='w-5 h-5 stroke-white' />
-                      </div>
-                      <div className='font-medium text-slate-900'>
-                        Office Hours
-                      </div>
-                    </div>
-                    <div className='flex gap-1 items-center'>
-                      <div>
-                        <CodeBracketIcon className='w-5 h-5 stroke-white' />
-                      </div>
-                      <div className='font-medium text-slate-900'>
-                        Software Provided
-                      </div>
-                    </div>
-                  </div>
                 </div>
+                <div className='font-medium text-base text-slate-900'>
+                  Students completing the workshop will design and improve a
+                  paperboard carton or corrugated container and learn how to
+                  price and order production samples of their packaging.
+                </div>
+              </div>
+              <div
+                className='font-greycliff flex items-center gap-1 text-medium cursor-pointer font-semibold text-white bg-clemson shadow w-fit py-3 px-4 rounded-lg text-center lg:text-left'
+                onClick={() => {
+                  gtag('event', 'workshop_register_click');
+                  window.open(
+                    'https://learn.packagingschool.com/courses/pack-design-workshop?coupon=summer2023',
+                    '_blank'
+                  );
+                }}
+              >
+                <div>
+                  <BoltIcon className='w-4 h-4 fill-white' />
+                </div>
+                <div>Save 30% Pre-Register By June 15</div>
               </div>
               <div className='border-b border-b-slate-400' />
               <div className='w-full overflow-scroll max-w-xl' id='scrollers'>
