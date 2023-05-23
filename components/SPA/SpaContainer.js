@@ -268,14 +268,6 @@ const SpaContainer = () => {
                   </div>
                   <div className='flex gap-1 items-center'>
                     <div>
-                      <ChatBubbleLeftEllipsisIcon className='w-5 h-5 stroke-white' />
-                    </div>
-                    <div className='font-medium text-slate-900 text-sm'>
-                      Office Hours
-                    </div>
-                  </div>
-                  <div className='flex gap-1 items-center'>
-                    <div>
                       <CodeBracketIcon className='w-5 h-5 stroke-white' />
                     </div>
                     <div className='font-medium text-slate-900 text-sm'>
