@@ -10,6 +10,7 @@ import LinksButton from '../../components/Shared/LinksButton';
 import SocialShare from '../../components/Shared/SocialShare';
 import LessonSlides from '../../components/Lessons/LessonSlides';
 import RelatedLessons from '../../components/Shared/RelatedLessons';
+import Image from 'next/image';
 
 export const LessonContext = createContext({
   unlocked: Boolean,
@@ -49,6 +50,14 @@ const Index = ({ lesson, lessons }) => {
       >
         <div className='flex flex-col gap-12 pt-12 dark:bg-real-dark'>
           <LessonsHeader title={lesson.title} subhead={lesson.subhead} />
+          <div className='hidden'>
+            <Image
+              src={lesson?.seoImage}
+              width={200}
+              height={200}
+              alt={lesson?.title}
+            />
+          </div>
           <div>
             {lesson.mediaType === 'SLIDES' ? (
               <LessonSlides slides={lesson.slides ? lesson.slides : []} />
