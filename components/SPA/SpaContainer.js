@@ -282,7 +282,7 @@ const SpaContainer = () => {
                 <div className='text-xl font-semibold text-white'>
                   <span className='line-through text-white/60'>$399</span>
                   &nbsp;{' '}
-                  <span className='font-bold'>$279.30 (Until June 15!)</span>
+                  <span className='font-bold'>$279.30 (Until June 22!)</span>
                 </div>
                 <div className='font-medium text-base text-slate-900'>
                   Students completing the workshop will design and improve a
