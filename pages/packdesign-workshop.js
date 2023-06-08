@@ -121,7 +121,7 @@ const Page = () => {
         <SpaContainer />
         <div className='absolute top-0 left-0 w-full h-full'>
           <Canvas camera={{ position: [0, 0, 0], fov: 25 }} shadows dpr='2'>
-            <ambientLight intensity={0.5} />
+            <ambientLight intensity={0.8} />
             {/* <Environment preset='city' /> */}
             <CameraRig>
               <Backdrop />
