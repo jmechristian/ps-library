@@ -183,6 +183,7 @@ type User @model @auth(rules: [{ allow: public }]) {
   company: String
   email: String! @index(name: "userByEmail")
   office: String
+  bio: String
   cell: String
   picture: String
   linkedin: String
@@ -192,6 +193,7 @@ type User @model @auth(rules: [{ allow: public }]) {
   cmpmForm: CMPMForm @hasOne(fields: ["cmpmFormID"])
   instructorId: Instructor @hasOne
   studentId: Student @hasOne
+  savedCourses: [String]
 }
 
 type CMPMForm
@@ -221,6 +223,7 @@ type CMPMForm
   cmpmGoals: String
   moreAboutYou: String
   birthYear: String
+  optOut: Boolean
 }
 
 type APSSpeaker @model @auth(rules: [{ allow: public }]) {
@@ -255,15 +258,25 @@ type LMSCirriculum @model @auth(rules: [{ allow: public }]) {
 type LMSCourse @model @auth(rules: [{ allow: public }]) {
   id: ID!
   courseId: String
+  category: CategoryType @default(value: "MATERIALS")
   Cirriculum: [LMSCirriculum] @manyToMany(relationName: "CirriculumCourses")
   Lessons: [LMSLesson] @manyToMany(relationName: "CourseLessons")
   Instructors: [Instructor] @manyToMany(relationName: "CourseInstructors")
-  price: Int
-  hours: Int
-  videos: Int
+  price: String
+  hours: String
+  lessons: String
+  videos: String
+  preview: String
   seoImage: String
-  description: String
+  infoSheet: String
+  title: String
+  subheadline: String
+  what_learned: String
+  objectives: [String]
+  link: String
+  trial_link: String
   percentComplete: Int
+  slug: String! @index(name: "LMScourseBySlug")
 }
 
 type LMSLesson @model @auth(rules: [{ allow: public }]) {
@@ -315,4 +328,14 @@ type Timestamp @model @auth(rules: [{ allow: public }]) {
   id: ID!
   time: String!
   description: String
+}
+
+######### Staff #########
+
+type Staff @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  fullName: String!
+  title: String!
+  image: String!
+  linkedIn: String
 }

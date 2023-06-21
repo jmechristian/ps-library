@@ -899,11 +899,13 @@ export const getCompany = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -974,6 +976,7 @@ export const getUser = /* GraphQL */ `
       company
       email
       office
+      bio
       cell
       picture
       linkedin
@@ -998,11 +1001,13 @@ export const getUser = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1030,6 +1035,7 @@ export const getUser = /* GraphQL */ `
         cmpmGoals
         moreAboutYou
         birthYear
+        optOut
         createdOn
         updatedOn
         cMPMFormUserId
@@ -1044,11 +1050,13 @@ export const getUser = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1070,11 +1078,13 @@ export const getUser = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1086,6 +1096,7 @@ export const getUser = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      savedCourses
       createdAt
       updatedAt
       userInstructorIdId
@@ -1107,6 +1118,7 @@ export const listUsers = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -1139,6 +1151,7 @@ export const listUsers = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
@@ -1155,6 +1168,7 @@ export const listUsers = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -1186,6 +1200,7 @@ export const usersByName = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -1218,6 +1233,7 @@ export const usersByName = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
@@ -1234,6 +1250,7 @@ export const usersByName = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -1265,6 +1282,7 @@ export const usersByEmail = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -1297,6 +1315,7 @@ export const usersByEmail = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
@@ -1313,6 +1332,7 @@ export const usersByEmail = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -1344,6 +1364,7 @@ export const usersByCompanyID = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -1376,6 +1397,7 @@ export const usersByCompanyID = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
@@ -1392,6 +1414,7 @@ export const usersByCompanyID = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -1412,6 +1435,7 @@ export const getCMPMForm = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -1444,6 +1468,7 @@ export const getCMPMForm = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
@@ -1460,6 +1485,7 @@ export const getCMPMForm = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -1487,6 +1513,7 @@ export const getCMPMForm = /* GraphQL */ `
       cmpmGoals
       moreAboutYou
       birthYear
+      optOut
       createdOn
       updatedOn
       cMPMFormUserId
@@ -1509,11 +1536,13 @@ export const listCMPMForms = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1541,6 +1570,7 @@ export const listCMPMForms = /* GraphQL */ `
         cmpmGoals
         moreAboutYou
         birthYear
+        optOut
         createdOn
         updatedOn
         cMPMFormUserId
@@ -1671,6 +1701,7 @@ export const getLMSCourse = /* GraphQL */ `
     getLMSCourse(id: $id) {
       id
       courseId
+      category
       Cirriculum {
         items {
           id
@@ -1703,10 +1734,19 @@ export const getLMSCourse = /* GraphQL */ `
       }
       price
       hours
+      lessons
       videos
+      preview
       seoImage
-      description
+      infoSheet
+      title
+      subheadline
+      what_learned
+      objectives
+      link
+      trial_link
       percentComplete
+      slug
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -1723,6 +1763,7 @@ export const listLMSCourses = /* GraphQL */ `
       items {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -1734,10 +1775,70 @@ export const listLMSCourses = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
+        slug
+        createdAt
+        updatedAt
+        studentCourseEnrolledId
+      }
+      nextToken
+    }
+  }
+`;
+export const lMSCoursesBySlug = /* GraphQL */ `
+  query LMSCoursesBySlug(
+    $slug: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelLMSCourseFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    lMSCoursesBySlug(
+      slug: $slug
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        courseId
+        category
+        Cirriculum {
+          nextToken
+        }
+        Lessons {
+          nextToken
+        }
+        Instructors {
+          nextToken
+        }
+        price
+        hours
+        lessons
+        videos
+        preview
+        seoImage
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
+        percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -1859,6 +1960,7 @@ export const getStudent = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -1891,6 +1993,7 @@ export const getStudent = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
@@ -1907,6 +2010,7 @@ export const getStudent = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -1916,12 +2020,22 @@ export const getStudent = /* GraphQL */ `
         items {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -1950,11 +2064,13 @@ export const listStudents = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1982,6 +2098,7 @@ export const getInstructor = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -2014,6 +2131,7 @@ export const getInstructor = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
@@ -2030,6 +2148,7 @@ export const getInstructor = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -2067,11 +2186,13 @@ export const listInstructors = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -2251,6 +2372,39 @@ export const listTimestamps = /* GraphQL */ `
         createdAt
         updatedAt
         lessonVideoTimestampsId
+      }
+      nextToken
+    }
+  }
+`;
+export const getStaff = /* GraphQL */ `
+  query GetStaff($id: ID!) {
+    getStaff(id: $id) {
+      id
+      fullName
+      title
+      image
+      linkedIn
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listStaff = /* GraphQL */ `
+  query ListStaff(
+    $filter: ModelStaffFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listStaff(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        fullName
+        title
+        image
+        linkedIn
+        createdAt
+        updatedAt
       }
       nextToken
     }
@@ -2746,6 +2900,7 @@ export const getAPSUser = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -2778,6 +2933,7 @@ export const getAPSUser = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
@@ -2794,6 +2950,7 @@ export const getAPSUser = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -2828,11 +2985,13 @@ export const listAPSUsers = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -2877,11 +3036,13 @@ export const aPSUsersByAPSId = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -2926,11 +3087,13 @@ export const aPSUsersByUserId = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -3140,6 +3303,7 @@ export const getCirriculumCourses = /* GraphQL */ `
       lMSCourse {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -3151,10 +3315,19 @@ export const getCirriculumCourses = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -3188,12 +3361,22 @@ export const listCirriculumCourses = /* GraphQL */ `
         lMSCourse {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -3233,12 +3416,22 @@ export const cirriculumCoursesByLMSCirriculumId = /* GraphQL */ `
         lMSCourse {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -3278,12 +3471,22 @@ export const cirriculumCoursesByLMSCourseId = /* GraphQL */ `
         lMSCourse {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -3304,6 +3507,7 @@ export const getCourseLessons = /* GraphQL */ `
       lMSCourse {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -3315,10 +3519,19 @@ export const getCourseLessons = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -3367,12 +3580,22 @@ export const listCourseLessons = /* GraphQL */ `
         lMSCourse {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -3416,12 +3639,22 @@ export const courseLessonsByLMSCourseId = /* GraphQL */ `
         lMSCourse {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -3465,12 +3698,22 @@ export const courseLessonsByLMSLessonId = /* GraphQL */ `
         lMSCourse {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -3501,6 +3744,7 @@ export const getCourseInstructors = /* GraphQL */ `
       lMSCourse {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -3512,10 +3756,19 @@ export const getCourseInstructors = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -3530,11 +3783,13 @@ export const getCourseInstructors = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -3569,12 +3824,22 @@ export const listCourseInstructors = /* GraphQL */ `
         lMSCourse {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -3614,12 +3879,22 @@ export const courseInstructorsByLMSCourseId = /* GraphQL */ `
         lMSCourse {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -3659,12 +3934,22 @@ export const courseInstructorsByInstructorId = /* GraphQL */ `
         lMSCourse {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId

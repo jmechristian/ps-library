@@ -1037,11 +1037,13 @@ export const onCreateCompany = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1085,11 +1087,13 @@ export const onUpdateCompany = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1133,11 +1137,13 @@ export const onDeleteCompany = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1177,6 +1183,7 @@ export const onCreateUser = /* GraphQL */ `
       company
       email
       office
+      bio
       cell
       picture
       linkedin
@@ -1201,11 +1208,13 @@ export const onCreateUser = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1233,6 +1242,7 @@ export const onCreateUser = /* GraphQL */ `
         cmpmGoals
         moreAboutYou
         birthYear
+        optOut
         createdOn
         updatedOn
         cMPMFormUserId
@@ -1247,11 +1257,13 @@ export const onCreateUser = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1273,11 +1285,13 @@ export const onCreateUser = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1289,6 +1303,7 @@ export const onCreateUser = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      savedCourses
       createdAt
       updatedAt
       userInstructorIdId
@@ -1305,6 +1320,7 @@ export const onUpdateUser = /* GraphQL */ `
       company
       email
       office
+      bio
       cell
       picture
       linkedin
@@ -1329,11 +1345,13 @@ export const onUpdateUser = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1361,6 +1379,7 @@ export const onUpdateUser = /* GraphQL */ `
         cmpmGoals
         moreAboutYou
         birthYear
+        optOut
         createdOn
         updatedOn
         cMPMFormUserId
@@ -1375,11 +1394,13 @@ export const onUpdateUser = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1401,11 +1422,13 @@ export const onUpdateUser = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1417,6 +1440,7 @@ export const onUpdateUser = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      savedCourses
       createdAt
       updatedAt
       userInstructorIdId
@@ -1433,6 +1457,7 @@ export const onDeleteUser = /* GraphQL */ `
       company
       email
       office
+      bio
       cell
       picture
       linkedin
@@ -1457,11 +1482,13 @@ export const onDeleteUser = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1489,6 +1516,7 @@ export const onDeleteUser = /* GraphQL */ `
         cmpmGoals
         moreAboutYou
         birthYear
+        optOut
         createdOn
         updatedOn
         cMPMFormUserId
@@ -1503,11 +1531,13 @@ export const onDeleteUser = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1529,11 +1559,13 @@ export const onDeleteUser = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1545,6 +1577,7 @@ export const onDeleteUser = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      savedCourses
       createdAt
       updatedAt
       userInstructorIdId
@@ -1563,6 +1596,7 @@ export const onCreateCMPMForm = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -1595,6 +1629,7 @@ export const onCreateCMPMForm = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
@@ -1611,6 +1646,7 @@ export const onCreateCMPMForm = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -1638,6 +1674,7 @@ export const onCreateCMPMForm = /* GraphQL */ `
       cmpmGoals
       moreAboutYou
       birthYear
+      optOut
       createdOn
       updatedOn
       cMPMFormUserId
@@ -1655,6 +1692,7 @@ export const onUpdateCMPMForm = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -1687,6 +1725,7 @@ export const onUpdateCMPMForm = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
@@ -1703,6 +1742,7 @@ export const onUpdateCMPMForm = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -1730,6 +1770,7 @@ export const onUpdateCMPMForm = /* GraphQL */ `
       cmpmGoals
       moreAboutYou
       birthYear
+      optOut
       createdOn
       updatedOn
       cMPMFormUserId
@@ -1747,6 +1788,7 @@ export const onDeleteCMPMForm = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -1779,6 +1821,7 @@ export const onDeleteCMPMForm = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
@@ -1795,6 +1838,7 @@ export const onDeleteCMPMForm = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -1822,6 +1866,7 @@ export const onDeleteCMPMForm = /* GraphQL */ `
       cmpmGoals
       moreAboutYou
       birthYear
+      optOut
       createdOn
       updatedOn
       cMPMFormUserId
@@ -2016,6 +2061,7 @@ export const onCreateLMSCourse = /* GraphQL */ `
     onCreateLMSCourse {
       id
       courseId
+      category
       Cirriculum {
         items {
           id
@@ -2048,10 +2094,19 @@ export const onCreateLMSCourse = /* GraphQL */ `
       }
       price
       hours
+      lessons
       videos
+      preview
       seoImage
-      description
+      infoSheet
+      title
+      subheadline
+      what_learned
+      objectives
+      link
+      trial_link
       percentComplete
+      slug
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -2063,6 +2118,7 @@ export const onUpdateLMSCourse = /* GraphQL */ `
     onUpdateLMSCourse {
       id
       courseId
+      category
       Cirriculum {
         items {
           id
@@ -2095,10 +2151,19 @@ export const onUpdateLMSCourse = /* GraphQL */ `
       }
       price
       hours
+      lessons
       videos
+      preview
       seoImage
-      description
+      infoSheet
+      title
+      subheadline
+      what_learned
+      objectives
+      link
+      trial_link
       percentComplete
+      slug
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -2110,6 +2175,7 @@ export const onDeleteLMSCourse = /* GraphQL */ `
     onDeleteLMSCourse {
       id
       courseId
+      category
       Cirriculum {
         items {
           id
@@ -2142,10 +2208,19 @@ export const onDeleteLMSCourse = /* GraphQL */ `
       }
       price
       hours
+      lessons
       videos
+      preview
       seoImage
-      description
+      infoSheet
+      title
+      subheadline
+      what_learned
+      objectives
+      link
+      trial_link
       percentComplete
+      slug
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -2359,6 +2434,7 @@ export const onCreateStudent = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -2391,6 +2467,7 @@ export const onCreateStudent = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
@@ -2407,6 +2484,7 @@ export const onCreateStudent = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -2416,12 +2494,22 @@ export const onCreateStudent = /* GraphQL */ `
         items {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -2445,6 +2533,7 @@ export const onUpdateStudent = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -2477,6 +2566,7 @@ export const onUpdateStudent = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
@@ -2493,6 +2583,7 @@ export const onUpdateStudent = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -2502,12 +2593,22 @@ export const onUpdateStudent = /* GraphQL */ `
         items {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -2531,6 +2632,7 @@ export const onDeleteStudent = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -2563,6 +2665,7 @@ export const onDeleteStudent = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
@@ -2579,6 +2682,7 @@ export const onDeleteStudent = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -2588,12 +2692,22 @@ export const onDeleteStudent = /* GraphQL */ `
         items {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -2617,6 +2731,7 @@ export const onCreateInstructor = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -2649,6 +2764,7 @@ export const onCreateInstructor = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
@@ -2665,6 +2781,7 @@ export const onCreateInstructor = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -2697,6 +2814,7 @@ export const onUpdateInstructor = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -2729,6 +2847,7 @@ export const onUpdateInstructor = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
@@ -2745,6 +2864,7 @@ export const onUpdateInstructor = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -2777,6 +2897,7 @@ export const onDeleteInstructor = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -2809,6 +2930,7 @@ export const onDeleteInstructor = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
@@ -2825,6 +2947,7 @@ export const onDeleteInstructor = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -3088,6 +3211,45 @@ export const onDeleteTimestamp = /* GraphQL */ `
       createdAt
       updatedAt
       lessonVideoTimestampsId
+    }
+  }
+`;
+export const onCreateStaff = /* GraphQL */ `
+  subscription OnCreateStaff {
+    onCreateStaff {
+      id
+      fullName
+      title
+      image
+      linkedIn
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateStaff = /* GraphQL */ `
+  subscription OnUpdateStaff {
+    onUpdateStaff {
+      id
+      fullName
+      title
+      image
+      linkedIn
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteStaff = /* GraphQL */ `
+  subscription OnDeleteStaff {
+    onDeleteStaff {
+      id
+      fullName
+      title
+      image
+      linkedIn
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -3452,6 +3614,7 @@ export const onCreateAPSUser = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -3484,6 +3647,7 @@ export const onCreateAPSUser = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
@@ -3500,6 +3664,7 @@ export const onCreateAPSUser = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -3541,6 +3706,7 @@ export const onUpdateAPSUser = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -3573,6 +3739,7 @@ export const onUpdateAPSUser = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
@@ -3589,6 +3756,7 @@ export const onUpdateAPSUser = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -3630,6 +3798,7 @@ export const onDeleteAPSUser = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -3662,6 +3831,7 @@ export const onDeleteAPSUser = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
@@ -3678,6 +3848,7 @@ export const onDeleteAPSUser = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -3853,6 +4024,7 @@ export const onCreateCirriculumCourses = /* GraphQL */ `
       lMSCourse {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -3864,10 +4036,19 @@ export const onCreateCirriculumCourses = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -3895,6 +4076,7 @@ export const onUpdateCirriculumCourses = /* GraphQL */ `
       lMSCourse {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -3906,10 +4088,19 @@ export const onUpdateCirriculumCourses = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -3937,6 +4128,7 @@ export const onDeleteCirriculumCourses = /* GraphQL */ `
       lMSCourse {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -3948,10 +4140,19 @@ export const onDeleteCirriculumCourses = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -3970,6 +4171,7 @@ export const onCreateCourseLessons = /* GraphQL */ `
       lMSCourse {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -3981,10 +4183,19 @@ export const onCreateCourseLessons = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -4028,6 +4239,7 @@ export const onUpdateCourseLessons = /* GraphQL */ `
       lMSCourse {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -4039,10 +4251,19 @@ export const onUpdateCourseLessons = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -4086,6 +4307,7 @@ export const onDeleteCourseLessons = /* GraphQL */ `
       lMSCourse {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -4097,10 +4319,19 @@ export const onDeleteCourseLessons = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -4144,6 +4375,7 @@ export const onCreateCourseInstructors = /* GraphQL */ `
       lMSCourse {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -4155,10 +4387,19 @@ export const onCreateCourseInstructors = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -4173,11 +4414,13 @@ export const onCreateCourseInstructors = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -4203,6 +4446,7 @@ export const onUpdateCourseInstructors = /* GraphQL */ `
       lMSCourse {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -4214,10 +4458,19 @@ export const onUpdateCourseInstructors = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -4232,11 +4485,13 @@ export const onUpdateCourseInstructors = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -4262,6 +4517,7 @@ export const onDeleteCourseInstructors = /* GraphQL */ `
       lMSCourse {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -4273,10 +4529,19 @@ export const onDeleteCourseInstructors = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -4291,11 +4556,13 @@ export const onDeleteCourseInstructors = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId

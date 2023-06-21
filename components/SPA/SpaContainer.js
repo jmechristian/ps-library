@@ -146,9 +146,6 @@ const syllabus = [
         title: 'Final Survey',
       },
       {
-        title: 'Final Exam',
-      },
-      {
         title: 'How to Print Your Certificate of Completion',
       },
     ],
