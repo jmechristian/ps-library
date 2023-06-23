@@ -277,9 +277,7 @@ const SpaContainer = () => {
                 </div>
 
                 <div className='text-xl font-semibold text-white'>
-                  <span className='line-through text-white/60'>$399</span>
-                  &nbsp;{' '}
-                  <span className='font-bold'>$279.30 (Until June 22!)</span>
+                  <span className='font-bold'>$399</span>
                 </div>
                 <div className='font-medium text-base text-slate-900'>
                   Students completing the workshop will design and improve a
@@ -300,7 +298,7 @@ const SpaContainer = () => {
                 <div>
                   <BoltIcon className='w-4 h-4 fill-white' />
                 </div>
-                <div>Save 30% Pre-Register By June 15</div>
+                <div>Newly Released!</div>
               </div>
               <div className='border-b border-b-slate-400' />
               <div className='w-full overflow-scroll max-w-xl' id='scrollers'>
