@@ -259,7 +259,7 @@ const Page = () => {
                     onClick={() => {
                       gtag('event', 'workshop_register_click');
                       window.open(
-                        'https://learn.packagingschool.com/courses/pack-design-workshop?coupon=summer2023',
+                        'https://learn.packagingschool.com/courses/pack-design-workshop',
                         '_blank'
                       );
                     }}
@@ -281,7 +281,7 @@ const Page = () => {
                     onClick={() => {
                       gtag('event', 'workshop_register_click');
                       window.open(
-                        'https://learn.packagingschool.com/courses/pack-design-workshop?coupon=summer2023',
+                        'https://learn.packagingschool.com/courses/pack-design-workshop',
                         '_blank'
                       );
                     }}
@@ -353,7 +353,7 @@ const Page = () => {
               onClick={() => {
                 gtag('event', 'workshop_register_click');
                 window.open(
-                  'https://learn.packagingschool.com/courses/pack-design-workshop?coupon=summer2023',
+                  'https://learn.packagingschool.com/courses/pack-design-workshop',
                   '_blank'
                 );
               }}
