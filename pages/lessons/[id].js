@@ -64,16 +64,18 @@ const Index = ({ lesson, lessons }) => {
             ) : (
               <LessonsMedia videoUrl={lesson.media} />
             )}
-            <LessonActivity
-              actionCTA={lesson.actionCTA}
-              actionSubhead={lesson.actionSubhead}
-              actionLink={lesson.actionLink}
-              name={lesson.name}
-              actionTitle={lesson.actionLinkTitle}
-              actionExample={lesson.actionExample}
-              lessonTitle={lesson.title}
-              mediaType={lesson.mediaType && lesson.mediaType}
-            />
+            {lesson.actionLinkTitle && (
+              <LessonActivity
+                actionCTA={lesson.actionCTA}
+                actionSubhead={lesson.actionSubhead}
+                actionLink={lesson.actionLink}
+                name={lesson.name}
+                actionTitle={lesson.actionLinkTitle}
+                actionExample={lesson.actionExample}
+                lessonTitle={lesson.title}
+                mediaType={lesson.mediaType && lesson.mediaType}
+              />
+            )}
           </div>
           <LessonsContent
             content={lesson.content}
