@@ -31,12 +31,6 @@ const solutions = [
     href: 'https://packagingschool.com/about-packaging-school/',
     icon: InformationCircleIcon,
   },
-  {
-    name: 'Campus Store',
-    description: "Connect with third-party tools that you're already using.",
-    href: 'https://packagingschool.com/store/',
-    icon: ShoppingCartIcon,
-  },
 ];
 const resources = [
   {
