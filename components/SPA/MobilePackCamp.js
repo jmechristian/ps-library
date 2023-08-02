@@ -253,7 +253,7 @@ const MobilePackCamp = () => {
   useEffect(() => {
     console.log(scrollYProgress.current);
     scrollYProgress.onChange((latest) => {
-      if (scrollYProgress.current > 0.02) {
+      if (scrollYProgress.current > 0) {
         setIsScrolling(true);
       }
 
