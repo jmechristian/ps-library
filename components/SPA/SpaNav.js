@@ -77,7 +77,7 @@ const SpaNav = () => {
                 <MenuIcon open={open} className='h-6 w-6 stroke-slate-700' />
               </Popover.Button>
             </div>
-            <Popover.Panel className='absolute inset-x-0 top-0 bg-white/45 py-3.5 shadow-sm [@supports(backdrop-filter:blur(0))]:bg-black/30  [@supports(backdrop-filter:blur(0))]:backdrop-blur'>
+            <Popover.Panel className='absolute inset-x-0 top-0 bg-white/45 py-3.5 shadow-sm [@supports(backdrop-filter:blur(0))]:bg-white/30  [@supports(backdrop-filter:blur(0))]:backdrop-blur'>
               {sections.map((section, sectionIndex) => (
                 <Popover.Button
                   as={Link}
@@ -89,7 +89,7 @@ const SpaNav = () => {
                   <div className='flex items-center px-4 py-3'>
                     <span
                       aria-hidden='true'
-                      className='font-mono text-sm text-base-brand'
+                      className='font-mono text-sm text-white'
                     >
                       {(sectionIndex + 1).toString().padStart(2, '0')}
                     </span>
@@ -111,7 +111,7 @@ const SpaNav = () => {
                 <div className='flex items-center px-4 py-3'>
                   <span
                     aria-hidden='true'
-                    className='font-mono text-sm text-base-brand'
+                    className='font-mono text-sm text-white'
                   >
                     05
                   </span>
