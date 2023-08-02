@@ -269,7 +269,7 @@ const MobilePackCamp = () => {
         {/* CAMERA */}
         <div className='aspect-square md:aspect-[4/3] w-full h-full relative'>
           <div className='w-full h-full fixed top-0 left-0'>
-            <Canvas camera={{ position: [0, 0, 0], fov: 40 }} shadows dpr='3'>
+            <Canvas camera={{ position: [0, 0, 0], fov: 40 }} shadows dpr='4'>
               <ambientLight intensity={0.6} />
               {/* <Environment preset='city' /> */}
               <CameraRig>
