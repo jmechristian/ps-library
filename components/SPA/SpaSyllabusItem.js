@@ -9,12 +9,10 @@ const SpaSyllabusItem = ({ item }) => {
         <Disclosure>
           {({ open }) => (
             <>
-              <Disclosure.Button className='flex w-full justify-between rounded-lg px-4 py-2 text-left font-medium'>
+              <Disclosure.Button className='flex w-full justify-between rounded-lg px-4 py-2 text-left '>
                 <div className='flex gap-2 font-greycliff items-center'>
-                  <div className='text-medium text-white font-bold'>
-                    {item.section}
-                  </div>
-                  <div className='text-md font-semibold text-white'>
+                  <div className='text-white '>{item.section}</div>
+                  <div className='font-semibold text-white text-sm'>
                     {item.title}
                   </div>
                 </div>

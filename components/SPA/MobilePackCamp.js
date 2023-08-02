@@ -13,11 +13,11 @@ import {
   CodeBracketIcon,
   BoltIcon,
 } from '@heroicons/react/24/outline';
-import SpaSyllabus from '../components/SPA/SpaSyllabus';
-import SpaObjectives from '../components/SPA/SpaObjectives';
-import SpaAudience from '../components/SPA/SpaAudience';
-import SpaAbout from '../components/SPA/SpaAbout';
-import SpaNav from '../components/SPA/SpaNav';
+import SpaSyllabus from '../SPA/SpaSyllabus';
+import SpaObjectives from '../SPA/SpaObjectives';
+import SpaAudience from '../SPA/SpaAudience';
+import SpaAbout from '../SPA/SpaAbout';
+import SpaNav from '../SPA/SpaNav';
 import { Canvas, useFrame } from '@react-three/fiber';
 import {
   Center,
@@ -246,7 +246,7 @@ const syllabus = [
   },
 ];
 
-const Page = () => {
+const MobilePackCamp = () => {
   const { scrollYProgress } = useScroll();
   const [isScrolling, setIsScrolling] = useState(false);
 
@@ -365,4 +365,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default MobilePackCamp;

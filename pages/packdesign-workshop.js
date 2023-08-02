@@ -11,6 +11,7 @@ import {
 import { useGLTF } from '@react-three/drei';
 import { easing } from 'maath';
 import SpaContainer from '../components/SPA/SpaContainer';
+import MobilePackCamp from '../components/SPA/MobilePackCamp';
 
 export function Model(props) {
   const ref = useRef();
@@ -67,7 +68,7 @@ function Backdrop() {
         radius={9}
         intensity={0.55}
         ambient={0.25}
-        position={[5, 5, -10]}
+        position={[-2, 2, -5]}
       />
       <RandomizedLight
         amount={4}
@@ -117,11 +118,14 @@ const Page = () => {
           content='Master the fundementals of packaging design in this emmersive, online workshop. Work though the design process from ideation through building your own digital prototypes.'
         />
       </Head>
-      <div className='w-full bg-base-brand flex flex-1 full-height relative'>
+      <div className='block lg:hidden'>
+        <MobilePackCamp />
+      </div>
+      <div className='w-full bg-indigo-200 hidden lg:flex gap-6 relative'>
         <SpaContainer />
-        <div className='absolute top-0 left-0 w-full h-full'>
-          <Canvas camera={{ position: [0, 0, 0], fov: 25 }} shadows dpr='2'>
-            <ambientLight intensity={0.8} />
+        <div className='fixed top-0 left-0 w-full h-full'>
+          <Canvas camera={{ position: [0, 0, 0], fov: 30 }} shadows dpr='2'>
+            <ambientLight intensity={0.6} />
             {/* <Environment preset='city' /> */}
             <CameraRig>
               <Backdrop />

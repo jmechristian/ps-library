@@ -23,8 +23,8 @@ module.exports = {
         'real-dark': '#0E0E0E',
       },
       fontFamily: {
-        roboto: 'roboto, sans-serif',
-        greycliff: 'greycliff-cf, sans-serif',
+        roboto: 'inter, sans-serif',
+        greycliff: 'inter, sans-serif',
       },
       typography: {
         orange: {

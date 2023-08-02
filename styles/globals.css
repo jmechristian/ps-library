@@ -68,6 +68,6 @@
   justify-content: flex-end;
 }
 
-canvas {
+/* canvas {
   min-height: calc(100vh - 80px);
-}
+} */

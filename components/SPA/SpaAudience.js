@@ -2,11 +2,14 @@ import React from 'react';
 
 const SpaAudience = () => {
   return (
-    <div className='flex flex-col gap-6'>
-      <div className='font-semibold text-2xl text-slate-800 font-greycliff'>
+    <div
+      className='flex flex-col gap-6 px-6 lg:px-0 scroll-mt-20'
+      id='audience'
+    >
+      <div className='font-semibold text-2xl text-gray-900 font-greycliff'>
         Who is this workshop for?
       </div>
-      <p className='lg:text-lg lg:leading-relaxed tracking-wide text-slate-800 font-medium'>
+      <p className='xl:text-lg text-gray-900'>
         This course is tailored to individuals interested in acquiring skills in
         package design and creation. From researching the category to putting
         together the design elements and building a prototype, participants gain

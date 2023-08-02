@@ -5,13 +5,13 @@ import {
   Square3Stack3DIcon,
   TrophyIcon,
   LightBulbIcon,
-  BoltIcon,
 } from '@heroicons/react/24/solid';
 import {
   ComputerDesktopIcon,
   ChatBubbleLeftEllipsisIcon,
   HandRaisedIcon,
   CodeBracketIcon,
+  BoltIcon,
 } from '@heroicons/react/24/outline';
 import SpaSyllabus from '../SPA/SpaSyllabus';
 import SpaObjectives from '../SPA/SpaObjectives';
@@ -172,11 +172,11 @@ const SpaContainer = () => {
     <>
       <div className='flex justify-center items-center md:items-start w-full h-full z-30 md:pt-8 md:pl-8 lg:pt-0'>
         <div className='w-full max-w-7xl mx-auto py-4 md:py-9 xl:py-16'>
-          <div className='flex gap-6 px-4 lg:px-4 xl:px-0 relative'>
-            <div className='hidden lg:flex flex-col gap-6 mt-2 max-w-lg absolute z-[100]'>
+          <div className='flex px-4 lg:px-4 xl:px-0 relative gap-4 xl:gap-9'>
+            <div className='hidden lg:flex flex-col gap-8 mt-2 max-w-lg h-full shadow-lg  bg-gray-800/20 rounded-lg p-4'>
               <div className='flex flex-col justify-center items-center gap-1.5'>
                 <div
-                  className={`w-16 h-16 ${
+                  className={`w-12 h-12 xl:w-16 xl:h-16 ${
                     isActive === 'ABOUT' ? 'bg-slate-900/40' : 'bg-white/50'
                   } backdrop-blur rounded-full flex justify-center items-center shadow-lg cursor-pointer hover:bg-base-dark`}
                   onClick={() => setIsActive('ABOUT')}
@@ -187,7 +187,7 @@ const SpaContainer = () => {
               </div>
               <div className='flex flex-col justify-center items-center gap-1.5'>
                 <div
-                  className={`w-16 h-16 ${
+                  className={`w-12 h-12 xl:w-16 xl:h-16 ${
                     isActive === 'AUDIENCE' ? 'bg-slate-900/40' : 'bg-white/50'
                   } backdrop-blur rounded-full flex justify-center items-center shadow-lg cursor-pointer hover:bg-base-dark`}
                   onClick={() => setIsActive('AUDIENCE')}
@@ -200,7 +200,7 @@ const SpaContainer = () => {
               </div>
               <div className='flex flex-col justify-center items-center gap-1.5'>
                 <div
-                  className={`w-16 h-16 ${
+                  className={`w-12 h-12 xl:w-16 xl:h-16 ${
                     isActive === 'OBJECTIVES'
                       ? 'bg-slate-900/40'
                       : 'bg-white/50'
@@ -215,7 +215,7 @@ const SpaContainer = () => {
               </div>
               <div className='flex flex-col justify-center items-center gap-1.5'>
                 <div
-                  className={`w-16 h-16 ${
+                  className={`w-12 h-12 xl:w-16 xl:h-16 ${
                     isActive === 'SYLLABUS' ? 'bg-slate-900/40' : 'bg-white/50'
                   } backdrop-blur rounded-full flex justify-center items-center shadow-lg cursor-pointer hover:bg-base-dark`}
                   onClick={() => setIsActive('SYLLABUS')}
@@ -228,7 +228,7 @@ const SpaContainer = () => {
               </div>
               <div className='flex flex-col justify-center items-center gap-1.5'>
                 <div
-                  className='w-16 h-16 bg-clemson cursor-pointer backdrop-blur rounded-full flex justify-center items-center shadow-lg'
+                  className='w-12 h-12 xl:w-16 xl:h-16 bg-clemson cursor-pointer backdrop-blur rounded-full flex justify-center items-center shadow-lg'
                   onClick={() => {
                     gtag('event', 'workshop_register_click');
                     window.open(
@@ -244,9 +244,17 @@ const SpaContainer = () => {
                 </div>
               </div>
             </div>
-            <div className='max-w-2xl flex flex-col gap-5 xl:gap-6 h-full bg-white/30 md:min-w-[625px] lg:w-[800px] min-h-[600px] lg:h-[720px] p-6 lg:p-12 rounded-xl backdrop-blur-lg shadow-lg lg:ml-24'>
+            <div className='max-w-lg xl:max-w-xl flex flex-col gap-5 xl:gap-6 h-full p-6 rounded-xl'>
               <div className='flex flex-col gap-3'>
-                <div className='flex flex-wrap gap-4'>
+                <div className='flex flex-wrap gap-x-6 gap-y-3 mb-3'>
+                  <div className='flex gap-1 items-center'>
+                    <div>
+                      <BoltIcon className='w-5 h-5 stroke-white' />
+                    </div>
+                    <div className='font-medium text-slate-900 text-sm'>
+                      Newly Released!
+                    </div>
+                  </div>
                   <div className='flex gap-1 items-center'>
                     <div>
                       <ComputerDesktopIcon className='w-5 h-5 stroke-white' />
@@ -272,21 +280,21 @@ const SpaContainer = () => {
                     </div>
                   </div>
                 </div>
-                <div className='text-4xl xl:text-5xl text-slate-800 font-greycliff font-semibold leading-none'>
+                <div className='text-4xl xl:text-5xl text-slate-800 tracking-tight font-greycliff font-semibold leading-none'>
                   Pack Design Workshop
                 </div>
 
                 <div className='text-xl font-semibold text-white'>
                   <span className='font-bold'>$399</span>
                 </div>
-                <div className='font-medium text-base text-slate-900'>
+                <div className='font-medium xl:text-lg text-slate-900'>
                   Students completing the workshop will design and improve a
                   paperboard carton or corrugated container and learn how to
                   price and order production samples of their packaging.
                 </div>
               </div>
               <div
-                className='font-greycliff flex items-center gap-1 text-medium cursor-pointer font-semibold text-white bg-clemson shadow w-fit py-3 px-4 rounded-lg text-center lg:text-left'
+                className='font-greycliff flex items-center gap-1 text-lg cursor-pointer font-semibold text-white bg-clemson shadow w-fit py-3 px-4 rounded-lg text-center lg:text-left'
                 onClick={() => {
                   gtag('event', 'workshop_register_click');
                   window.open(
@@ -295,64 +303,16 @@ const SpaContainer = () => {
                   );
                 }}
               >
-                <div>
-                  <BoltIcon className='w-4 h-4 fill-white' />
-                </div>
-                <div>Newly Released!</div>
+                <div>Enroll Now</div>
               </div>
-              <div className='border-b border-b-slate-400' />
-              <div className='w-full overflow-scroll max-w-xl' id='scrollers'>
+              <div className='border-b border-b-white mt-6' />
+              <div
+                className='w-full overflow-scroll max-w-xl mt-6'
+                id='scrollers'
+              >
                 {getPage(isActive)}
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div className='fixed lg:hidden bottom-0 left-0 right-0 h-16 bg-black z-[80]'>
-        <div className='flex gap-3 flex-nowrap overflow-scroll px-4 h-full items-center text-sm font-semibold justify-center'>
-          <div
-            className={`${
-              isActive === 'ABOUT' ? 'text-base-mid' : 'text-white/70'
-            }`}
-            onClick={() => setIsActive('ABOUT')}
-          >
-            About
-          </div>
-          <div
-            className={`${
-              isActive === 'AUDIENCE' ? 'text-base-mid' : 'text-white/70'
-            }`}
-            onClick={() => setIsActive('AUDIENCE')}
-          >
-            Audience
-          </div>
-          <div
-            className={`${
-              isActive === 'OBJECTIVES' ? 'text-base-mid' : 'text-white/70'
-            }`}
-            onClick={() => setIsActive('OBJECTIVES')}
-          >
-            Objectives
-          </div>
-          <div
-            className={`${
-              isActive === 'SYLLABUS' ? 'text-base-mid' : 'text-white/70'
-            }`}
-            onClick={() => setIsActive('SYLLABUS')}
-          >
-            Syllabus
-          </div>
-          <div
-            className='text-clemson'
-            onClick={() => {
-              gtag('event', 'workshop_register_click');
-              window.open(
-                'https://learn.packagingschool.com/courses/pack-design-workshop',
-                '_blank'
-              );
-            }}
-          >
-            Register
           </div>
         </div>
       </div>
