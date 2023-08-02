@@ -283,7 +283,7 @@ const MobilePackCamp = () => {
         </div>
         {/* CONTENT */}
         <motion.div
-          className='w-full h-full py-12 relative z-50 bg-transparent rounded-xl'
+          className='w-full h-full pt-6 pb-12 relative z-50 bg-transparent rounded-xl'
           animate={isScrolling ? { backgroundColor: '#1f97bf' } : {}}
         >
           <div className='flex flex-col gap-6 mb-9 md:max-w-2xl md:mx-auto'>
