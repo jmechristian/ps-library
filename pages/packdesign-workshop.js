@@ -124,7 +124,7 @@ const Page = () => {
       <div className='w-full bg-indigo-200 hidden lg:flex gap-6 relative'>
         <SpaContainer />
         <div className='fixed top-0 left-0 w-full h-full'>
-          <Canvas camera={{ position: [0, 0, 0], fov: 30 }} shadows dpr='4'>
+          <Canvas camera={{ position: [0, 0, 0], fov: 30 }} shadows dpr='2'>
             <ambientLight intensity={0.6} />
             {/* <Environment preset='city' /> */}
             <CameraRig>
