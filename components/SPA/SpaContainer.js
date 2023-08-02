@@ -306,10 +306,7 @@ const SpaContainer = () => {
                 <div>Enroll Now</div>
               </div>
               <div className='border-b border-b-white mt-6' />
-              <div
-                className='w-full overflow-scroll max-w-xl mt-6'
-                id='scrollers'
-              >
+              <div className='w-full max-w-xl mt-6' id='scrollers'>
                 {getPage(isActive)}
               </div>
             </div>
