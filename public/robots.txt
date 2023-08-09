@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://library.packagingschool.com
+
+# Sitemaps
+Sitemap: https://library.packagingschool.com/sitemap.xml
